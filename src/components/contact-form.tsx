@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { createClient } from "../../supabase/client";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { createClient } from "../../supabase/client";
-import { Loader2 } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -15,24 +17,24 @@ export default function ContactForm() {
     subject: "",
     message: "",
   });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formStatus, setFormStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string;
-  }>({ type: null, message: "" });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setFormStatus({ type: null, message: "" });
+    setLoading(true);
+    setError("");
+    setSuccess(false);
 
     try {
       const supabase = createClient();
@@ -50,7 +52,7 @@ export default function ContactForm() {
 
       if (error) throw error;
 
-      // Reset form on success
+      setSuccess(true);
       setFormData({
         name: "",
         email: "",
@@ -58,129 +60,172 @@ export default function ContactForm() {
         subject: "",
         message: "",
       });
-
-      setFormStatus({
-        type: "success",
-        message:
-          "Thank you! Your message has been sent successfully. We'll get back to you soon.",
-      });
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setFormStatus({
-        type: "error",
-        message:
-          "There was an error submitting your message. Please try again later.",
-      });
+    } catch (error: any) {
+      setError("Failed to send message. Please try again.");
+      console.error("Error:", error);
     } finally {
-      setIsSubmitting(false);
+      setLoading(false);
     }
   };
 
+  if (success) {
+    return (
+      <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+        <div className="text-center">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="w-8 h-8 text-green-600" />
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            Message Sent!
+          </h3>
+          <p className="text-gray-600 mb-6">
+            Thank you for contacting us. We'll get back to you within 24 hours.
+          </p>
+          <Button
+            onClick={() => setSuccess(false)}
+            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
+          >
+            Send Another Message
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <form onSubmit={handleSubmit} className="contact-form">
-      <div className="contact-form-grid">
-        <div className="contact-form-field">
-          <label htmlFor="name" className="contact-form-label">
-            Full Name <span className="contact-form-required">*</span>
-          </label>
-          <Input
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Your full name"
-            className={formStatus.type === "error" ? "form-error" : ""}
-          />
-        </div>
-
-        <div className="contact-form-field">
-          <label htmlFor="email" className="contact-form-label">
-            Email <span className="contact-form-required">*</span>
-          </label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="your.email@example.com"
-            className={formStatus.type === "error" ? "form-error" : ""}
-          />
-        </div>
+    <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+      <div className="mb-8">
+        <h2 className="text-3xl font-bold text-gray-900 mb-2">Get In Touch</h2>
+        <p className="text-gray-600">
+          Fill out the form below and we'll get back to you as soon as possible.
+        </p>
       </div>
 
-      <div className="contact-form-grid">
-        <div className="contact-form-field">
-          <label htmlFor="phone" className="contact-form-label">
-            Phone Number
-          </label>
-          <Input
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="Your phone number"
-          />
-        </div>
-
-        <div className="contact-form-field">
-          <label htmlFor="subject" className="contact-form-label">
-            Subject <span className="contact-form-required">*</span>
-          </label>
-          <Input
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-            placeholder="Subject of your inquiry"
-            className={formStatus.type === "error" ? "form-error" : ""}
-          />
-        </div>
-      </div>
-
-      <div className="contact-form-field">
-        <label htmlFor="message" className="contact-form-label">
-          Message <span className="contact-form-required">*</span>
-        </label>
-        <Textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          placeholder="Please describe your project or inquiry"
-          rows={6}
-          className={formStatus.type === "error" ? "form-error" : ""}
-        />
-      </div>
-
-      {formStatus.type && (
-        <div
-          className={`p-4 rounded-md ${
-            formStatus.type === "success" ? "success-message" : "error-message"
-          }`}
-        >
-          {formStatus.message}
-        </div>
+      {error && (
+        <Alert className="mb-6 border-red-200 bg-red-50">
+          <AlertCircle className="h-4 w-4 text-red-600" />
+          <AlertDescription className="text-red-700">{error}</AlertDescription>
+        </Alert>
       )}
 
-      <Button
-        type="submit"
-        className={`bg-blue-900 hover:bg-blue-800 text-white px-8 py-2 ${isSubmitting ? "btn-loading" : ""}`}
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? (
-          <>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Sending...
-          </>
-        ) : (
-          "Send Message"
-        )}
-      </Button>
-    </form>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+              Full Name <span className="text-red-500">*</span>
+            </Label>
+            <Input
+              id="name"
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="Your full name"
+              className="h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label
+              htmlFor="email"
+              className="text-sm font-medium text-gray-700"
+            >
+              Email Address <span className="text-red-500">*</span>
+            </Label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              placeholder="your.email@example.com"
+              className="h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <Label
+              htmlFor="phone"
+              className="text-sm font-medium text-gray-700"
+            >
+              Phone Number
+            </Label>
+            <Input
+              id="phone"
+              name="phone"
+              type="tel"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="+91 12345 67890"
+              className="h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label
+              htmlFor="subject"
+              className="text-sm font-medium text-gray-700"
+            >
+              Subject <span className="text-red-500">*</span>
+            </Label>
+            <Input
+              id="subject"
+              name="subject"
+              type="text"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+              placeholder="What's this about?"
+              className="h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <Label
+            htmlFor="message"
+            className="text-sm font-medium text-gray-700"
+          >
+            Message <span className="text-red-500">*</span>
+          </Label>
+          <Textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            placeholder="Tell us about your printing needs..."
+            rows={6}
+            className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 resize-none"
+          />
+        </div>
+
+        <Button
+          type="submit"
+          disabled={loading}
+          className="w-full h-12 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02]"
+        >
+          {loading ? (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin mr-2" />
+              Sending Message...
+            </>
+          ) : (
+            "Send Message"
+          )}
+        </Button>
+      </form>
+
+      <div className="mt-6 text-center text-sm text-gray-500">
+        <p>
+          * Required fields. We'll never share your information with third
+          parties.
+        </p>
+      </div>
+    </div>
   );
 }

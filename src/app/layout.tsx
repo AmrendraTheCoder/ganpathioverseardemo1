@@ -5,12 +5,14 @@ import Script from "next/script";
 import { TempoInit } from "@/components/tempo-init";
 import { ThemeProvider } from "@/components/theme-provider";
 import ErrorBoundary from "@/components/error-boundary";
+import PageTransitionProvider from "../components/page-transition-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tempo - Modern SaaS Starter",
-  description: "A modern full-stack starter template powered by Next.js",
+  title: "Ganpathi Overseas - Premium Printing Services",
+  description:
+    "Professional printing services in Lucknow. Offset printing, digital printing, UV printing, and more with 25+ years of experience.",
 };
 
 export default function RootLayout({
@@ -29,9 +31,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ErrorBoundary>
-            <main className="min-h-screen flex flex-col page-transition">
-              {children}
-            </main>
+            <PageTransitionProvider>
+              <main className="min-h-screen flex flex-col">{children}</main>
+            </PageTransitionProvider>
           </ErrorBoundary>
           <TempoInit />
         </ThemeProvider>

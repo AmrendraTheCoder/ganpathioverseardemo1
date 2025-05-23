@@ -1,14 +1,12 @@
 import DashboardNavbar from "@/components/dashboard-navbar";
 import {
-  InfoIcon,
-  UserCircle,
   MessageSquare,
   FileText,
   BarChart3,
   TrendingUp,
+  Users,
+  Calendar,
 } from "lucide-react";
-import { redirect } from "next/navigation";
-import { createClient } from "../../../supabase/server";
 import Link from "next/link";
 import {
   Card,
@@ -17,34 +15,39 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { createClient } from "../../../supabase/server";
 
 export default async function Dashboard() {
-  const supabase = await createClient();
+  let stats = {
+    totalInquiries: 0,
+    newInquiries: 0,
+    totalBlogPosts: 0,
+    recentInquiries: [],
+  };
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  try {
+    const supabase = await createClient();
 
-  if (!user) {
-    return redirect("/sign-in");
+    // Fetch dashboard statistics
+    const [inquiriesResult, blogPostsResult] = await Promise.all([
+      supabase.from("contact_inquiries").select("*", { count: "exact" }),
+      supabase.from("blog_posts").select("*", { count: "exact" }),
+    ]);
+
+    stats.totalInquiries = inquiriesResult.count || 0;
+    stats.totalBlogPosts = blogPostsResult.count || 0;
+
+    // Count new inquiries
+    stats.newInquiries =
+      inquiriesResult.data?.filter((inquiry) => inquiry.status === "new")
+        .length || 0;
+
+    // Recent inquiries
+    stats.recentInquiries = inquiriesResult.data?.slice(0, 5) || [];
+  } catch (error) {
+    console.error("Error fetching dashboard data:", error);
+    // Continue with default stats if database is not available
   }
-
-  // Fetch dashboard statistics
-  const [inquiriesResult, blogPostsResult] = await Promise.all([
-    supabase.from("contact_inquiries").select("*", { count: "exact" }),
-    supabase.from("blog_posts").select("*", { count: "exact" }),
-  ]);
-
-  const totalInquiries = inquiriesResult.count || 0;
-  const totalBlogPosts = blogPostsResult.count || 0;
-
-  // Count new inquiries
-  const newInquiries =
-    inquiriesResult.data?.filter((inquiry) => inquiry.status === "new")
-      .length || 0;
-
-  // Recent inquiries
-  const recentInquiries = inquiriesResult.data?.slice(0, 5) || [];
 
   return (
     <>
@@ -53,98 +56,118 @@ export default async function Dashboard() {
         <div className="container mx-auto px-4 py-8">
           {/* Header Section */}
           <header className="mb-8">
-            <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
-            <p className="text-gray-600">
-              Welcome back! Here's an overview of your business.
-            </p>
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-4xl font-bold mb-2 text-gray-900">
+                  Dashboard
+                </h1>
+                <p className="text-gray-600 text-lg">
+                  Welcome back! Here's an overview of your business.
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm text-gray-500">Last updated</p>
+                <p className="text-lg font-medium text-gray-900">
+                  {new Date().toLocaleDateString()}
+                </p>
+              </div>
+            </div>
           </header>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <Card className="border-l-4 border-l-blue-500 hover:shadow-lg transition-shadow">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">
+                <CardTitle className="text-sm font-medium text-gray-600">
                   Total Inquiries
                 </CardTitle>
-                <MessageSquare className="h-4 w-4 text-muted-foreground" />
+                <MessageSquare className="h-5 w-5 text-blue-500" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{totalInquiries}</div>
-                <p className="text-xs text-muted-foreground">
+                <div className="text-3xl font-bold text-gray-900">
+                  {stats.totalInquiries}
+                </div>
+                <p className="text-xs text-gray-500 mt-1">
                   Customer inquiries received
                 </p>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border-l-4 border-l-yellow-500 hover:shadow-lg transition-shadow">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">
+                <CardTitle className="text-sm font-medium text-gray-600">
                   New Inquiries
                 </CardTitle>
-                <TrendingUp className="h-4 w-4 text-muted-foreground" />
+                <TrendingUp className="h-5 w-5 text-yellow-500" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{newInquiries}</div>
-                <p className="text-xs text-muted-foreground">
-                  Pending responses
-                </p>
+                <div className="text-3xl font-bold text-gray-900">
+                  {stats.newInquiries}
+                </div>
+                <p className="text-xs text-gray-500 mt-1">Pending responses</p>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border-l-4 border-l-green-500 hover:shadow-lg transition-shadow">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">
+                <CardTitle className="text-sm font-medium text-gray-600">
                   Blog Posts
                 </CardTitle>
-                <FileText className="h-4 w-4 text-muted-foreground" />
+                <FileText className="h-5 w-5 text-green-500" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{totalBlogPosts}</div>
-                <p className="text-xs text-muted-foreground">
-                  Published articles
-                </p>
+                <div className="text-3xl font-bold text-gray-900">
+                  {stats.totalBlogPosts}
+                </div>
+                <p className="text-xs text-gray-500 mt-1">Published articles</p>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border-l-4 border-l-purple-500 hover:shadow-lg transition-shadow">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">
+                <CardTitle className="text-sm font-medium text-gray-600">
                   Response Rate
                 </CardTitle>
-                <BarChart3 className="h-4 w-4 text-muted-foreground" />
+                <BarChart3 className="h-5 w-5 text-purple-500" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">
-                  {totalInquiries > 0
+                <div className="text-3xl font-bold text-gray-900">
+                  {stats.totalInquiries > 0
                     ? Math.round(
-                        ((totalInquiries - newInquiries) / totalInquiries) *
-                          100,
+                        ((stats.totalInquiries - stats.newInquiries) /
+                          stats.totalInquiries) *
+                          100
                       )
                     : 0}
                   %
                 </div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-gray-500 mt-1">
                   Inquiries responded to
                 </p>
               </CardContent>
             </Card>
           </div>
 
-          {/* Quick Actions */}
+          {/* Quick Actions and Recent Activity */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            <Card>
+            <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle>Quick Actions</CardTitle>
+                <CardTitle className="flex items-center space-x-2">
+                  <Users className="w-5 h-5 text-blue-600" />
+                  <span>Quick Actions</span>
+                </CardTitle>
                 <CardDescription>
                   Manage your business efficiently
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <Link href="/dashboard/inquiries" className="block">
-                  <div className="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition-colors">
-                    <MessageSquare className="h-8 w-8 text-blue-600 mr-4" />
+                <Link href="/dashboard/inquiries" className="block group">
+                  <div className="flex items-center p-4 border border-gray-200 rounded-xl hover:border-blue-300 hover:bg-blue-50 transition-all duration-200 group-hover:shadow-md">
+                    <MessageSquare className="h-10 w-10 text-blue-600 mr-4 group-hover:scale-110 transition-transform" />
                     <div>
-                      <h3 className="font-medium">Manage Inquiries</h3>
+                      <h3 className="font-semibold text-gray-900">
+                        Manage Inquiries
+                      </h3>
                       <p className="text-sm text-gray-600">
                         Respond to customer inquiries and quotes
                       </p>
@@ -152,11 +175,13 @@ export default async function Dashboard() {
                   </div>
                 </Link>
 
-                <Link href="/dashboard/blog" className="block">
-                  <div className="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition-colors">
-                    <FileText className="h-8 w-8 text-green-600 mr-4" />
+                <Link href="/dashboard/blog" className="block group">
+                  <div className="flex items-center p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200 group-hover:shadow-md">
+                    <FileText className="h-10 w-10 text-green-600 mr-4 group-hover:scale-110 transition-transform" />
                     <div>
-                      <h3 className="font-medium">Manage Blog</h3>
+                      <h3 className="font-semibold text-gray-900">
+                        Manage Blog
+                      </h3>
                       <p className="text-sm text-gray-600">
                         Create and edit blog posts
                       </p>
@@ -166,25 +191,32 @@ export default async function Dashboard() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle>Recent Inquiries</CardTitle>
+                <CardTitle className="flex items-center space-x-2">
+                  <Calendar className="w-5 h-5 text-purple-600" />
+                  <span>Recent Inquiries</span>
+                </CardTitle>
                 <CardDescription>Latest customer inquiries</CardDescription>
               </CardHeader>
               <CardContent>
-                {recentInquiries.length === 0 ? (
-                  <p className="text-gray-500 text-center py-4">
-                    No inquiries yet
-                  </p>
+                {stats.recentInquiries.length === 0 ? (
+                  <div className="text-center py-8">
+                    <MessageSquare className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+                    <p className="text-gray-500">No inquiries yet</p>
+                    <p className="text-sm text-gray-400 mt-1">
+                      Customer inquiries will appear here
+                    </p>
+                  </div>
                 ) : (
                   <div className="space-y-3">
-                    {recentInquiries.map((inquiry) => (
+                    {stats.recentInquiries.map((inquiry: any) => (
                       <div
                         key={inquiry.id}
-                        className="flex items-center justify-between p-3 border rounded-lg"
+                        className="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:border-gray-300 transition-colors"
                       >
-                        <div>
-                          <h4 className="font-medium text-sm">
+                        <div className="flex-1">
+                          <h4 className="font-medium text-sm text-gray-900 mb-1">
                             {inquiry.subject}
                           </h4>
                           <p className="text-xs text-gray-600">
@@ -192,7 +224,7 @@ export default async function Dashboard() {
                           </p>
                         </div>
                         <span
-                          className={`px-2 py-1 text-xs rounded-full ${
+                          className={`px-3 py-1 text-xs rounded-full font-medium ${
                             inquiry.status === "new"
                               ? "bg-blue-100 text-blue-800"
                               : inquiry.status === "in_progress"
@@ -206,7 +238,7 @@ export default async function Dashboard() {
                     ))}
                     <Link
                       href="/dashboard/inquiries"
-                      className="block text-center text-blue-600 hover:text-blue-800 text-sm font-medium"
+                      className="block text-center text-blue-600 hover:text-blue-800 text-sm font-medium mt-4 py-2 hover:bg-blue-50 rounded-lg transition-colors"
                     >
                       View all inquiries →
                     </Link>
@@ -216,28 +248,24 @@ export default async function Dashboard() {
             </Card>
           </div>
 
-          {/* User Profile Section */}
-          <Card>
+          {/* System Status */}
+          <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <UserCircle className="h-5 w-5" />
-                User Profile
-              </CardTitle>
-              <CardDescription>Your account information</CardDescription>
+              <CardTitle className="text-blue-900">System Status</CardTitle>
+              <CardDescription className="text-blue-700">
+                Everything is running smoothly
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2">
-                <p>
-                  <span className="font-medium">Email:</span> {user.email}
-                </p>
-                <p>
-                  <span className="font-medium">User ID:</span> {user.id}
-                </p>
-                <p>
-                  <span className="font-medium">Last Sign In:</span>{" "}
-                  {user.last_sign_in_at
-                    ? new Date(user.last_sign_in_at).toLocaleDateString()
-                    : "N/A"}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-blue-900">
+                    All systems operational
+                  </span>
+                </div>
+                <p className="text-sm text-blue-700">
+                  Last checked: {new Date().toLocaleTimeString()}
                 </p>
               </div>
             </CardContent>

@@ -1,30 +1,71 @@
-import { redirect } from "next/navigation";
-import { createClient } from "../../../supabase/server";
+"use client";
 
-// Admin email addresses that can access the dashboard
-const ADMIN_EMAILS = [
-  "admin@ganpathioverseas.com",
-  "owner@ganpathioverseas.com",
-  "manager@ganpathioverseas.com",
-];
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
 
-export default async function DashboardLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const supabase = await createClient();
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const router = useRouter();
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  useEffect(() => {
+    const checkAuth = () => {
+      const adminSession = localStorage.getItem("admin_session");
+      const loginTime = localStorage.getItem("admin_login_time");
 
-  if (!user) {
-    return redirect("/sign-in");
+      if (adminSession && loginTime) {
+        // Check if session is still valid (24 hours)
+        const now = Date.now();
+        const sessionAge = now - parseInt(loginTime);
+        const maxAge = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+        if (sessionAge < maxAge) {
+          setIsAuthenticated(true);
+        } else {
+          // Session expired
+          localStorage.removeItem("admin_session");
+          localStorage.removeItem("admin_login_time");
+          setIsAuthenticated(false);
+        }
+      } else {
+        setIsAuthenticated(false);
+      }
+    };
+
+    checkAuth();
+  }, []);
+
+  useEffect(() => {
+    if (isAuthenticated === false) {
+      router.push("/admin");
+    }
+  }, [isAuthenticated, router]);
+
+  // Loading state
+  if (isAuthenticated === null) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="flex flex-col items-center space-y-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center animate-pulse">
+            <span className="text-white font-bold text-2xl">G</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Loader2 className="w-5 h-5 animate-spin text-blue-600" />
+            <p className="text-gray-600 font-medium">
+              Checking authentication...
+            </p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
-  // Check if user email is in admin list
-  if (!ADMIN_EMAILS.includes(user.email || "")) {
+  // Not authenticated - will redirect
+  if (isAuthenticated === false) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6 text-center">
@@ -32,19 +73,19 @@ export default async function DashboardLayout({
             Access Restricted
           </h2>
           <p className="text-gray-600 mb-6">
-            You don't have permission to access the admin dashboard. Please
-            contact the administrator if you believe this is an error.
+            Please sign in to access the admin dashboard.
           </p>
-          <a
-            href="/"
+          <button
+            onClick={() => router.push("/admin")}
             className="inline-flex items-center px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors"
           >
-            Return to Homepage
-          </a>
+            Go to Login
+          </button>
         </div>
       </div>
     );
   }
 
+  // Authenticated - render dashboard
   return <div className="min-h-screen bg-gray-50">{children}</div>;
 }

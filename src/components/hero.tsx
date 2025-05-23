@@ -164,12 +164,12 @@ export default function Hero() {
                         delay: 0.1,
                       },
                       {
-                        src: "https://images.unsplash.com/photo-1598537179958-687e6cc425d7?w=500&q=80",
+                        src: "https://images.unsplash.com/photo-1611244419377-b0a760c19719?w=500&q=80",
                         alt: "Business cards",
                         delay: 0.2,
                       },
                       {
-                        src: "https://images.unsplash.com/photo-1616070829624-a11213034646?w=500&q=80",
+                        src: "https://images.unsplash.com/photo-1601645191163-3fc0d5d64e35?w=500&q=80",
                         alt: "Large format",
                         delay: 0.3,
                       },
