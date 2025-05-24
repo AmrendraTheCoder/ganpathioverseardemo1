@@ -278,7 +278,7 @@ export default function BlogPostList({
   };
 
   const getPostStats = () => {
-    const categories = [...new Set(posts.map((post) => post.category))];
+    const categories = Array.from(new Set(posts.map((post) => post.category)));
     const thisMonth = new Date().getMonth();
     const thisYear = new Date().getFullYear();
 

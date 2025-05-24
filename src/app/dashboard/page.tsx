@@ -22,10 +22,28 @@ import {
 } from "@/components/ui/card";
 import { createClient } from "../../../supabase/client";
 
+// Define types for better type safety
+interface RecentInquiry {
+  id: string;
+  name: string;
+  subject: string;
+  status: "new" | "in_progress" | "resolved";
+  created_at: string;
+  email: string;
+  message: string;
+}
+
+interface DashboardStats {
+  totalInquiries: number;
+  newInquiries: number;
+  totalBlogPosts: number;
+  recentInquiries: RecentInquiry[];
+}
+
 export default function Dashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [stats, setStats] = useState({
+  const [stats, setStats] = useState<DashboardStats>({
     totalInquiries: 0,
     newInquiries: 0,
     totalBlogPosts: 0,
@@ -85,8 +103,18 @@ export default function Dashboard() {
         inquiriesResult.data?.filter((inquiry) => inquiry.status === "new")
           .length || 0;
 
-      // Recent inquiries
-      const recentInquiries = inquiriesResult.data?.slice(0, 5) || [];
+      // Recent inquiries - transform and type the data properly
+      const recentInquiries: RecentInquiry[] = (
+        inquiriesResult.data?.slice(0, 5) || []
+      ).map((inquiry: any) => ({
+        id: inquiry.id,
+        name: inquiry.name,
+        subject: inquiry.subject,
+        status: inquiry.status || "new",
+        created_at: inquiry.created_at,
+        email: inquiry.email,
+        message: inquiry.message,
+      }));
 
       setStats({
         totalInquiries,
@@ -278,7 +306,7 @@ export default function Dashboard() {
                   </div>
                 ) : (
                   <div className="space-y-3">
-                    {stats.recentInquiries.map((inquiry: any) => (
+                    {stats.recentInquiries.map((inquiry) => (
                       <div
                         key={inquiry.id}
                         className="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:border-gray-300 transition-colors"

@@ -29,6 +29,24 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+// Define types
+interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  cover_image: string | null;
+  author: string;
+  category: string;
+  created_at: string;
+  updated_at: string | null;
+  view_count: number | null;
+  like_count: number | null;
+  comment_count: number | null;
+  share_count: number | null;
+}
+
 interface BlogStats {
   totalPosts: number;
   publishedThisMonth: number;
@@ -37,16 +55,34 @@ interface BlogStats {
   totalComments: number;
   totalShares: number;
   avgReadTime: number;
-  topPerformingPost: any;
-  recentActivity: any[];
+  topPerformingPost: BlogPost | null;
+  recentActivity: RecentActivity[];
   viewsThisWeek: number;
   engagementRate: number;
+}
+
+interface RecentActivity {
+  type: "view" | "like" | "comment" | "share";
+  title: string;
+  time: string;
+  icon: any;
+  description: string;
+}
+
+// Type for joined query results
+interface ActivityWithPost {
+  created_at: string;
+  author_name?: string;
+  platform?: string;
+  blog_posts: {
+    title: string;
+  } | null;
 }
 
 export default function BlogManagementPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<BlogPost[]>([]);
   const [stats, setStats] = useState<BlogStats>({
     totalPosts: 0,
     publishedThisMonth: 0,
@@ -103,14 +139,24 @@ export default function BlogManagementPage() {
         .from("blog_posts")
         .select(
           `
-          *,
+          id,
+          title,
+          slug,
+          excerpt,
+          content,
+          cover_image,
+          author,
+          category,
+          created_at,
+          updated_at,
           view_count,
           like_count,
           comment_count,
           share_count
         `
         )
-        .order("created_at", { ascending: false });
+        .order("created_at", { ascending: false })
+        .returns<BlogPost[]>();
 
       if (postsError) {
         console.error("Error fetching blog posts:", postsError);
@@ -157,17 +203,20 @@ export default function BlogManagementPage() {
         totalPosts > 0 ? Math.round(totalWords / totalPosts / 200) : 0;
 
       // Find top performing post
-      const topPerformingPost = blogPosts?.reduce((top, post) => {
-        const postScore =
-          (post.view_count || 0) +
-          (post.like_count || 0) * 2 +
-          (post.comment_count || 0) * 3;
-        const topScore =
-          (top?.view_count || 0) +
-          (top?.like_count || 0) * 2 +
-          (top?.comment_count || 0) * 3;
-        return postScore > topScore ? post : top;
-      }, null);
+      const topPerformingPost = blogPosts?.reduce(
+        (top, post) => {
+          const postScore =
+            (post.view_count || 0) +
+            (post.like_count || 0) * 2 +
+            (post.comment_count || 0) * 3;
+          const topScore =
+            (top?.view_count || 0) +
+            (top?.like_count || 0) * 2 +
+            (top?.comment_count || 0) * 3;
+          return postScore > topScore ? post : top;
+        },
+        null as BlogPost | null
+      );
 
       // Get recent activity from views and likes tables
       const oneWeekAgo = new Date();
@@ -180,26 +229,30 @@ export default function BlogManagementPage() {
             .select("created_at, blog_posts!inner(title)")
             .gte("created_at", oneWeekAgo.toISOString())
             .order("created_at", { ascending: false })
-            .limit(10),
+            .limit(10)
+            .returns<ActivityWithPost[]>(),
           supabase
             .from("blog_likes")
             .select("created_at, blog_posts!inner(title)")
             .gte("created_at", oneWeekAgo.toISOString())
             .order("created_at", { ascending: false })
-            .limit(5),
+            .limit(5)
+            .returns<ActivityWithPost[]>(),
           supabase
             .from("blog_comments")
             .select("created_at, author_name, blog_posts!inner(title)")
             .eq("status", "approved")
             .gte("created_at", oneWeekAgo.toISOString())
             .order("created_at", { ascending: false })
-            .limit(5),
+            .limit(5)
+            .returns<ActivityWithPost[]>(),
           supabase
             .from("blog_shares")
             .select("created_at, platform, blog_posts!inner(title)")
             .gte("created_at", oneWeekAgo.toISOString())
             .order("created_at", { ascending: false })
-            .limit(5),
+            .limit(5)
+            .returns<ActivityWithPost[]>(),
         ]);
 
       // Get views this week
@@ -214,35 +267,43 @@ export default function BlogManagementPage() {
         totalViews > 0 ? Math.round((engagementActions / totalViews) * 100) : 0;
 
       // Combine recent activity
-      const recentActivity = [
-        ...(viewsData.data || []).map((item) => ({
-          type: "view",
-          title: item.blog_posts?.title,
-          time: item.created_at,
-          icon: Eye,
-          description: "New page view",
-        })),
-        ...(likesData.data || []).map((item) => ({
-          type: "like",
-          title: item.blog_posts?.title,
-          time: item.created_at,
-          icon: Heart,
-          description: "Article liked",
-        })),
-        ...(commentsData.data || []).map((item) => ({
-          type: "comment",
-          title: item.blog_posts?.title,
-          time: item.created_at,
-          icon: MessageCircle,
-          description: `Comment by ${item.author_name}`,
-        })),
-        ...(sharesData.data || []).map((item) => ({
-          type: "share",
-          title: item.blog_posts?.title,
-          time: item.created_at,
-          icon: Share2,
-          description: `Shared on ${item.platform}`,
-        })),
+      const recentActivity: RecentActivity[] = [
+        ...(viewsData.data || []).map(
+          (item): RecentActivity => ({
+            type: "view" as const,
+            title: item.blog_posts?.title || "Unknown Post",
+            time: item.created_at,
+            icon: Eye,
+            description: "New page view",
+          })
+        ),
+        ...(likesData.data || []).map(
+          (item): RecentActivity => ({
+            type: "like" as const,
+            title: item.blog_posts?.title || "Unknown Post",
+            time: item.created_at,
+            icon: Heart,
+            description: "Article liked",
+          })
+        ),
+        ...(commentsData.data || []).map(
+          (item): RecentActivity => ({
+            type: "comment" as const,
+            title: item.blog_posts?.title || "Unknown Post",
+            time: item.created_at,
+            icon: MessageCircle,
+            description: `Comment by ${item.author_name || "Unknown"}`,
+          })
+        ),
+        ...(sharesData.data || []).map(
+          (item): RecentActivity => ({
+            type: "share" as const,
+            title: item.blog_posts?.title || "Unknown Post",
+            time: item.created_at,
+            icon: Share2,
+            description: `Shared on ${item.platform || "Unknown platform"}`,
+          })
+        ),
       ]
         .sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime())
         .slice(0, 10);
@@ -584,7 +645,12 @@ export default function BlogManagementPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <BlogPostList initialPosts={posts} />
+              <BlogPostList
+                initialPosts={posts.map((post) => ({
+                  ...post,
+                  cover_image: post.cover_image || "", // Convert null to empty string
+                }))}
+              />
             </CardContent>
           </Card>
         </div>

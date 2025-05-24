@@ -28,6 +28,41 @@ interface BlogAnalytics {
   recentActivity: any[];
 }
 
+// Type definitions for the joined query results
+interface BlogViewWithPost {
+  created_at: string;
+  blog_posts: {
+    title: string;
+    slug: string;
+  } | null;
+}
+
+interface BlogLikeWithPost {
+  created_at: string;
+  blog_posts: {
+    title: string;
+    slug: string;
+  } | null;
+}
+
+interface BlogCommentWithPost {
+  created_at: string;
+  author_name: string;
+  blog_posts: {
+    title: string;
+    slug: string;
+  } | null;
+}
+
+interface BlogShareWithPost {
+  created_at: string;
+  platform: string;
+  blog_posts: {
+    title: string;
+    slug: string;
+  } | null;
+}
+
 export const useRealtimeBlogAnalytics = (initialPosts?: BlogPost[]) => {
   const [posts, setPosts] = useState<BlogPost[]>(initialPosts || []);
   const [analytics, setAnalytics] = useState<BlogAnalytics>({
@@ -112,58 +147,76 @@ export const useRealtimeBlogAnalytics = (initialPosts?: BlogPost[]) => {
       const [viewsData, likesData, commentsData, sharesData] = await Promise.all([
         supabase
           .from('blog_views')
-          .select('created_at, blog_posts!inner(title, slug)')
-          .gte('created_at', oneHourAgo.toISOString())
-          .order('created_at', { ascending: false })
-          .limit(5),
-        supabase
-          .from('blog_likes')
-          .select('created_at, blog_posts!inner(title, slug)')
-          .gte('created_at', oneHourAgo.toISOString())
-          .order('created_at', { ascending: false })
-          .limit(5),
-        supabase
-          .from('blog_comments')
-          .select('created_at, author_name, blog_posts!inner(title, slug)')
-          .eq('status', 'approved')
-          .gte('created_at', oneHourAgo.toISOString())
-          .order('created_at', { ascending: false })
-          .limit(5),
-        supabase
-          .from('blog_shares')
-          .select('created_at, platform, blog_posts!inner(title, slug)')
+          .select(`
+            created_at,
+            blog_posts!inner(title, slug)
+          `)
           .gte('created_at', oneHourAgo.toISOString())
           .order('created_at', { ascending: false })
           .limit(5)
+          .returns<BlogViewWithPost[]>(),
+        supabase
+          .from('blog_likes')
+          .select(`
+            created_at,
+            blog_posts!inner(title, slug)
+          `)
+          .gte('created_at', oneHourAgo.toISOString())
+          .order('created_at', { ascending: false })
+          .limit(5)
+          .returns<BlogLikeWithPost[]>(),
+        supabase
+          .from('blog_comments')
+          .select(`
+            created_at,
+            author_name,
+            blog_posts!inner(title, slug)
+          `)
+          .eq('status', 'approved')
+          .gte('created_at', oneHourAgo.toISOString())
+          .order('created_at', { ascending: false })
+          .limit(5)
+          .returns<BlogCommentWithPost[]>(),
+        supabase
+          .from('blog_shares')
+          .select(`
+            created_at,
+            platform,
+            blog_posts!inner(title, slug)
+          `)
+          .gte('created_at', oneHourAgo.toISOString())
+          .order('created_at', { ascending: false })
+          .limit(5)
+          .returns<BlogShareWithPost[]>()
       ]);
 
       // Combine recent activity
       const recentActivity = [
         ...(viewsData.data || []).map(item => ({
           type: 'view',
-          title: item.blog_posts?.title,
-          slug: item.blog_posts?.slug,
+          title: item.blog_posts?.title || 'Unknown Post',
+          slug: item.blog_posts?.slug || '',
           time: item.created_at,
           description: 'New page view'
         })),
         ...(likesData.data || []).map(item => ({
           type: 'like',
-          title: item.blog_posts?.title,
-          slug: item.blog_posts?.slug,
+          title: item.blog_posts?.title || 'Unknown Post',
+          slug: item.blog_posts?.slug || '',
           time: item.created_at,
           description: 'Article liked'
         })),
         ...(commentsData.data || []).map(item => ({
           type: 'comment',
-          title: item.blog_posts?.title,
-          slug: item.blog_posts?.slug,
+          title: item.blog_posts?.title || 'Unknown Post',
+          slug: item.blog_posts?.slug || '',
           time: item.created_at,
           description: `Comment by ${item.author_name}`
         })),
         ...(sharesData.data || []).map(item => ({
           type: 'share',
-          title: item.blog_posts?.title,
-          slug: item.blog_posts?.slug,
+          title: item.blog_posts?.title || 'Unknown Post',
+          slug: item.blog_posts?.slug || '',
           time: item.created_at,
           description: `Shared on ${item.platform}`
         }))

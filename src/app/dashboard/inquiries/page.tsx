@@ -22,11 +22,47 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+// Define a flexible interface for our database data
+interface ContactInquiry {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  message: string;
+  status: "new" | "in_progress" | "resolved";
+  created_at: string;
+  updated_at?: string;
+  service_type?: string;
+  urgency?: "low" | "medium" | "high";
+}
+
+// Type for what InquiryList expects (with required fields)
+type InquiryListItem = ContactInquiry & {
+  service_type: string;
+  urgency: "low" | "medium" | "high";
+};
+
+type InquiryListProps = {
+  service_type: string;
+  urgency: "low" | "medium" | "high";
+  [key: string]: any;
+};
+
+interface InquiryStats {
+  totalInquiries: number;
+  newInquiries: number;
+  inProgressInquiries: number;
+  resolvedInquiries: number;
+  todayInquiries: number;
+  responseRate: number;
+}
+
 export default function InquiriesPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [inquiries, setInquiries] = useState([]);
-  const [stats, setStats] = useState({
+  const [inquiries, setInquiries] = useState<ContactInquiry[]>([]);
+  const [stats, setStats] = useState<InquiryStats>({
     totalInquiries: 0,
     newInquiries: 0,
     inProgressInquiries: 0,
@@ -82,6 +118,7 @@ export default function InquiriesPage() {
         return;
       }
 
+      // Set the inquiries data as-is from the database
       setInquiries(inquiriesData || []);
 
       // Calculate stats
@@ -117,6 +154,17 @@ export default function InquiriesPage() {
     } catch (error) {
       console.error("Error fetching inquiries data:", error);
     }
+  };
+
+  // Transform inquiries for InquiryList component
+  const transformInquiriesForList = (
+    inquiries: ContactInquiry[]
+  ): InquiryListItem[] => {
+    return inquiries.map((inquiry) => ({
+      ...inquiry,
+      service_type: inquiry.service_type || "General Inquiry",
+      urgency: inquiry.urgency || "medium",
+    }));
   };
 
   if (loading) {
@@ -262,7 +310,7 @@ export default function InquiriesPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <InquiryList initialInquiries={inquiries} />
+              <InquiryList initialInquiries={inquiries as any} />
             </CardContent>
           </Card>
         </div>

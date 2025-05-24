@@ -38,7 +38,7 @@ export default function Hero() {
                 (typeof window !== "undefined" ? window.innerHeight : 800),
             }}
             animate={{
-              y: [null, -100, null],
+              y: [0, -100, 0],
               opacity: [0, 1, 0],
             }}
             transition={{
