@@ -9,83 +9,59 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
     const checkAuth = () => {
-      const adminSession = localStorage.getItem("admin_session");
-      const loginTime = localStorage.getItem("admin_login_time");
+      if (typeof window !== "undefined") {
+        const adminSession = localStorage.getItem("admin_session");
+        const loginTime = localStorage.getItem("admin_login_time");
 
-      if (adminSession && loginTime) {
-        // Check if session is still valid (24 hours)
-        const now = Date.now();
-        const sessionAge = now - parseInt(loginTime);
-        const maxAge = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+        if (adminSession === "true" && loginTime) {
+          const now = Date.now();
+          const sessionAge = now - parseInt(loginTime);
+          const twentyFourHours = 24 * 60 * 60 * 1000;
 
-        if (sessionAge < maxAge) {
-          setIsAuthenticated(true);
+          // Check if session is still valid
+          if (sessionAge < twentyFourHours) {
+            setIsAuthenticated(true);
+          } else {
+            // Clear expired session
+            localStorage.removeItem("admin_session");
+            localStorage.removeItem("admin_login_time");
+            localStorage.removeItem("admin_username");
+            router.push("/admin");
+            return;
+          }
         } else {
-          // Session expired
-          localStorage.removeItem("admin_session");
-          localStorage.removeItem("admin_login_time");
-          setIsAuthenticated(false);
+          router.push("/admin");
+          return;
         }
-      } else {
-        setIsAuthenticated(false);
       }
+      setLoading(false);
     };
 
     checkAuth();
-  }, []);
+  }, [router]);
 
-  useEffect(() => {
-    if (isAuthenticated === false) {
-      router.push("/admin");
-    }
-  }, [isAuthenticated, router]);
-
-  // Loading state
-  if (isAuthenticated === null) {
+  // Show loading spinner while checking authentication
+  if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="flex flex-col items-center space-y-4">
-          <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center animate-pulse">
-            <span className="text-white font-bold text-2xl">G</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Loader2 className="w-5 h-5 animate-spin text-blue-600" />
-            <p className="text-gray-600 font-medium">
-              Checking authentication...
-            </p>
-          </div>
+        <div className="text-center">
+          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-blue-600" />
+          <p className="text-gray-600">Authenticating...</p>
         </div>
       </div>
     );
   }
 
-  // Not authenticated - will redirect
-  if (isAuthenticated === false) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6 text-center">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Access Restricted
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Please sign in to access the admin dashboard.
-          </p>
-          <button
-            onClick={() => router.push("/admin")}
-            className="inline-flex items-center px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors"
-          >
-            Go to Login
-          </button>
-        </div>
-      </div>
-    );
+  // Don't render children if not authenticated
+  if (!isAuthenticated) {
+    return null;
   }
 
-  // Authenticated - render dashboard
   return <div className="min-h-screen bg-gray-50">{children}</div>;
 }

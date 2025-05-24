@@ -153,7 +153,7 @@ export default function Footer() {
                     href="tel:+911234567890"
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    +91 123 456 7890
+                    +91 965 191 1111
                   </a>
                 </div>
 

@@ -5,14 +5,14 @@ import Script from "next/script";
 import { TempoInit } from "@/components/tempo-init";
 import { ThemeProvider } from "@/components/theme-provider";
 import ErrorBoundary from "@/components/error-boundary";
-import PageTransitionProvider from "../components/page-transition-provider";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ganpathi Overseas - Premium Printing Services",
   description:
-    "Professional printing services in Lucknow. Offset printing, digital printing, UV printing, and more with 25+ years of experience.",
+    "Professional printing solutions in Lucknow with over 25 years of experience. Offset, UV, Digital printing and more.",
 };
 
 export default function RootLayout({
@@ -31,11 +31,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ErrorBoundary>
-            <PageTransitionProvider>
-              <main className="min-h-screen flex flex-col">{children}</main>
-            </PageTransitionProvider>
+            <main className="min-h-screen flex flex-col page-transition">
+              {children}
+            </main>
           </ErrorBoundary>
           <TempoInit />
+          <Toaster position="top-right" expand={false} richColors closeButton />
         </ThemeProvider>
       </body>
     </html>

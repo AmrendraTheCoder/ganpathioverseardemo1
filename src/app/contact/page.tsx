@@ -36,7 +36,7 @@ export default function ContactPage() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      details: ["+91 123 456 7890", "+91 987 654 3210"],
+      details: ["+91 965 191 1111", "+91 965 191 1111"],
       action: "Call Now",
       color: "text-green-600 bg-green-50",
     },
@@ -96,7 +96,7 @@ export default function ContactPage() {
             with expert advice and competitive quotes.
           </p>
           <div className="flex justify-center">
-            <Badge className="bg-yellow-500 text-yellow-900 px-4 py-2 text-sm font-medium">
+            <Badge className="bg-yellow-500 text-yellow-900 px-4 py-2 text-sm font-medium hover:bg-yellow-400 hover:text-yellow-800 hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer">
               <Star className="w-4 h-4 mr-2" />
               Average response time: 2 hours
             </Badge>

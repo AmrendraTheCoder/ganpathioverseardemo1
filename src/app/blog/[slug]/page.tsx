@@ -62,7 +62,6 @@ export default async function BlogPostPage({
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
 
       {/* Pass the post data to the client component */}
       <BlogPostClient post={post} />

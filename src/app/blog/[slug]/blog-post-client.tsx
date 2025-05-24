@@ -83,6 +83,7 @@ export default function BlogPostClient({ post }: BlogPostProps) {
     } else {
       // Fallback: copy to clipboard
       navigator.clipboard.writeText(window.location.href);
+      // You could add a toast notification here
     }
   };
 
@@ -100,38 +101,73 @@ export default function BlogPostClient({ post }: BlogPostProps) {
         />
       </div>
 
-      {/* Floating Action Buttons */}
-      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 space-y-3 z-40">
-        <Button
-          onClick={() => setIsDarkMode(!isDarkMode)}
-          size="icon"
-          variant="outline"
-          className={`w-12 h-12 rounded-full shadow-lg ${
-            isDarkMode
-              ? "bg-gray-800 border-gray-600 hover:bg-gray-700"
-              : "bg-white border-gray-200 hover:bg-gray-50"
-          }`}
-        >
-          {isDarkMode ? (
-            <Sun className="w-5 h-5" />
-          ) : (
-            <Moon className="w-5 h-5" />
-          )}
-        </Button>
+      {/* Fixed Top Bar with Dark Mode Toggle */}
+      <div
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          isDarkMode
+            ? "bg-gray-900/95 border-gray-700"
+            : "bg-white/95 border-gray-200"
+        } backdrop-blur-xl border-b`}
+      >
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            {/* Back Navigation */}
+            <Link
+              href="/blog"
+              className={`inline-flex items-center hover:translate-x-1 transition-transform ${
+                isDarkMode
+                  ? "text-blue-400 hover:text-blue-300"
+                  : "text-blue-900 hover:text-blue-700"
+              }`}
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              <span className="hidden sm:inline">Back to all posts</span>
+              <span className="sm:hidden">Back</span>
+            </Link>
 
-        <Button
-          onClick={handleShare}
-          size="icon"
-          variant="outline"
-          className={`w-12 h-12 rounded-full shadow-lg ${
-            isDarkMode
-              ? "bg-gray-800 border-gray-600 hover:bg-gray-700"
-              : "bg-white border-gray-200 hover:bg-gray-50"
-          }`}
-        >
-          <Share2 className="w-5 h-5" />
-        </Button>
+            {/* Dark Mode Toggle */}
+            <div className="flex items-center space-x-3">
+              <Button
+                onClick={() => setIsDarkMode(!isDarkMode)}
+                size="sm"
+                variant="outline"
+                className={`${
+                  isDarkMode
+                    ? "bg-gray-800 border-gray-600 hover:bg-gray-700 text-gray-100"
+                    : "bg-white border-gray-200 hover:bg-gray-50"
+                }`}
+              >
+                {isDarkMode ? (
+                  <Sun className="w-4 h-4 mr-2" />
+                ) : (
+                  <Moon className="w-4 h-4 mr-2" />
+                )}
+                <span className="hidden sm:inline">
+                  {isDarkMode ? "Light" : "Dark"}
+                </span>
+              </Button>
 
+              {/* Share Button */}
+              <Button
+                onClick={handleShare}
+                size="sm"
+                variant="outline"
+                className={
+                  isDarkMode
+                    ? "border-gray-600 hover:bg-gray-800 text-gray-100"
+                    : ""
+                }
+              >
+                <Share2 className="w-4 h-4 mr-2" />
+                <span className="hidden sm:inline">Share</span>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Action Buttons - Right Side */}
+      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 space-y-3 z-30">
         <Button
           onClick={() => setIsBookmarked(!isBookmarked)}
           size="icon"
@@ -141,28 +177,32 @@ export default function BlogPostClient({ post }: BlogPostProps) {
               ? "bg-gray-800 border-gray-600 hover:bg-gray-700"
               : "bg-white border-gray-200 hover:bg-gray-50"
           } ${isBookmarked ? "text-yellow-500" : ""}`}
+          title={isBookmarked ? "Remove bookmark" : "Bookmark article"}
         >
           <Bookmark
             className={`w-5 h-5 ${isBookmarked ? "fill-current" : ""}`}
           />
         </Button>
+
+        {/* Scroll to top button */}
+        <Button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          size="icon"
+          variant="outline"
+          className={`w-12 h-12 rounded-full shadow-lg ${
+            isDarkMode
+              ? "bg-gray-800 border-gray-600 hover:bg-gray-700"
+              : "bg-white border-gray-200 hover:bg-gray-50"
+          }`}
+          title="Scroll to top"
+        >
+          <ArrowLeft className="w-5 h-5 -rotate-90" />
+        </Button>
       </div>
 
-      <div className="pt-24 pb-16">
+      {/* Main Content */}
+      <div className="pt-20 pb-16">
         <div className="container mx-auto px-4">
-          {/* Back Navigation */}
-          <Link
-            href="/blog"
-            className={`inline-flex items-center mb-8 hover:translate-x-1 transition-transform ${
-              isDarkMode
-                ? "text-blue-400 hover:text-blue-300"
-                : "text-blue-900 hover:text-blue-700"
-            }`}
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to all posts
-          </Link>
-
           <div className="max-w-4xl mx-auto">
             {/* Article Header */}
             <header className="mb-12">
@@ -181,7 +221,7 @@ export default function BlogPostClient({ post }: BlogPostProps) {
 
               {/* Title */}
               <h1
-                className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
+                className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight ${
                   isDarkMode ? "text-gray-100" : "text-gray-900"
                 }`}
               >
@@ -190,7 +230,7 @@ export default function BlogPostClient({ post }: BlogPostProps) {
 
               {/* Excerpt */}
               <p
-                className={`text-xl mb-8 leading-relaxed ${
+                className={`text-lg md:text-xl mb-8 leading-relaxed ${
                   isDarkMode ? "text-gray-300" : "text-gray-600"
                 }`}
               >
@@ -199,7 +239,7 @@ export default function BlogPostClient({ post }: BlogPostProps) {
 
               {/* Meta Information */}
               <div
-                className={`flex flex-wrap items-center gap-6 text-sm pb-8 border-b ${
+                className={`flex flex-wrap items-center gap-4 md:gap-6 text-sm pb-8 border-b ${
                   isDarkMode
                     ? "text-gray-400 border-gray-700"
                     : "text-gray-500 border-gray-200"
@@ -229,7 +269,7 @@ export default function BlogPostClient({ post }: BlogPostProps) {
 
             {/* Cover Image */}
             {post.cover_image && (
-              <div className="relative h-96 md:h-[500px] mb-12 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-64 md:h-96 lg:h-[500px] mb-12 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src={post.cover_image}
                   alt={post.title}
@@ -241,7 +281,7 @@ export default function BlogPostClient({ post }: BlogPostProps) {
 
             {/* Article Content */}
             <article
-              className={`prose prose-lg max-w-none ${
+              className={`prose prose-base md:prose-lg lg:prose-xl max-w-none ${
                 isDarkMode
                   ? "prose-invert prose-headings:text-gray-100 prose-p:text-gray-300 prose-strong:text-gray-200 prose-a:text-blue-400 prose-blockquote:text-gray-300 prose-blockquote:border-blue-500"
                   : "prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-a:text-blue-600 prose-blockquote:text-gray-600 prose-blockquote:border-blue-500"
@@ -256,7 +296,7 @@ export default function BlogPostClient({ post }: BlogPostProps) {
                 isDarkMode ? "border-gray-700" : "border-gray-200"
               }`}
             >
-              <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div className="flex items-center gap-4">
                   <span
                     className={`text-sm ${
@@ -298,7 +338,7 @@ export default function BlogPostClient({ post }: BlogPostProps) {
 
             {/* Author Bio Section */}
             <div
-              className={`mt-12 p-8 rounded-2xl ${
+              className={`mt-12 p-6 md:p-8 rounded-2xl ${
                 isDarkMode
                   ? "bg-gray-800/50 border border-gray-700"
                   : "bg-gray-50 border border-gray-100"

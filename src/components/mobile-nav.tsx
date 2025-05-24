@@ -78,7 +78,7 @@ export default function MobileNav({ user }: MobileNavProps) {
               <div className="pt-4 border-t">
                 <div className="flex items-center gap-2 text-blue-900 mb-4">
                   <Phone className="h-4 w-4 text-yellow-500" />
-                  <span className="text-sm font-medium">+91 123 456 7890</span>
+                  <span className="text-sm font-medium">+91 965 191 1111</span>
                 </div>
 
                 {user ? (

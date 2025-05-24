@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createClient } from "../../../supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,9 +29,15 @@ import {
   Plus,
   Loader2,
   Image as ImageIcon,
+  Eye,
+  RefreshCw,
+  ExternalLink,
+  FileText,
+  TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { toast } from "sonner";
 
 type BlogPost = {
   id: string;
@@ -54,6 +60,7 @@ export default function BlogPostList({
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const [formData, setFormData] = useState({
     title: "",
@@ -67,6 +74,48 @@ export default function BlogPostList({
 
   const supabase = createClient();
 
+  // Set up real-time subscription
+  useEffect(() => {
+    const channel = supabase
+      .channel("blog-changes")
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "blog_posts",
+        },
+        (payload) => {
+          console.log("Real-time blog update:", payload);
+          refreshPosts();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
+  // Refresh posts from database
+  const refreshPosts = async () => {
+    setIsRefreshing(true);
+    try {
+      const { data, error } = await supabase
+        .from("blog_posts")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+      setPosts(data || []);
+    } catch (error) {
+      console.error("Error refreshing posts:", error);
+      toast.error("Failed to refresh blog posts");
+    } finally {
+      setIsRefreshing(false);
+    }
+  };
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-US", {
@@ -77,7 +126,7 @@ export default function BlogPostList({
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -108,7 +157,7 @@ export default function BlogPostList({
       content: "",
       cover_image:
         "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=800&q=80",
-      author: "",
+      author: "Admin",
       category: "",
       slug: "",
     });
@@ -151,6 +200,7 @@ export default function BlogPostList({
             author: formData.author,
             category: formData.category,
             slug: formData.slug,
+            updated_at: new Date().toISOString(),
           })
           .eq("id", selectedPost.id);
 
@@ -159,20 +209,11 @@ export default function BlogPostList({
         // Update local state
         setPosts((prev) =>
           prev.map((post) =>
-            post.id === selectedPost.id
-              ? {
-                  ...post,
-                  title: formData.title,
-                  excerpt: formData.excerpt,
-                  content: formData.content,
-                  cover_image: formData.cover_image,
-                  author: formData.author,
-                  category: formData.category,
-                  slug: formData.slug,
-                }
-              : post,
-          ),
+            post.id === selectedPost.id ? { ...post, ...formData } : post
+          )
         );
+
+        toast.success("Blog post updated successfully!");
       } else {
         // Create new post
         const { data, error } = await supabase
@@ -197,12 +238,14 @@ export default function BlogPostList({
         if (data) {
           setPosts((prev) => [data[0], ...prev]);
         }
+
+        toast.success("Blog post created successfully!");
       }
 
-      // Close dialog
       setIsDialogOpen(false);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error saving blog post:", error);
+      toast.error(error.message || "Failed to save blog post");
     } finally {
       setIsSubmitting(false);
     }
@@ -224,19 +267,54 @@ export default function BlogPostList({
       // Update local state
       setPosts((prev) => prev.filter((post) => post.id !== selectedPost.id));
 
-      // Close dialog
+      toast.success("Blog post deleted successfully!");
       setIsDeleteDialogOpen(false);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error deleting blog post:", error);
+      toast.error(error.message || "Failed to delete blog post");
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const getPostStats = () => {
+    const categories = [...new Set(posts.map((post) => post.category))];
+    const thisMonth = new Date().getMonth();
+    const thisYear = new Date().getFullYear();
+
+    const thisMonthPosts = posts.filter((post) => {
+      const postDate = new Date(post.created_at);
+      return (
+        postDate.getMonth() === thisMonth && postDate.getFullYear() === thisYear
+      );
+    }).length;
+
+    return {
+      total: posts.length,
+      categories: categories.length,
+      thisMonth: thisMonthPosts,
+    };
+  };
+
+  const stats = getPostStats();
+
   return (
     <>
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-semibold">Blog Posts</h2>
+        <div className="flex items-center space-x-4">
+          <h2 className="text-2xl font-semibold">Blog Posts</h2>
+          <Button
+            onClick={refreshPosts}
+            variant="outline"
+            size="sm"
+            disabled={isRefreshing}
+          >
+            <RefreshCw
+              className={`w-4 h-4 mr-2 ${isRefreshing ? "animate-spin" : ""}`}
+            />
+            Refresh
+          </Button>
+        </div>
         <Button
           onClick={openNewPostDialog}
           className="bg-blue-900 hover:bg-blue-800"
@@ -245,9 +323,60 @@ export default function BlogPostList({
         </Button>
       </div>
 
+      {/* Quick Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <Card className="bg-blue-50 border-blue-200">
+          <CardContent className="p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-blue-600">Total Posts</p>
+                <p className="text-2xl font-bold text-blue-900">
+                  {stats.total}
+                </p>
+              </div>
+              <FileText className="w-8 h-8 text-blue-500" />
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-green-50 border-green-200">
+          <CardContent className="p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-green-600">This Month</p>
+                <p className="text-2xl font-bold text-green-900">
+                  {stats.thisMonth}
+                </p>
+              </div>
+              <TrendingUp className="w-8 h-8 text-green-500" />
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-purple-50 border-purple-200">
+          <CardContent className="p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-purple-600">Categories</p>
+                <p className="text-2xl font-bold text-purple-900">
+                  {stats.categories}
+                </p>
+              </div>
+              <FileText className="w-8 h-8 text-purple-500" />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       {posts.length === 0 ? (
-        <div className="text-center py-12 bg-gray-50 rounded-lg">
-          <p className="text-gray-500 mb-4">No blog posts found.</p>
+        <div className="text-center py-16 bg-gray-50 rounded-lg">
+          <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            No blog posts found
+          </h3>
+          <p className="text-gray-500 mb-6">
+            Create your first blog post to get started.
+          </p>
           <Button
             onClick={openNewPostDialog}
             className="bg-blue-900 hover:bg-blue-800"
@@ -258,7 +387,7 @@ export default function BlogPostList({
       ) : (
         <div className="grid gap-6">
           {posts.map((post) => (
-            <Card key={post.id}>
+            <Card key={post.id} className="hover:shadow-lg transition-shadow">
               <CardHeader className="flex flex-row items-start gap-4 space-y-0">
                 <div className="relative w-24 h-24 rounded-md overflow-hidden flex-shrink-0">
                   <Image
@@ -272,24 +401,31 @@ export default function BlogPostList({
                   />
                 </div>
                 <div className="flex-1">
-                  <CardTitle className="text-xl">{post.title}</CardTitle>
-                  <CardDescription className="flex items-center mt-1">
-                    <Calendar className="h-4 w-4 mr-1" />
-                    {formatDate(post.created_at)}
-                    <span className="mx-2">•</span>
-                    {post.category}
+                  <CardTitle className="text-xl mb-2">{post.title}</CardTitle>
+                  <div className="flex items-center space-x-4 mb-2">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Calendar className="h-4 w-4 mr-1" />
+                      {formatDate(post.created_at)}
+                    </div>
+                    <div className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+                      {post.category}
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      By {post.author}
+                    </div>
+                  </div>
+                  <CardDescription className="text-sm">
+                    {post.excerpt}
                   </CardDescription>
                 </div>
               </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">{post.excerpt}</p>
-              </CardContent>
               <CardFooter className="flex justify-between">
                 <Link
                   href={`/blog/${post.slug}`}
                   target="_blank"
-                  className="text-blue-600 hover:underline"
+                  className="text-blue-600 hover:underline flex items-center"
                 >
+                  <ExternalLink className="h-4 w-4 mr-1" />
                   View Post
                 </Link>
                 <div className="flex gap-2">
@@ -303,7 +439,7 @@ export default function BlogPostList({
                   <Button
                     variant="outline"
                     size="sm"
-                    className="text-red-500"
+                    className="text-red-500 hover:text-red-700"
                     onClick={() => openDeleteDialog(post)}
                   >
                     <Trash2 className="h-4 w-4 mr-1" /> Delete
@@ -317,7 +453,7 @@ export default function BlogPostList({
 
       {/* Create/Edit Post Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-2xl">
+        <DialogContent className="sm:max-w-4xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>
               {selectedPost ? "Edit Blog Post" : "Create New Blog Post"}
@@ -420,7 +556,8 @@ export default function BlogPostList({
                   onChange={handleChange}
                   placeholder="Full post content (HTML supported)"
                   required
-                  rows={10}
+                  rows={15}
+                  className="font-mono text-sm"
                 />
               </div>
             </div>
@@ -433,7 +570,11 @@ export default function BlogPostList({
               >
                 Cancel
               </Button>
-              <Button type="submit" disabled={isSubmitting}>
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-blue-900 hover:bg-blue-800"
+              >
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

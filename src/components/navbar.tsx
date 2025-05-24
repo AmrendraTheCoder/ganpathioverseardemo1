@@ -57,7 +57,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-6">
             <div className="flex items-center">
               <Phone className="w-4 h-4 mr-2" />
-              <span>+91 123 456 7890</span>
+              <span>+91 965 191 1111</span>
             </div>
             <div className="flex items-center">
               <Mail className="w-4 h-4 mr-2" />

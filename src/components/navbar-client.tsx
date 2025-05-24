@@ -66,7 +66,7 @@ export default function NavbarClient({ user }: { user: any }) {
             <div className="flex items-center">
               <Phone className="w-4 h-4 mr-2" />
               <a href="tel:+911234567890" className="hover:text-blue-200">
-                +91 123 456 7890
+                +91 965 191 1111
               </a>
             </div>
             <div className="flex items-center">

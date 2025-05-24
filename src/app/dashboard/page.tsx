@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import DashboardNavbar from "@/components/dashboard-navbar";
 import {
   MessageSquare,
@@ -6,6 +10,7 @@ import {
   TrendingUp,
   Users,
   Calendar,
+  Loader2,
 } from "lucide-react";
 import Link from "next/link";
 import {
@@ -15,44 +20,107 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { createClient } from "../../../supabase/server";
+import { createClient } from "../../../supabase/client";
 
-export default async function Dashboard() {
-  let stats = {
+export default function Dashboard() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [stats, setStats] = useState({
     totalInquiries: 0,
     newInquiries: 0,
     totalBlogPosts: 0,
     recentInquiries: [],
+  });
+  const router = useRouter();
+
+  // Check authentication on component mount
+  useEffect(() => {
+    const checkAuth = () => {
+      if (typeof window !== "undefined") {
+        const adminSession = localStorage.getItem("admin_session");
+        const loginTime = localStorage.getItem("admin_login_time");
+
+        if (adminSession === "true" && loginTime) {
+          const now = Date.now();
+          const sessionAge = now - parseInt(loginTime);
+          const twentyFourHours = 24 * 60 * 60 * 1000;
+
+          // Check if session is still valid
+          if (sessionAge < twentyFourHours) {
+            setIsAuthenticated(true);
+            fetchDashboardData();
+          } else {
+            // Clear expired session
+            localStorage.removeItem("admin_session");
+            localStorage.removeItem("admin_login_time");
+            localStorage.removeItem("admin_username");
+            router.push("/admin");
+          }
+        } else {
+          router.push("/admin");
+        }
+      }
+      setLoading(false);
+    };
+
+    checkAuth();
+  }, [router]);
+
+  // Fetch dashboard statistics
+  const fetchDashboardData = async () => {
+    try {
+      const supabase = createClient();
+
+      // Fetch dashboard statistics
+      const [inquiriesResult, blogPostsResult] = await Promise.all([
+        supabase.from("contact_inquiries").select("*", { count: "exact" }),
+        supabase.from("blog_posts").select("*", { count: "exact" }),
+      ]);
+
+      const totalInquiries = inquiriesResult.count || 0;
+      const totalBlogPosts = blogPostsResult.count || 0;
+
+      // Count new inquiries
+      const newInquiries =
+        inquiriesResult.data?.filter((inquiry) => inquiry.status === "new")
+          .length || 0;
+
+      // Recent inquiries
+      const recentInquiries = inquiriesResult.data?.slice(0, 5) || [];
+
+      setStats({
+        totalInquiries,
+        newInquiries,
+        totalBlogPosts,
+        recentInquiries,
+      });
+    } catch (error) {
+      console.error("Error fetching dashboard data:", error);
+      // Continue with default stats if database is not available
+    }
   };
 
-  try {
-    const supabase = await createClient();
+  // Show loading spinner while checking authentication
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-blue-600" />
+          <p className="text-gray-600">Loading dashboard...</p>
+        </div>
+      </div>
+    );
+  }
 
-    // Fetch dashboard statistics
-    const [inquiriesResult, blogPostsResult] = await Promise.all([
-      supabase.from("contact_inquiries").select("*", { count: "exact" }),
-      supabase.from("blog_posts").select("*", { count: "exact" }),
-    ]);
-
-    stats.totalInquiries = inquiriesResult.count || 0;
-    stats.totalBlogPosts = blogPostsResult.count || 0;
-
-    // Count new inquiries
-    stats.newInquiries =
-      inquiriesResult.data?.filter((inquiry) => inquiry.status === "new")
-        .length || 0;
-
-    // Recent inquiries
-    stats.recentInquiries = inquiriesResult.data?.slice(0, 5) || [];
-  } catch (error) {
-    console.error("Error fetching dashboard data:", error);
-    // Continue with default stats if database is not available
+  // Don't render dashboard if not authenticated
+  if (!isAuthenticated) {
+    return null;
   }
 
   return (
     <>
       <DashboardNavbar />
-      <main className="w-full">
+      <main className="w-full min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8">
           {/* Header Section */}
           <header className="mb-8">
@@ -76,7 +144,7 @@ export default async function Dashboard() {
 
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Card className="border-l-4 border-l-blue-500 hover:shadow-lg transition-shadow">
+            <Card className="border-l-4 border-l-blue-500 hover:shadow-lg transition-shadow bg-white">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium text-gray-600">
                   Total Inquiries
@@ -93,7 +161,7 @@ export default async function Dashboard() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-yellow-500 hover:shadow-lg transition-shadow">
+            <Card className="border-l-4 border-l-yellow-500 hover:shadow-lg transition-shadow bg-white">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium text-gray-600">
                   New Inquiries
@@ -108,7 +176,7 @@ export default async function Dashboard() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-green-500 hover:shadow-lg transition-shadow">
+            <Card className="border-l-4 border-l-green-500 hover:shadow-lg transition-shadow bg-white">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium text-gray-600">
                   Blog Posts
@@ -123,7 +191,7 @@ export default async function Dashboard() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-purple-500 hover:shadow-lg transition-shadow">
+            <Card className="border-l-4 border-l-purple-500 hover:shadow-lg transition-shadow bg-white">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium text-gray-600">
                   Response Rate
@@ -150,7 +218,7 @@ export default async function Dashboard() {
 
           {/* Quick Actions and Recent Activity */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow bg-white">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Users className="w-5 h-5 text-blue-600" />
@@ -191,7 +259,7 @@ export default async function Dashboard() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow bg-white">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Calendar className="w-5 h-5 text-purple-600" />
