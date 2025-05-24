@@ -80,7 +80,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=800&q=80"
+                  src="/images/backgrounds/machine.jpg"
                   alt="Ganpathi Overseas printing facility"
                   fill
                   className="object-cover"
@@ -172,21 +172,21 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
               {
-                name: "Rajesh Kumar",
+                name: "Onkar",
                 position: "Founder & CEO",
-                image: "https://api.dicebear.com/7.x/avataaars/svg?seed=rajesh",
+                image: "/images/team/ceo.jpg",
                 bio: "With over 30 years in the printing industry, Rajesh founded Ganpathi Overseas with a vision to provide premium printing services in Lucknow.",
               },
               {
                 name: "Priya Sharma",
                 position: "Operations Director",
-                image: "https://api.dicebear.com/7.x/avataaars/svg?seed=priya",
+                image: "/images/team/priya_sharma.avif",
                 bio: "Priya oversees all production processes, ensuring efficient workflows and maintaining our high quality standards.",
               },
               {
                 name: "Amit Patel",
                 position: "Creative Director",
-                image: "https://api.dicebear.com/7.x/avataaars/svg?seed=amit",
+                image: "/images/team/amit_patel.avif",
                 bio: "Amit leads our design team, bringing creative vision and innovative solutions to every client project.",
               },
             ].map((member, index) => (

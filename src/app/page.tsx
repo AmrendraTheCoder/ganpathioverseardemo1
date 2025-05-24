@@ -60,72 +60,63 @@ export default function Home() {
       id: 1,
       title: "Corporate Brochures",
       category: "brochures",
-      image:
-        "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=500&h=400&fit=crop",
+      image: "/images/gallery/IN_Bulk-Brochures_Hero-image_01.webp",
       description: "Professional corporate brochures with premium finishing",
     },
     {
       id: 2,
       title: "Product Catalogs",
       category: "catalogs",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop",
+      image: "/images/gallery/IN_booklets_tile_001.webp",
       description: "High-quality product catalogs with vibrant colors",
     },
     {
       id: 3,
       title: "Business Cards",
       category: "cards",
-      image:
-        "https://images.unsplash.com/photo-1541411006633-e1db4c6dd92b?w=500&h=400&fit=crop",
+      image: "/images/gallery/visting_card.webp",
       description: "Elegant business cards with various finishing options",
     },
     {
       id: 4,
       title: "Large Format Banners",
       category: "banners",
-      image:
-        "https://images.unsplash.com/photo-1616070829624-a11213034646?w=500&h=400&fit=crop",
+      image: "/images/gallery/banners_01.jpeg",
       description: "Eye-catching banners for events and promotions",
     },
     {
       id: 5,
       title: "Book Publishing",
       category: "books",
-      image:
-        "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=500&h=400&fit=crop",
+      image: "/images/gallery/book_booklet.jpeg",
       description: "Professional book printing and binding services",
     },
     {
       id: 6,
       title: "Packaging Design",
       category: "packaging",
-      image:
-        "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&h=400&fit=crop",
+      image: "/images/gallery/packaging.webp",
       description: "Custom packaging solutions for your products",
     },
     {
       id: 7,
       title: "Wedding Invitations",
       category: "invitations",
-      image:
-        "https://images.unsplash.com/photo-1520637836862-4d197d17c73a?w=500&h=400&fit=crop",
+      image: "/images/gallery/wedding_card.webp",
       description: "Beautiful wedding invitations with elegant designs",
     },
     {
       id: 8,
       title: "Menu Cards",
       category: "menus",
-      image:
-        "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=500&h=400&fit=crop",
+      image: "/images/gallery/IN_Menus_002.webp",
       description: "Restaurant menu cards with premium paper quality",
     },
     {
       id: 9,
       title: "Promotional Flyers",
       category: "flyers",
-      image:
-        "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&h=400&fit=crop",
+      image: "/images/gallery/IN-postcards-overview.webp",
       description: "Attention-grabbing promotional flyers",
     },
   ];
@@ -135,21 +126,21 @@ export default function Home() {
     {
       name: "Rajesh Gupta",
       company: "Tech Solutions Pvt Ltd",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=rajesh",
+      image: "/images/testimonialsPerson/Rajesh_gupta.avif",
       rating: 5,
       text: "Outstanding quality and service! Ganpathi Overseas delivered our corporate brochures on time with exceptional print quality.",
     },
     {
       name: "Priya Sharma",
       company: "Fashion Hub",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=priya",
+      image: "/images/testimonialsPerson/priya_sharma.avif",
       rating: 5,
       text: "Their attention to detail is remarkable. The packaging design for our products exceeded our expectations completely.",
     },
     {
       name: "Amit Patel",
       company: "Food Corner Restaurant",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=amit",
+      image: "/images/testimonialsPerson/amit_patel.avif",
       rating: 5,
       text: "Professional team, competitive pricing, and excellent quality. Highly recommend for all printing needs.",
     },
@@ -162,32 +153,28 @@ export default function Home() {
       title: "Offset Printing",
       description:
         "High-quality offset printing for large volumes with exceptional color accuracy.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+      image: "/images/services/offset-printing.jpg",
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Digital Printing",
       description:
         "Fast turnaround digital printing perfect for small to medium runs.",
-      image:
-        "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=300&fit=crop",
+      image: "/images/services/Digital_Printing.jpg",
     },
     {
       icon: <Globe className="w-8 h-8" />,
       title: "Large Format",
       description:
         "Eye-catching banners, posters, and signage for maximum impact.",
-      image:
-        "https://images.unsplash.com/photo-1616070829624-a11213034646?w=400&h=300&fit=crop",
+      image: "/images/services/large_format_printing.webp",
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: "UV Printing",
       description:
         "Durable UV printing on various materials with vibrant colors.",
-      image:
-        "https://images.unsplash.com/photo-1598537179958-687e6cc425d7?w=400&h=300&fit=crop",
+      image: "/images/services/UV_Printing.webp",
     },
   ];
 

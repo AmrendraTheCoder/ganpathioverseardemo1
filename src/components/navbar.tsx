@@ -49,26 +49,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Bar - Slides away on scroll */}
-      <div
-        className={`bg-gradient-to-r from-blue-900 to-blue-800 text-white py-3 text-sm transition-all duration-300 ${isScrolled ? "h-0 py-0 overflow-hidden" : "h-auto"} hidden md:block`}
-      >
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center">
-              <Phone className="w-4 h-4 mr-2" />
-              <span>+91 965 191 1111</span>
-            </div>
-            <div className="flex items-center">
-              <Mail className="w-4 h-4 mr-2" />
-              <span>info@ganpathioverseas.com</span>
-            </div>
-          </div>
-          <div className="text-blue-200">
-            Mon - Fri: 9AM - 6PM | Sat: 10AM - 4PM
-          </div>
-        </div>
-      </div>
+    
 
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-transparent">

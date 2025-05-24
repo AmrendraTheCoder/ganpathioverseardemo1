@@ -36,8 +36,7 @@ export default function ServicesPage() {
         "Pantone color matching available",
       ],
       // More relevant printing industry image
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+      image: "/images/services/offset-printing.jpg",
       popular: true,
     },
     {
@@ -52,8 +51,7 @@ export default function ServicesPage() {
         "Vibrant colors that don't fade",
       ],
       // UV printing specific image
-      image:
-        "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+      image: "/images/services/UV_Printing.webp",
       popular: false,
     },
     {
@@ -68,8 +66,7 @@ export default function ServicesPage() {
         "Perfect for proofs and small runs",
       ],
       // Digital printing equipment image
-      image:
-        "https://images.unsplash.com/photo-1598537179958-687e6cc425d7?w=800&q=80",
+      image: "/images/services/Digital_Printing.jpg",
       popular: false,
     },
     {
@@ -84,8 +81,7 @@ export default function ServicesPage() {
         "Custom mounting and finishing",
       ],
       // Large format banner/poster image
-      image:
-        "https://images.unsplash.com/photo-1616070829624-a11213034646?w=800&q=80",
+      image: "/images/services/large_format_printing.webp",
       popular: false,
     },
     {
@@ -100,8 +96,7 @@ export default function ServicesPage() {
         "ISBN registration assistance",
       ],
       // Book printing/binding image
-      image:
-        "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=800&q=80",
+      image: "/images/services/book_publishing.jpg",
       popular: false,
     },
     {
@@ -116,8 +111,7 @@ export default function ServicesPage() {
         "Brand-focused design approach",
       ],
       // Packaging/boxes image
-      image:
-        "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
+      image: "/images/services/packaging_solutions.jpg",
       popular: false,
     },
   ];

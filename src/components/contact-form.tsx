@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { createClient } from "../../supabase/client";
 import { Loader2, Send, CheckCircle, AlertCircle } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
