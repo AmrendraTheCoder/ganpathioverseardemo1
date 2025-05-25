@@ -10,7 +10,7 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ganpathi Overseas - Premium Printing Services",
+  title: "Ganpathi Overseas",
   description:
     "Professional printing solutions in Lucknow with over 25 years of experience. Offset, UV, Digital printing and more.",
 };
