@@ -213,27 +213,6 @@ export default function AdminLogin() {
               </Button>
             </form>
 
-            {/* Demo Credentials */}
-            <div className="mt-8 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
-              <h3 className="font-medium text-blue-900 mb-2 flex items-center">
-                <Shield className="w-4 h-4 mr-2" />
-                Demo Credentials:
-              </h3>
-              <div className="space-y-1">
-                <p className="text-sm text-blue-700">
-                  <span className="font-medium">Username:</span> admin
-                </p>
-                <p className="text-sm text-blue-700">
-                  <span className="font-medium">Password:</span> ganpathi@2024
-                </p>
-              </div>
-              <div className="mt-3 pt-3 border-t border-blue-200">
-                <p className="text-xs text-blue-600">
-                  💡 Click the eye icon to show/hide password
-                </p>
-              </div>
-            </div>
-
             {/* Security Notice */}
             <div className="mt-6 p-3 bg-gray-50 rounded-lg border">
               <p className="text-xs text-gray-600 text-center">
