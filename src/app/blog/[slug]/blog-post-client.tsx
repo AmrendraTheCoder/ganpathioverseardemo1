@@ -38,7 +38,20 @@ interface BlogPostProps {
     view_count?: number;
     like_count?: number;
     comment_count?: number;
+    relatedPosts: RelatedPost[];
   };
+}
+
+interface RelatedPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  cover_image: string;
+  author: string;
+  category: string;
+  created_at: string;
+  reading_time?: number;
 }
 
 interface Comment {
