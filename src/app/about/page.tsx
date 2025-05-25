@@ -178,15 +178,15 @@ export default function AboutPage() {
                 bio: "With over 30 years in the printing industry, Rajesh founded Ganpathi Overseas with a vision to provide premium printing services in Lucknow.",
               },
               {
-                name: "Priya Sharma",
+                name: "Subodh Sharma",
                 position: "Operations Director",
-                image: "/images/team/priya_sharma.avif",
+                image: "/images/team/amit_patel.avif",
                 bio: "Priya oversees all production processes, ensuring efficient workflows and maintaining our high quality standards.",
               },
               {
                 name: "Amit Patel",
                 position: "Creative Director",
-                image: "/images/team/amit_patel.avif",
+                image: "/images/team/Rajesh_gupta.avif",
                 bio: "Amit leads our design team, bringing creative vision and innovative solutions to every client project.",
               },
             ].map((member, index) => (
