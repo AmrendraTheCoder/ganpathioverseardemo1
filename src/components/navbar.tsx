@@ -466,7 +466,7 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
                     className={`absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 group-hover:w-8 group-hover:left-1/2 group-hover:-translate-x-1/2 transition-all duration-300 ${
                       isActiveLink(item.href) ? "w-8 -translate-x-1/2" : ""
                     }`}
-                  ></span>
+                  ></span> 
                 </Link>
               ))}
             </div>
