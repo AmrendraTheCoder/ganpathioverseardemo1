@@ -24,12 +24,12 @@ export default function AboutPage() {
               About Ganpathi Overseas
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Lucknow's premier printing service provider with over 25 years of
+              Lucknow's premier printing service provider with over 20 years of
               experience delivering exceptional quality and innovation.
             </p>
             <div className="flex items-center justify-center mt-8 space-x-8 text-blue-200">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">25+</div>
+                <div className="text-3xl font-bold text-white">20+</div>
                 <div className="text-sm">Years Experience</div>
               </div>
               <div className="text-center">
@@ -58,22 +58,43 @@ export default function AboutPage() {
               </div>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  Founded in 1998, Ganpathi Overseas began as a small
-                  family-owned printing shop in the heart of Lucknow. What
-                  started with a single offset printer has now grown into one of
-                  the region's most respected printing companies.
+                  The story of Ganpathi Overseas began in 2004 when our founder,
+                  Onkar, was working as a graphic designer at a local
+                  advertising agency in Lucknow. For four years, he witnessed
+                  firsthand the gap between what clients envisioned and what
+                  printing vendors could deliver. Day after day, he saw
+                  compromised quality, missed deadlines, and frustrated
+                  customers.
                 </p>
                 <p>
-                  Our journey has been defined by a commitment to quality,
-                  innovation, and customer satisfaction. We've continuously
-                  invested in the latest printing technologies while maintaining
-                  the personal touch and attention to detail that set us apart.
+                  Onkar had always possessed a keen eye for design and an
+                  intuitive understanding of what customers truly needed. He
+                  could visualize the perfect finish, the right paper texture,
+                  and the exact color that would make a design come alive. This
+                  wasn't just a job for him – it was his passion.
                 </p>
                 <p>
-                  Today, we serve clients across Uttar Pradesh and beyond,
-                  providing comprehensive printing solutions for businesses of
-                  all sizes. Our dedication to excellence has earned us a
-                  reputation as a trusted partner for all printing needs.
+                  In 2008, with unwavering determination and a small loan from
+                  his family, Onkar took the leap. He left his comfortable job
+                  and started Ganpathi Overseas with just one second-hand offset
+                  printer in a small 400 sq ft space near Indira Nagar. His wife
+                  handled the accounts while he managed everything from client
+                  meetings to operating the machines.
+                </p>
+                <p>
+                  Those early days were challenging – working 16-hour days,
+                  personally delivering orders on his motorcycle, and
+                  reinvesting every rupee back into the business. But his
+                  commitment to understanding exactly what each customer wanted,
+                  combined with his design sensibility, began to set him apart.
+                </p>
+                <p>
+                  Today, what started as a one-man dream has grown into a
+                  thriving enterprise with state-of-the-art equipment and a
+                  dedicated team of 25+ professionals. We've moved to a spacious
+                  facility, but we've never forgotten our roots – that personal
+                  touch and deep understanding of customer needs that started it
+                  all.
                 </p>
               </div>
             </div>
@@ -89,7 +110,7 @@ export default function AboutPage() {
               <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center shadow-xl">
                 <div className="text-center text-white">
                   <div className="text-2xl font-bold">EST</div>
-                  <div className="text-lg">1998</div>
+                  <div className="text-lg">2008</div>
                 </div>
               </div>
             </div>
@@ -175,19 +196,19 @@ export default function AboutPage() {
                 name: "Onkar",
                 position: "Founder & CEO",
                 image: "/images/team/ceo.jpg",
-                bio: "With over 30 years in the printing industry, Rajesh founded Ganpathi Overseas with a vision to provide premium printing services in Lucknow.",
+                bio: "A visionary entrepreneur with 20+ years of design and printing expertise. Starting from humble beginnings as a graphic designer, Onkar built Ganpathi Overseas from the ground up with an unwavering commitment to quality and customer satisfaction. His hands-on approach and deep understanding of client needs continue to drive the company's growth and innovation.",
               },
               {
                 name: "Subodh Sharma",
                 position: "Operations Director",
                 image: "/images/team/amit_patel.avif",
-                bio: "Priya oversees all production processes, ensuring efficient workflows and maintaining our high quality standards.",
+                bio: "With 15+ years in production management, Subodh ensures seamless operations across all departments. His expertise in workflow optimization and quality control has been instrumental in maintaining our high standards while scaling operations. He personally oversees every major project to ensure timely delivery and exceptional results.",
               },
               {
                 name: "Amit Patel",
                 position: "Creative Director",
                 image: "/images/team/Rajesh_gupta.avif",
-                bio: "Amit leads our design team, bringing creative vision and innovative solutions to every client project.",
+                bio: "A creative mastermind with 12+ years in graphic design and brand development. Amit leads our design team in creating compelling visual solutions that perfectly align with client objectives. His innovative approach and attention to detail have helped countless businesses enhance their brand presence through effective print communication.",
               },
             ].map((member, index) => (
               <div

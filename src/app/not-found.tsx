@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -10,9 +10,9 @@ export default function NotFound() {
       <Navbar />
 
       {/* Main Content */}
-      <div className="flex flex-col items-center justify-center min-h-[70vh] px-4 py-12">
+      <div className="flex flex-col items-center justify-center min-h-[75vh] px-6 py-16">
         {/* Animated 404 */}
-        <div className="relative mb-12">
+        <div className="relative mb-16">
           <div className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 animate-pulse">
             404
           </div>
@@ -21,11 +21,11 @@ export default function NotFound() {
         </div>
 
         {/* Error Message */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Oops! Page Not Found
           </h2>
-          <p className="text-lg text-gray-600 mb-2">
+          <p className="text-lg text-gray-600 mb-4">
             The page you're looking for seems to have wandered off into the
             digital void.
           </p>
@@ -35,7 +35,7 @@ export default function NotFound() {
         </div>
 
         {/* Illustration */}
-        <div className="mb-12">
+        <div className="mb-16">
           <div className="relative w-64 h-48 mx-auto">
             {/* Simple illustration using CSS */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl opacity-50"></div>
@@ -49,7 +49,7 @@ export default function NotFound() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row gap-6 mb-12">
           <Link
             href="/"
             className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
@@ -58,13 +58,13 @@ export default function NotFound() {
             <span className="font-semibold">Return Home</span>
           </Link>
 
-          <Link
-            href="javascript:history.back()"
+          <button
+            onClick={() => window.history.back()}
             className="group flex items-center gap-2 px-8 py-4 bg-white text-gray-700 border-2 border-gray-200 rounded-xl hover:border-blue-300 hover:text-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
           >
             <ArrowLeft className="w-5 h-5 group-hover:animate-pulse" />
             <span className="font-semibold">Go Back</span>
-          </Link>
+          </button>
         </div>
 
         {/* Help Links */}

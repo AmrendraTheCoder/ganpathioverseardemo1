@@ -55,28 +55,19 @@ export default function ContactForm() {
     setFormStatus({ type: null, message: "" });
 
     try {
-      const supabase = createClient();
+      // Submit to API endpoint instead of direct Supabase call
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Insert inquiry into database
-      const { data, error } = await supabase
-        .from("contact_inquiries")
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone || null,
-            subject: formData.subject,
-            message: formData.message,
-            status: "new",
-            service_type: formData.service || null,
-            urgency: formData.urgency,
-            created_at: new Date().toISOString(),
-          },
-        ])
-        .select();
+      const result = await response.json();
 
-      if (error) {
-        throw error;
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit inquiry");
       }
 
       // Success - reset form
@@ -93,7 +84,8 @@ export default function ContactForm() {
       setFormStatus({
         type: "success",
         message:
-          "Thank you! Your inquiry has been submitted successfully. We'll get back to you within 2 hours during business hours.",
+          result.message ||
+          "Thank you! Your inquiry has been submitted successfully.",
       });
 
       // Auto-hide success message after 5 seconds

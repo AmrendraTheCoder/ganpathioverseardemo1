@@ -4,6 +4,7 @@ import { useState } from "react";
 import { createClient } from "../../../supabase/client";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import FileUpload from "@/components/file-upload";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -43,8 +44,10 @@ export default function QuotePage() {
     urgency: "",
     budget: "",
     description: "",
-    fileUpload: null as File | null,
   });
+
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [uploadedFileUrls, setUploadedFileUrls] = useState<string[]>([]);
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -82,9 +85,30 @@ export default function QuotePage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    setFormData((prev) => ({ ...prev, fileUpload: file }));
+  const uploadFilesToServer = async (files: File[]) => {
+    if (files.length === 0) return [];
+
+    const formData = new FormData();
+    files.forEach((file) => {
+      formData.append("files", file);
+    });
+
+    try {
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Upload failed");
+      }
+
+      const result = await response.json();
+      return result.files;
+    } catch (error) {
+      console.error("Upload error:", error);
+      throw error;
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -94,32 +118,46 @@ export default function QuotePage() {
     setSuccess(false);
 
     try {
-      const supabase = createClient();
+      // Upload files first
+      let uploadedFilesData = [];
+      if (uploadedFiles.length > 0) {
+        uploadedFilesData = await uploadFilesToServer(uploadedFiles);
+      }
 
-      const { error } = await supabase.from("contact_inquiries").insert([
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          subject: `Quote Request - ${formData.service}`,
-          message: `
-Company: ${formData.company}
-Service: ${formData.service}
-Quantity: ${formData.quantity}
-Paper Type: ${formData.paperType}
-Size: ${formData.size}
-Colors: ${formData.colors}
-Finish: ${formData.finishType}
-Urgency: ${formData.urgency}
-Budget: ${formData.budget}
-Description: ${formData.description}
-File: ${formData.fileUpload ? formData.fileUpload.name : "None"}
-            `.trim(),
-          status: "new",
+      const fileList = uploadedFilesData
+        .map((file) => `${file.originalName} (${file.url})`)
+        .join(", ");
+
+      // Prepare quote request data
+      const quoteData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        service: formData.service,
+        description: formData.description,
+        quantity: formData.quantity,
+        dimensions: formData.size,
+        materials: `${formData.paperType} - ${formData.colors} colors - ${formData.finishType} finish`,
+        deadline: formData.urgency,
+        budget: formData.budget,
+        additionalNotes: fileList ? `Uploaded Files: ${fileList}` : null,
+      };
+
+      // Submit to API endpoint
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      ]);
+        body: JSON.stringify(quoteData),
+      });
 
-      if (error) throw error;
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit quote request");
+      }
 
       setSuccess(true);
       setFormData({
@@ -136,10 +174,13 @@ File: ${formData.fileUpload ? formData.fileUpload.name : "None"}
         urgency: "",
         budget: "",
         description: "",
-        fileUpload: null,
       });
+      setUploadedFiles([]);
+      setUploadedFileUrls([]);
     } catch (error: any) {
-      setError("Failed to submit quote request. Please try again.");
+      setError(
+        error.message || "Failed to submit quote request. Please try again."
+      );
       console.error("Error:", error);
     } finally {
       setLoading(false);
@@ -510,40 +551,16 @@ File: ${formData.fileUpload ? formData.fileUpload.name : "None"}
 
                   {/* File Upload */}
                   <div className="space-y-2">
-                    <Label
-                      htmlFor="fileUpload"
-                      className="text-sm font-medium text-gray-700"
-                    >
-                      Upload Files (Optional)
+                    <Label className="text-sm font-medium text-gray-700">
+                      Upload Design Files (Optional)
                     </Label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 hover:border-blue-400 transition-colors">
-                      <input
-                        id="fileUpload"
-                        type="file"
-                        onChange={handleFileChange}
-                        className="hidden"
-                        accept=".pdf,.jpg,.jpeg,.png,.ai,.eps,.psd"
-                      />
-                      <label
-                        htmlFor="fileUpload"
-                        className="cursor-pointer flex flex-col items-center"
-                      >
-                        <Upload className="w-8 h-8 text-gray-400 mb-2" />
-                        <p className="text-sm text-gray-600 text-center">
-                          Click to upload your design files
-                          <br />
-                          <span className="text-xs text-gray-500">
-                            PDF, JPG, PNG, AI, EPS, PSD (Max 10MB)
-                          </span>
-                        </p>
-                        {formData.fileUpload && (
-                          <p className="text-sm text-blue-600 mt-2 flex items-center">
-                            <FileText className="w-4 h-4 mr-1" />
-                            {formData.fileUpload.name}
-                          </p>
-                        )}
-                      </label>
-                    </div>
+                    <FileUpload
+                      files={uploadedFiles}
+                      onFilesChange={setUploadedFiles}
+                      maxFiles={5}
+                      maxSizePerFile={10}
+                      className="bg-gray-50 border border-gray-200 rounded-lg"
+                    />
                   </div>
 
                   {/* Project Description */}

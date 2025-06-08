@@ -1,6 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { Metadata } from "next";
+import PrintSamplesPopup from "@/components/print-samples-popup";
 import {
   Printer,
   Palette,
@@ -12,17 +15,14 @@ import {
   ArrowRight,
   Star,
   Calculator,
+  Eye,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Our Services - Ganpathi Overseas",
-  description:
-    "Comprehensive printing services including offset printing, UV printing, digital printing, large format, book publishing, and packaging solutions.",
-};
-
 export default function ServicesPage() {
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+
   const services = [
     {
       icon: <Printer className="w-10 h-10" />,
@@ -220,12 +220,13 @@ export default function ServicesPage() {
                       <Calculator className="mr-2 w-5 h-5" />
                       Get Quote for {service.title}
                     </Link>
-                    <Link
-                      href="/contact"
+                    <button
+                      onClick={() => setSelectedService(service.title)}
                       className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-200 font-medium"
                     >
-                      Ask Questions
-                    </Link>
+                      <Eye className="mr-2 w-5 h-5" />
+                      Print Samples
+                    </button>
                   </div>
                 </div>
               </div>
@@ -315,6 +316,13 @@ export default function ServicesPage() {
       </section>
 
       <Footer />
+
+      {/* Print Samples Popup */}
+      <PrintSamplesPopup
+        isOpen={selectedService !== null}
+        onClose={() => setSelectedService(null)}
+        serviceTitle={selectedService || ""}
+      />
     </div>
   );
 }

@@ -1,7 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ContactForm from "@/components/contact-form";
-import { Metadata } from "next";
+import Chatbot from "@/components/chatbot";
 import {
   MapPin,
   Phone,
@@ -15,20 +18,37 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-export const metadata: Metadata = {
-  title: "Contact Us - Ganpathi Overseas",
-  description:
-    "Get in touch with Ganpathi Overseas for all your printing needs. Request a quote or inquire about our services.",
-};
-
 export default function ContactPage() {
+  const [chatbotOpen, setChatbotOpen] = useState(false);
+
+  const handleContactAction = (index: number) => {
+    switch (index) {
+      case 0: // Get Directions
+        window.open(
+          "https://www.google.com/maps/place/Ganpathi+Overseas/@26.8709745,80.9815423,19z/data=!4m15!1m8!3m7!1s0x399bfd57dc7c6fcd:0x3c487e9bee085e45!2sGanpathi+Overseas!8m2!3d26.8711265!4d80.9815115!10e5!16s%2Fg%2F11vwrb8ld6!3m5!1s0x399bfd57dc7c6fcd:0x3c487e9bee085e45!8m2!3d26.8711265!4d80.9815115!16s%2Fg%2F11vwrb8ld6?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D",
+          "_blank"
+        );
+        break;
+      case 1: // Call Now
+        window.open("tel:+919651911111");
+        break;
+      case 2: // Send Email
+        window.open("mailto:info@ganpathioverseas.com");
+        break;
+      case 3: // View Calendar
+        // You can add calendar functionality here if needed
+        break;
+    }
+  };
+
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Visit Our Office",
       details: [
-        "123 Printing Plaza, Hazratganj",
-        "Lucknow, Uttar Pradesh 226001",
+        "9 Lakshampuri, Indira Nagar",
+        "Near Boothnath Metro Station",
+        "Lucknow, Uttar Pradesh 226016.",
       ],
       action: "Get Directions",
       color: "text-blue-600 bg-blue-50",
@@ -146,7 +166,12 @@ export default function ContactPage() {
                           {detail}
                         </p>
                       ))}
-                      <Button variant="outline" size="sm" className="mt-3">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="mt-3"
+                        onClick={() => handleContactAction(index)}
+                      >
                         {info.action}
                       </Button>
                     </div>
@@ -198,11 +223,17 @@ export default function ContactPage() {
                 solution for your project.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-blue-900 hover:bg-blue-800">
+                <Button
+                  className="bg-blue-900 hover:bg-blue-800"
+                  onClick={() => setChatbotOpen(true)}
+                >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   Chat with Expert
                 </Button>
-                <Button variant="outline">
+                <Button
+                  variant="outline"
+                  onClick={() => window.open("tel:+919651911111")}
+                >
                   <Phone className="w-4 h-4 mr-2" />
                   Schedule Call
                 </Button>
@@ -213,6 +244,9 @@ export default function ContactPage() {
       </div>
 
       <Footer />
+
+      {/* Chatbot */}
+      <Chatbot isOpen={chatbotOpen} onClose={() => setChatbotOpen(false)} />
     </div>
   );
 }
