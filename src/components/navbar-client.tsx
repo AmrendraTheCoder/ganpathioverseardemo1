@@ -106,7 +106,7 @@ export default function NavbarClient({ user }: { user: any }) {
           isScrolled
             ? "bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-200"
             : "bg-white/90 backdrop-blur-sm"
-        } ${pathname.startsWith("/blog/") ? "lg:top-0" : "lg:top-10"}`}
+        } lg:top-10`}
       >
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
@@ -374,9 +374,7 @@ export default function NavbarClient({ user }: { user: any }) {
       </nav>
 
       {/* Spacer */}
-      <div
-        className={`${pathname.startsWith("/blog/") ? "h-16" : "h-26 lg:h-36"}`}
-      />
+      <div className="h-26 lg:h-36" />
     </>
   );
 }
