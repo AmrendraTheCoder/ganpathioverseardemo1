@@ -48,6 +48,52 @@ export default function Home() {
     setMounted(true);
   }, []);
 
+  // Gallery action handlers
+  const handleViewItem = (item: any) => {
+    // Open item in a modal or navigate to dedicated page
+    window.open(item.link, "_blank");
+  };
+
+  const handleShareItem = async (item: any) => {
+    const shareUrl = `${window.location.origin}${item.link}`;
+    const shareText = `Check out this amazing ${item.title} by Ganpathi Overseas`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: item.title,
+          text: shareText,
+          url: shareUrl,
+        });
+      } catch (error) {
+        console.log("Error sharing:", error);
+        // Fallback to clipboard
+        copyToClipboard(shareUrl);
+      }
+    } else {
+      // Fallback to clipboard copy
+      copyToClipboard(shareUrl);
+    }
+  };
+
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      // You could add a toast notification here
+      alert("Link copied to clipboard!");
+    } catch (error) {
+      console.error("Failed to copy to clipboard:", error);
+      // Fallback for older browsers
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      alert("Link copied to clipboard!");
+    }
+  };
+
   // Company logos - adjusted for 120x120px
   const clientLogos = [
     { name: "Havells", logoUrl: "/images/logos/Havells.png" },
@@ -64,6 +110,7 @@ export default function Home() {
       category: "brochures",
       image: "/images/gallery/IN_Bulk-Brochures_Hero-image_01.webp",
       description: "Professional corporate brochures with premium finishing",
+      link: "/gallery/corporate-brochures",
     },
     {
       id: 2,
@@ -71,6 +118,7 @@ export default function Home() {
       category: "catalogs",
       image: "/images/gallery/IN_booklets_tile_001.webp",
       description: "High-quality product catalogs with vibrant colors",
+      link: "/gallery/product-catalogs",
     },
     {
       id: 3,
@@ -78,6 +126,7 @@ export default function Home() {
       category: "cards",
       image: "/images/gallery/visting_card.webp",
       description: "Elegant business cards with various finishing options",
+      link: "/gallery/business-cards",
     },
     {
       id: 4,
@@ -85,6 +134,7 @@ export default function Home() {
       category: "banners",
       image: "/images/gallery/banners_01.jpeg",
       description: "Eye-catching banners for events and promotions",
+      link: "/gallery/large-format-banners",
     },
     {
       id: 5,
@@ -92,6 +142,7 @@ export default function Home() {
       category: "books",
       image: "/images/gallery/book_booklet.jpeg",
       description: "Professional book printing and binding services",
+      link: "/gallery/book-publishing",
     },
     {
       id: 6,
@@ -99,6 +150,7 @@ export default function Home() {
       category: "packaging",
       image: "/images/gallery/packaging.webp",
       description: "Custom packaging solutions for your products",
+      link: "/gallery/packaging-design",
     },
     {
       id: 7,
@@ -106,6 +158,7 @@ export default function Home() {
       category: "invitations",
       image: "/images/gallery/wedding_card.webp",
       description: "Beautiful wedding invitations with elegant designs",
+      link: "/gallery/wedding-invitations",
     },
     {
       id: 8,
@@ -113,6 +166,7 @@ export default function Home() {
       category: "menus",
       image: "/images/gallery/IN_Menus_002.webp",
       description: "Restaurant menu cards with premium paper quality",
+      link: "/gallery/menu-cards",
     },
     {
       id: 9,
@@ -120,6 +174,187 @@ export default function Home() {
       category: "flyers",
       image: "/images/gallery/IN-postcards-overview.webp",
       description: "Attention-grabbing promotional flyers",
+      link: "/gallery/promotional-flyers",
+    },
+    {
+      id: 10,
+      title: "Annual Reports",
+      category: "brochures",
+      image:
+        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+      description: "Professional annual reports with detailed layouts",
+      link: "/gallery/annual-reports",
+    },
+    {
+      id: 11,
+      title: "Magazine Printing",
+      category: "books",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+      description: "High-quality magazine printing with perfect binding",
+      link: "/gallery/magazine-printing",
+    },
+    {
+      id: 12,
+      title: "Corporate Stationery",
+      category: "cards",
+      image:
+        "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&q=80",
+      description: "Complete corporate stationery solutions",
+      link: "/gallery/corporate-stationery",
+    },
+    {
+      id: 13,
+      title: "Trade Show Displays",
+      category: "banners",
+      image:
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+      description: "Eye-catching trade show displays and backdrops",
+      link: "/gallery/trade-show-displays",
+    },
+    {
+      id: 14,
+      title: "Event Invitations",
+      category: "invitations",
+      image:
+        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80",
+      description: "Custom event invitations for all occasions",
+      link: "/gallery/event-invitations",
+    },
+    {
+      id: 15,
+      title: "Food Packaging",
+      category: "packaging",
+      image:
+        "https://images.unsplash.com/photo-1607434472257-d9f8e57a643d?w=800&q=80",
+      description: "Food-grade packaging with attractive designs",
+      link: "/gallery/food-packaging",
+    },
+    {
+      id: 16,
+      title: "Vinyl Banners",
+      category: "banners",
+      image:
+        "https://images.unsplash.com/photo-1541544537156-7627a7a4aa1c?w=800&q=80",
+      description: "Durable vinyl banners for outdoor use",
+      link: "/gallery/vinyl-banners",
+    },
+    {
+      id: 17,
+      title: "Leaflets & Pamphlets",
+      category: "flyers",
+      image:
+        "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&q=80",
+      description: "Cost-effective leaflets and pamphlets",
+      link: "/gallery/leaflets-pamphlets",
+    },
+    {
+      id: 18,
+      title: "Certificate Printing",
+      category: "cards",
+      image:
+        "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
+      description: "Professional certificates with security features",
+      link: "/gallery/certificate-printing",
+    },
+    {
+      id: 19,
+      title: "Greeting Cards",
+      category: "invitations",
+      image:
+        "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&q=80",
+      description: "Custom greeting cards for special occasions",
+      link: "/gallery/greeting-cards",
+    },
+    {
+      id: 20,
+      title: "Product Labels",
+      category: "packaging",
+      image:
+        "https://images.unsplash.com/photo-1580169980114-ccd0babfa840?w=800&q=80",
+      description: "High-quality product labels and stickers",
+      link: "/gallery/product-labels",
+    },
+    {
+      id: 21,
+      title: "Booklets & Manuals",
+      category: "books",
+      image:
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
+      description: "Instructional booklets and user manuals",
+      link: "/gallery/booklets-manuals",
+    },
+    {
+      id: 22,
+      title: "Poster Printing",
+      category: "banners",
+      image:
+        "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&q=80",
+      description: "High-resolution poster printing in various sizes",
+      link: "/gallery/poster-printing",
+    },
+    {
+      id: 23,
+      title: "Corporate Folders",
+      category: "brochures",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+      description: "Professional presentation folders",
+      link: "/gallery/corporate-folders",
+    },
+    {
+      id: 24,
+      title: "Window Graphics",
+      category: "banners",
+      image:
+        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+      description: "Attractive window graphics and displays",
+      link: "/gallery/window-graphics",
+    },
+    {
+      id: 25,
+      title: "Calendars",
+      category: "books",
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+      description: "Custom calendars for corporate and personal use",
+      link: "/gallery/calendars",
+    },
+    {
+      id: 26,
+      title: "Table Tents",
+      category: "menus",
+      image:
+        "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+      description: "Promotional table tents for restaurants",
+      link: "/gallery/table-tents",
+    },
+    {
+      id: 27,
+      title: "Roll-up Banners",
+      category: "banners",
+      image:
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+      description: "Portable roll-up banners for events",
+      link: "/gallery/roll-up-banners",
+    },
+    {
+      id: 28,
+      title: "Gift Packaging",
+      category: "packaging",
+      image:
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80",
+      description: "Elegant gift boxes and packaging solutions",
+      link: "/gallery/gift-packaging",
+    },
+    {
+      id: 29,
+      title: "Notebook Printing",
+      category: "books",
+      image:
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
+      description: "Custom notebooks and journals",
+      link: "/gallery/notebook-printing",
     },
   ];
 
@@ -145,6 +380,134 @@ export default function Home() {
       image: "/images/testimonialsPerson/amit_patel.avif",
       rating: 5,
       text: "Professional team, competitive pricing, and excellent quality. Highly recommend for all printing needs.",
+    },
+    {
+      name: "Sneha Agarwal",
+      company: "Divine Weddings",
+      image:
+        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "The wedding invitation cards were absolutely stunning! The gold foil finish and premium paper quality made our special day even more memorable.",
+    },
+    {
+      name: "Vikram Singh",
+      company: "Singh Enterprises",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "We've been using Ganpathi Overseas for 5 years. Their consistency in quality and timely delivery has made them our go-to printing partner.",
+    },
+    {
+      name: "Meera Joshi",
+      company: "Joshi Textiles",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "The product catalogs they printed for us helped increase our sales by 40%. The color accuracy and paper quality were exceptional.",
+    },
+    {
+      name: "Arjun Malhotra",
+      company: "Malhotra Industries",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "Their offset printing service is top-notch. Large volume orders are handled efficiently with consistent quality throughout.",
+    },
+    {
+      name: "Kavita Reddy",
+      company: "Red Rose Catering",
+      image:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "The menu cards and table tents transformed our restaurant's presentation. Customers constantly compliment the professional look.",
+    },
+    {
+      name: "Rohit Sharma",
+      company: "Sharma Pharmaceuticals",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "Medical packaging requires precision and compliance. Ganpathi Overseas delivered exactly what we needed with perfect quality control.",
+    },
+    {
+      name: "Anita Gupta",
+      company: "Gupta Fashion House",
+      image:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "The product tags and labels have enhanced our brand image significantly. The UV coating gives them a premium feel.",
+    },
+    {
+      name: "Deepak Kumar",
+      company: "Kumar Construction",
+      image:
+        "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "Large format banners for our construction sites are always delivered on time. Weather-resistant quality that lasts months.",
+    },
+    {
+      name: "Sanjana Rao",
+      company: "Rao Educational Institute",
+      image:
+        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "Textbooks, certificates, and educational materials - all printed with perfect clarity. Student satisfaction has improved noticeably.",
+    },
+    {
+      name: "Manish Tiwari",
+      company: "Tiwari Automobiles",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "Service manuals and promotional materials are always print-ready. Their digital printing service is incredibly fast and reliable.",
+    },
+    {
+      name: "Pooja Agarwal",
+      company: "Agarwal Jewellers",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "The jewelry catalogs showcase our pieces beautifully. The high-gloss finish and color accuracy make our gold look even more stunning.",
+    },
+    {
+      name: "Suresh Yadav",
+      company: "Yadav Organics",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "Organic food packaging requires special care. Their eco-friendly printing options align perfectly with our brand values.",
+    },
+    {
+      name: "Ritu Saxena",
+      company: "Saxena Events",
+      image:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "From invitations to event banners, every print job is handled with perfection. Our clients always ask who did the printing!",
+    },
+    {
+      name: "Ashish Pandey",
+      company: "Pandey Publications",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "Book printing quality is exceptional. The binding is durable and the pages are perfectly aligned. Highly professional service.",
+    },
+    {
+      name: "Nisha Verma",
+      company: "Verma Beauty Salon",
+      image:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "Promotional flyers and business cards have helped grow our clientele. The design suggestions were spot-on and increased walk-ins.",
+    },
+    {
+      name: "Gaurav Singh",
+      company: "Singh IT Solutions",
+      image:
+        "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face&auto=format",
+      rating: 5,
+      text: "Technical documentation and user manuals are printed with crystal clear text. No complaints from our international clients.",
     },
   ];
 
@@ -236,6 +599,22 @@ export default function Home() {
       count: galleryItems.filter((item) => item.category === "packaging")
         .length,
     },
+    {
+      id: "invitations",
+      name: "Invitations",
+      count: galleryItems.filter((item) => item.category === "invitations")
+        .length,
+    },
+    {
+      id: "flyers",
+      name: "Flyers",
+      count: galleryItems.filter((item) => item.category === "flyers").length,
+    },
+    {
+      id: "menus",
+      name: "Menus",
+      count: galleryItems.filter((item) => item.category === "menus").length,
+    },
   ];
 
   return (
@@ -244,7 +623,7 @@ export default function Home() {
         <title>Ganpathi Overseas | Premium Print & Packaging Solutions</title>
         <meta
           name="description"
-          content="Ganpathi Overseas delivers top-tier printing services including brochures, catalogs, cards, banners, packaging, and more. 25+ years of excellence in print craftsmanship."
+          content="Ganpathi Overseas delivers top-tier printing services including brochures, catalogs, cards, banners, packaging, and more. 20+ years of excellence in print craftsmanship."
         />
         <meta
           name="keywords"
@@ -263,7 +642,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="25+ years of precision in print. Discover offset, digital, UV printing, banners, packaging & more."
+          content="20+ years of precision in print. Discover offset, digital, UV printing, banners, packaging & more."
         />
         <meta property="og:image" content="/images/seo/preview.jpg" />
 
@@ -331,33 +710,33 @@ export default function Home() {
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {/* Print Rollers */}
               <div
-                className={`absolute top-1/4 left-1/4 w-96 h-4 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full transform transition-all duration-[3000ms] ease-out ${
+                className={`absolute top-1/4 left-1/4 w-96 h-4 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full transform transition-all duration-1000 ease-out ${
                   mounted ? "rotate-12 opacity-100" : "rotate-0 opacity-0"
                 }`}
               ></div>
               <div
-                className={`absolute bottom-1/3 right-1/4 w-64 h-3 bg-gradient-to-r from-magenta-400/20 to-pink-400/20 rounded-full transform transition-all duration-[2500ms] ease-out delay-500 ${
+                className={`absolute bottom-1/3 right-1/4 w-64 h-3 bg-gradient-to-r from-magenta-400/20 to-pink-400/20 rounded-full transform transition-all duration-1000 ease-out delay-500 ${
                   mounted ? "rotate-[-12deg] opacity-100" : "rotate-0 opacity-0"
                 }`}
               ></div>
 
               {/* Ink Drops */}
               <div
-                className={`absolute top-1/2 right-1/3 w-6 h-6 bg-cyan-400/30 rounded-full transform transition-all duration-[2000ms] ease-out delay-1000 ${
+                className={`absolute top-1/2 right-1/3 w-6 h-6 bg-cyan-400/30 rounded-full transform transition-all duration-1000 ease-out delay-1000 ${
                   mounted
                     ? "translate-y-0 scale-100 opacity-100"
                     : "translate-y-10 scale-0 opacity-0"
                 }`}
               ></div>
               <div
-                className={`absolute bottom-1/2 left-1/3 w-4 h-4 bg-yellow-400/30 rounded-full transform transition-all duration-[2200ms] ease-out delay-700 ${
+                className={`absolute bottom-1/2 left-1/3 w-4 h-4 bg-yellow-400/30 rounded-full transform transition-all duration-1000 ease-out delay-700 ${
                   mounted
                     ? "translate-x-0 scale-100 opacity-100"
                     : "translate-x-8 scale-0 opacity-0"
                 }`}
               ></div>
               <div
-                className={`absolute top-2/3 left-1/2 w-5 h-5 bg-magenta-400/30 rounded-full transform transition-all duration-[1800ms] ease-out delay-1200 ${
+                className={`absolute top-2/3 left-1/2 w-5 h-5 bg-magenta-400/30 rounded-full transform transition-all duration-1000 ease-out delay-1000 ${
                   mounted
                     ? "translate-y-0 scale-100 opacity-100"
                     : "translate-y-6 scale-0 opacity-0"
@@ -366,14 +745,14 @@ export default function Home() {
 
               {/* Paper Sheets */}
               <div
-                className={`absolute top-1/3 right-1/5 w-32 h-40 bg-white/5 border border-white/10 rounded-lg transform transition-all duration-[2400ms] ease-out delay-300 ${
+                className={`absolute top-1/3 right-1/5 w-32 h-40 bg-white/5 border border-white/10 rounded-lg transform transition-all duration-1000 ease-out delay-300 ${
                   mounted
                     ? "rotate-12 translate-y-0 opacity-100"
                     : "rotate-0 translate-y-8 opacity-0"
                 }`}
               ></div>
               <div
-                className={`absolute bottom-1/4 left-1/5 w-24 h-32 bg-white/5 border border-white/10 rounded-lg transform transition-all duration-[2600ms] ease-out delay-800 ${
+                className={`absolute bottom-1/4 left-1/5 w-24 h-32 bg-white/5 border border-white/10 rounded-lg transform transition-all duration-1000 ease-out delay-800 ${
                   mounted
                     ? "rotate-[-8deg] translate-x-0 opacity-100"
                     : "rotate-0 translate-x-6 opacity-0"
@@ -382,7 +761,7 @@ export default function Home() {
 
               {/* Color Swatches */}
               <div
-                className={`absolute top-1/5 left-2/3 flex space-x-1 transform transition-all duration-[2800ms] ease-out delay-600 ${
+                className={`absolute top-1/5 left-2/3 flex space-x-1 transform transition-all duration-1000 ease-out delay-600 ${
                   mounted
                     ? "translate-y-0 opacity-100"
                     : "translate-y-4 opacity-0"
@@ -432,13 +811,13 @@ export default function Home() {
                   Elevating Print Excellence Through Innovation
                 </p>
                 <p className="text-lg text-slate-400 mb-12 max-w-3xl mx-auto">
-                  25+ years of precision craftsmanship, cutting-edge technology,
+                  20+ years of precision craftsmanship, cutting-edge technology,
                   and unwavering commitment to quality
                 </p>
               </div>
 
               <div
-                className={`flex flex-col sm:flex-row gap-6 justify-center mb-16 transform transition-all duration-1000 ease-out delay-900 ${
+                className={`flex flex-col sm:flex-row gap-6 justify-center mb-16 transform transition-all duration-1000 ease-out delay-700 ${
                   mounted
                     ? "translate-y-0 opacity-100"
                     : "translate-y-6 opacity-0"
@@ -585,13 +964,18 @@ export default function Home() {
                     {/* Overlay Actions */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="flex space-x-4">
-                        <button className="p-3 bg-white/90 rounded-full text-gray-800 hover:bg-white transition-colors">
+                        <button
+                          onClick={() => handleViewItem(item)}
+                          className="p-3 bg-white/90 rounded-full text-gray-800 hover:bg-white hover:scale-110 transition-all duration-200"
+                          title="View Details"
+                        >
                           <Eye className="w-5 h-5" />
                         </button>
-                        <button className="p-3 bg-white/90 rounded-full text-gray-800 hover:bg-white transition-colors">
-                          <Heart className="w-5 h-5" />
-                        </button>
-                        <button className="p-3 bg-white/90 rounded-full text-gray-800 hover:bg-white transition-colors">
+                        <button
+                          onClick={() => handleShareItem(item)}
+                          className="p-3 bg-white/90 rounded-full text-gray-800 hover:bg-white hover:scale-110 transition-all duration-200"
+                          title="Share"
+                        >
                           <Share2 className="w-5 h-5" />
                         </button>
                       </div>

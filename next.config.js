@@ -2,7 +2,6 @@
 
 const nextConfig = {
   images: {
-    domains: ["images.unsplash.com", "api.dicebear.com", "unsplash.com"],
     remotePatterns: [
       {
         protocol: "https",

@@ -1,0 +1,3933 @@
+# Query: //
+# ContextLines: 1
+
+1513 results - 43 files
+
+.gitignore:
+  1: # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+  2  
+
+components.json:
+  1  {
+  2:   "$schema": "https://ui.shadcn.com/schema.json",
+  3    "style": "default",
+
+next.config.js:
+  36    nextConfig["experimental"] = {
+  37:     // NextJS 13.4.8 up to 14.1.3:
+  38:     // swcPlugins: [[require.resolve("tempo-devtools/swc/0.86"), {}]],
+  39:     // NextJS 14.1.3 to 14.2.11:
+  40      swcPlugins: [[require.resolve("tempo-devtools/swc/0.90"), {}]],
+  41  
+  42:     // NextJS 15+ (Not yet supported, coming soon)
+  43    };
+
+package-lock.json:
+    54        "version": "5.2.0",
+    55:       "resolved": "https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz",
+    56        "integrity": "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==",
+
+    62        "funding": {
+    63:         "url": "https://github.com/sponsors/sindresorhus"
+    64        }
+
+    67        "version": "1.2.0",
+    68:       "resolved": "https://registry.npmjs.org/@date-fns/tz/-/tz-1.2.0.tgz",
+    69        "integrity": "sha512-LBrd7MiJZ9McsOgxqWX7AaxrDjcFVjWH/tIKJd7pnR7McaslGYOP1QmmiBXdJH/H/yLCT+rcQ7FaPBUxRGUtrg==",
+
+    73        "version": "0.25.4",
+    74:       "resolved": "https://registry.npmjs.org/@esbuild/aix-ppc64/-/aix-ppc64-0.25.4.tgz",
+    75        "integrity": "sha512-1VCICWypeQKhVbE9oW/sJaAmjLxhVqacdkvPLEjwlttjfwENRSClS8EjBz0KzRyFSCPDIkuXW34Je/vk7zdB7Q==",
+
+    90        "version": "0.25.4",
+    91:       "resolved": "https://registry.npmjs.org/@esbuild/android-arm/-/android-arm-0.25.4.tgz",
+    92        "integrity": "sha512-QNdQEps7DfFwE3hXiU4BZeOV68HHzYwGd0Nthhd3uCkkEKK7/R6MTgM0P7H7FAs5pU/DIWsviMmEGxEoxIZ+ZQ==",
+
+   107        "version": "0.25.4",
+   108:       "resolved": "https://registry.npmjs.org/@esbuild/android-arm64/-/android-arm64-0.25.4.tgz",
+   109        "integrity": "sha512-bBy69pgfhMGtCnwpC/x5QhfxAz/cBgQ9enbtwjf6V9lnPI/hMyT9iWpR1arm0l3kttTr4L0KSLpKmLp/ilKS9A==",
+
+   124        "version": "0.25.4",
+   125:       "resolved": "https://registry.npmjs.org/@esbuild/android-x64/-/android-x64-0.25.4.tgz",
+   126        "integrity": "sha512-TVhdVtQIFuVpIIR282btcGC2oGQoSfZfmBdTip2anCaVYcqWlZXGcdcKIUklfX2wj0JklNYgz39OBqh2cqXvcQ==",
+
+   141        "version": "0.25.4",
+   142:       "resolved": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.25.4.tgz",
+   143        "integrity": "sha512-Y1giCfM4nlHDWEfSckMzeWNdQS31BQGs9/rouw6Ub91tkK79aIMTH3q9xHvzH8d0wDru5Ci0kWB8b3up/nl16g==",
+
+   158        "version": "0.25.4",
+   159:       "resolved": "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.25.4.tgz",
+   160        "integrity": "sha512-CJsry8ZGM5VFVeyUYB3cdKpd/H69PYez4eJh1W/t38vzutdjEjtP7hB6eLKBoOdxcAlCtEYHzQ/PJ/oU9I4u0A==",
+
+   175        "version": "0.25.4",
+   176:       "resolved": "https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-0.25.4.tgz",
+   177        "integrity": "sha512-yYq+39NlTRzU2XmoPW4l5Ifpl9fqSk0nAJYM/V/WUGPEFfek1epLHJIkTQM6bBs1swApjO5nWgvr843g6TjxuQ==",
+
+   192        "version": "0.25.4",
+   193:       "resolved": "https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-0.25.4.tgz",
+   194        "integrity": "sha512-0FgvOJ6UUMflsHSPLzdfDnnBBVoCDtBTVyn/MrWloUNvq/5SFmh13l3dvgRPkDihRxb77Y17MbqbCAa2strMQQ==",
+
+   209        "version": "0.25.4",
+   210:       "resolved": "https://registry.npmjs.org/@esbuild/linux-arm/-/linux-arm-0.25.4.tgz",
+   211        "integrity": "sha512-kro4c0P85GMfFYqW4TWOpvmF8rFShbWGnrLqlzp4X1TNWjRY3JMYUfDCtOxPKOIY8B0WC8HN51hGP4I4hz4AaQ==",
+
+   226        "version": "0.25.4",
+   227:       "resolved": "https://registry.npmjs.org/@esbuild/linux-arm64/-/linux-arm64-0.25.4.tgz",
+   228        "integrity": "sha512-+89UsQTfXdmjIvZS6nUnOOLoXnkUTB9hR5QAeLrQdzOSWZvNSAXAtcRDHWtqAUtAmv7ZM1WPOOeSxDzzzMogiQ==",
+
+   243        "version": "0.25.4",
+   244:       "resolved": "https://registry.npmjs.org/@esbuild/linux-ia32/-/linux-ia32-0.25.4.tgz",
+   245        "integrity": "sha512-yTEjoapy8UP3rv8dB0ip3AfMpRbyhSN3+hY8mo/i4QXFeDxmiYbEKp3ZRjBKcOP862Ua4b1PDfwlvbuwY7hIGQ==",
+
+   260        "version": "0.25.4",
+   261:       "resolved": "https://registry.npmjs.org/@esbuild/linux-loong64/-/linux-loong64-0.25.4.tgz",
+   262        "integrity": "sha512-NeqqYkrcGzFwi6CGRGNMOjWGGSYOpqwCjS9fvaUlX5s3zwOtn1qwg1s2iE2svBe4Q/YOG1q6875lcAoQK/F4VA==",
+
+   277        "version": "0.25.4",
+   278:       "resolved": "https://registry.npmjs.org/@esbuild/linux-mips64el/-/linux-mips64el-0.25.4.tgz",
+   279        "integrity": "sha512-IcvTlF9dtLrfL/M8WgNI/qJYBENP3ekgsHbYUIzEzq5XJzzVEV/fXY9WFPfEEXmu3ck2qJP8LG/p3Q8f7Zc2Xg==",
+
+   294        "version": "0.25.4",
+   295:       "resolved": "https://registry.npmjs.org/@esbuild/linux-ppc64/-/linux-ppc64-0.25.4.tgz",
+   296        "integrity": "sha512-HOy0aLTJTVtoTeGZh4HSXaO6M95qu4k5lJcH4gxv56iaycfz1S8GO/5Jh6X4Y1YiI0h7cRyLi+HixMR+88swag==",
+
+   311        "version": "0.25.4",
+   312:       "resolved": "https://registry.npmjs.org/@esbuild/linux-riscv64/-/linux-riscv64-0.25.4.tgz",
+   313        "integrity": "sha512-i8JUDAufpz9jOzo4yIShCTcXzS07vEgWzyX3NH2G7LEFVgrLEhjwL3ajFE4fZI3I4ZgiM7JH3GQ7ReObROvSUA==",
+
+   328        "version": "0.25.4",
+   329:       "resolved": "https://registry.npmjs.org/@esbuild/linux-s390x/-/linux-s390x-0.25.4.tgz",
+   330        "integrity": "sha512-jFnu+6UbLlzIjPQpWCNh5QtrcNfMLjgIavnwPQAfoGx4q17ocOU9MsQ2QVvFxwQoWpZT8DvTLooTvmOQXkO51g==",
+
+   345        "version": "0.25.4",
+   346:       "resolved": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.25.4.tgz",
+   347        "integrity": "sha512-6e0cvXwzOnVWJHq+mskP8DNSrKBr1bULBvnFLpc1KY+d+irZSgZ02TGse5FsafKS5jg2e4pbvK6TPXaF/A6+CA==",
+
+   362        "version": "0.25.4",
+   363:       "resolved": "https://registry.npmjs.org/@esbuild/netbsd-arm64/-/netbsd-arm64-0.25.4.tgz",
+   364        "integrity": "sha512-vUnkBYxZW4hL/ie91hSqaSNjulOnYXE1VSLusnvHg2u3jewJBz3YzB9+oCw8DABeVqZGg94t9tyZFoHma8gWZQ==",
+
+   379        "version": "0.25.4",
+   380:       "resolved": "https://registry.npmjs.org/@esbuild/netbsd-x64/-/netbsd-x64-0.25.4.tgz",
+   381        "integrity": "sha512-XAg8pIQn5CzhOB8odIcAm42QsOfa98SBeKUdo4xa8OvX8LbMZqEtgeWE9P/Wxt7MlG2QqvjGths+nq48TrUiKw==",
+
+   396        "version": "0.25.4",
+   397:       "resolved": "https://registry.npmjs.org/@esbuild/openbsd-arm64/-/openbsd-arm64-0.25.4.tgz",
+   398:       "integrity": "sha512-Ct2WcFEANlFDtp1nVAXSNBPDxyU+j7+tId//iHXU2f/lN5AmO4zLyhDcpR5Cz1r08mVxzt3Jpyt4PmXQ1O6+7A==",
+   399        "cpu": [
+
+   413        "version": "0.25.4",
+   414:       "resolved": "https://registry.npmjs.org/@esbuild/openbsd-x64/-/openbsd-x64-0.25.4.tgz",
+   415        "integrity": "sha512-xAGGhyOQ9Otm1Xu8NT1ifGLnA6M3sJxZ6ixylb+vIUVzvvd6GOALpwQrYrtlPouMqd/vSbgehz6HaVk4+7Afhw==",
+
+   430        "version": "0.25.4",
+   431:       "resolved": "https://registry.npmjs.org/@esbuild/sunos-x64/-/sunos-x64-0.25.4.tgz",
+   432        "integrity": "sha512-Mw+tzy4pp6wZEK0+Lwr76pWLjrtjmJyUB23tHKqEDP74R3q95luY/bXqXZeYl4NYlvwOqoRKlInQialgCKy67Q==",
+
+   447        "version": "0.25.4",
+   448:       "resolved": "https://registry.npmjs.org/@esbuild/win32-arm64/-/win32-arm64-0.25.4.tgz",
+   449        "integrity": "sha512-AVUP428VQTSddguz9dO9ngb+E5aScyg7nOeJDrF1HPYu555gmza3bDGMPhmVXL8svDSoqPCsCPjb265yG/kLKQ==",
+
+   464        "version": "0.25.4",
+   465:       "resolved": "https://registry.npmjs.org/@esbuild/win32-ia32/-/win32-ia32-0.25.4.tgz",
+   466        "integrity": "sha512-i1sW+1i+oWvQzSgfRcxxG2k4I9n3O9NRqy8U+uugaT2Dy7kLO9Y7wI72haOahxceMX8hZAzgGou1FhndRldxRg==",
+
+   481        "version": "0.25.4",
+   482:       "resolved": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.25.4.tgz",
+   483        "integrity": "sha512-nOT2vZNw6hJ+z43oP1SPea/G/6AbN6X+bGNhNuq8NtRHy4wsMhw765IKLNmnjek7GvjWBYQ8Q5VBoYTFg9y1UQ==",
+
+   498        "version": "1.6.9",
+   499:       "resolved": "https://registry.npmjs.org/@floating-ui/core/-/core-1.6.9.tgz",
+   500        "integrity": "sha512-uMXCuQ3BItDUbAMhIXw7UPXRfAlOAvZzdK9BWpE60MCn+Svt3aLn9jsPTi/WNGlRUu2uI0v5S7JiIUsbsvh3fw==",
+
+   507        "version": "1.6.13",
+   508:       "resolved": "https://registry.npmjs.org/@floating-ui/dom/-/dom-1.6.13.tgz",
+   509        "integrity": "sha512-umqzocjDgNRGTuO7Q8CU32dkHkECqI8ZdMZ5Swb6QAM0t5rnlrN3lGo1hdpscRd3WS8T6DKYK4ephgIH9iRh3w==",
+
+   517        "version": "2.1.2",
+   518:       "resolved": "https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.1.2.tgz",
+   519        "integrity": "sha512-06okr5cgPzMNBy+Ycse2A6udMi4bqwW/zgBF/rwjcNqWkyr82Mcg8b0vjX8OJpZFy/FKjJmw6wV7t44kK6kW7A==",
+
+   530        "version": "0.2.9",
+   531:       "resolved": "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.9.tgz",
+   532        "integrity": "sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==",
+
+   536        "version": "8.0.2",
+   537:       "resolved": "https://registry.npmjs.org/@isaacs/cliui/-/cliui-8.0.2.tgz",
+   538        "integrity": "sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==",
+
+   554        "version": "0.3.8",
+   555:       "resolved": "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.8.tgz",
+   556        "integrity": "sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==",
+
+   569        "version": "3.1.2",
+   570:       "resolved": "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz",
+   571        "integrity": "sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==",
+
+   579        "version": "1.2.1",
+   580:       "resolved": "https://registry.npmjs.org/@jridgewell/set-array/-/set-array-1.2.1.tgz",
+   581        "integrity": "sha512-R8gLRTZeyp03ymzP/6Lil/28tGeGEzhx1q2k703KGWRAI1VdvPIXdG70VJc2pAMw3NA6JKL5hhFu1sJX0Mnn/A==",
+
+   589        "version": "1.5.0",
+   590:       "resolved": "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.0.tgz",
+   591        "integrity": "sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==",
+
+   596        "version": "0.3.25",
+   597:       "resolved": "https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.25.tgz",
+   598        "integrity": "sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==",
+
+   607        "version": "14.2.29",
+   608:       "resolved": "https://registry.npmjs.org/@next/env/-/env-14.2.29.tgz",
+   609        "integrity": "sha512-UzgLR2eBfhKIQt0aJ7PWH7XRPYw7SXz0Fpzdl5THjUnvxy4kfBk9OU4RNPNiETewEEtaBcExNFNn1QWH8wQTjg==",
+
+   613        "version": "14.2.29",
+   614:       "resolved": "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-14.2.29.tgz",
+   615        "integrity": "sha512-wWtrAaxCVMejxPHFb1SK/PVV1WDIrXGs9ki0C/kUM8ubKHQm+3hU9MouUywCw8Wbhj3pewfHT2wjunLEr/TaLA==",
+
+   629        "version": "14.2.29",
+   630:       "resolved": "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-14.2.29.tgz",
+   631        "integrity": "sha512-7Z/jk+6EVBj4pNLw/JQrvZVrAh9Bv8q81zCFSfvTMZ51WySyEHWVpwCEaJY910LyBftv2F37kuDPQm0w9CEXyg==",
+
+   645        "version": "14.2.29",
+   646:       "resolved": "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-14.2.29.tgz",
+   647        "integrity": "sha512-o6hrz5xRBwi+G7JFTHc+RUsXo2lVXEfwh4/qsuWBMQq6aut+0w98WEnoNwAwt7hkEqegzvazf81dNiwo7KjITw==",
+
+   661        "version": "14.2.29",
+   662:       "resolved": "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-14.2.29.tgz",
+   663        "integrity": "sha512-9i+JEHBOVgqxQ92HHRFlSW1EQXqa/89IVjtHgOqsShCcB/ZBjTtkWGi+SGCJaYyWkr/lzu51NTMCfKuBf7ULNw==",
+
+   677        "version": "14.2.29",
+   678:       "resolved": "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-14.2.29.tgz",
+   679        "integrity": "sha512-B7JtMbkUwHijrGBOhgSQu2ncbCYq9E7PZ7MX58kxheiEOwdkM+jGx0cBb+rN5AeqF96JypEppK6i/bEL9T13lA==",
+
+   693        "version": "14.2.29",
+   694:       "resolved": "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-14.2.29.tgz",
+   695        "integrity": "sha512-yCcZo1OrO3aQ38B5zctqKU1Z3klOohIxug6qdiKO3Q3qNye/1n6XIs01YJ+Uf+TdpZQ0fNrOQI2HrTLF3Zprnw==",
+
+   709        "version": "14.2.29",
+   710:       "resolved": "https://registry.npmjs.org/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-14.2.29.tgz",
+   711        "integrity": "sha512-WnrfeOEtTVidI9Z6jDLy+gxrpDcEJtZva54LYC0bSKQqmyuHzl0ego+v0F/v2aXq0am67BRqo/ybmmt45Tzo4A==",
+
+   725        "version": "14.2.29",
+   726:       "resolved": "https://registry.npmjs.org/@next/swc-win32-ia32-msvc/-/swc-win32-ia32-msvc-14.2.29.tgz",
+   727        "integrity": "sha512-vkcriFROT4wsTdSeIzbxaZjTNTFKjSYmLd8q/GVH3Dn8JmYjUKOuKXHK8n+lovW/kdcpIvydO5GtN+It2CvKWA==",
+
+   741        "version": "14.2.29",
+   742:       "resolved": "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.2.29.tgz",
+   743        "integrity": "sha512-iPPwUEKnVs7pwR0EBLJlwxLD7TTHWS/AoVZx1l9ZQzfQciqaFEr5AlYzA2uB6Fyby1IF18t4PL0nTpB+k4Tzlw==",
+
+   757        "version": "2.1.5",
+   758:       "resolved": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz",
+   759        "integrity": "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==",
+
+   770        "version": "2.0.5",
+   771:       "resolved": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz",
+   772        "integrity": "sha512-RkhPPp2zrqDAQA/2jNhnztcPAlv64XdhIp7a7454A5ovI7Bukxgt7MX7udwAu3zg1DcpPU0rz3VV1SeaqvY4+A==",
+
+   779        "version": "1.2.8",
+   780:       "resolved": "https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz",
+   781        "integrity": "sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==",
+
+   792        "version": "0.11.0",
+   793:       "resolved": "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz",
+   794        "integrity": "sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==",
+
+   803        "version": "1.1.0",
+   804:       "resolved": "https://registry.npmjs.org/@radix-ui/number/-/number-1.1.0.tgz",
+   805        "integrity": "sha512-V3gRzhVNU1ldS5XhAPTom1fOIo4ccrjjJgmE+LI2h/WaFpHmx0MQApT+KZHnx8abG6Avtfcz4WoEciMnpFT3HQ==",
+
+   809        "version": "1.1.1",
+   810:       "resolved": "https://registry.npmjs.org/@radix-ui/primitive/-/primitive-1.1.1.tgz",
+   811:       "integrity": "sha512-SJ31y+Q/zAyShtXJc8x83i9TYdbAfHZ++tUZnvjJJqFjzsdUnKsxPL6IEtBlxKkU7yzer//GQtZSV4GbldL3YA==",
+   812        "license": "MIT"
+
+   815        "version": "1.1.2",
+   816:       "resolved": "https://registry.npmjs.org/@radix-ui/react-accessible-icon/-/react-accessible-icon-1.1.2.tgz",
+   817        "integrity": "sha512-+rnMO0SEfzkcHr93RshkQVpOA26MtGOv4pcS9QUnLg4F8+GDmCJ8c2FEPhPz5e7arf31EzbTqJxFbzg3qen14g==",
+
+   838        "version": "1.2.3",
+   839:       "resolved": "https://registry.npmjs.org/@radix-ui/react-accordion/-/react-accordion-1.2.3.tgz",
+   840        "integrity": "sha512-RIQ15mrcvqIkDARJeERSuXSry2N8uYnxkdDetpfmalT/+0ntOXLkFOsh9iwlAsCv+qcmhZjbdJogIm6WBa6c4A==",
+
+   869        "version": "1.1.6",
+   870:       "resolved": "https://registry.npmjs.org/@radix-ui/react-alert-dialog/-/react-alert-dialog-1.1.6.tgz",
+   871        "integrity": "sha512-p4XnPqgej8sZAAReCAKgz1REYZEBLR8hU9Pg27wFnCWIMc8g1ccCs0FjBcy05V15VTu8pAePw/VDYeOm/uZ6yQ==",
+
+   897        "version": "1.1.2",
+   898:       "resolved": "https://registry.npmjs.org/@radix-ui/react-arrow/-/react-arrow-1.1.2.tgz",
+   899        "integrity": "sha512-G+KcpzXHq24iH0uGG/pF8LyzpFJYGD4RfLjCIBfGdSLXvjLHST31RUiRVrupIBMvIppMgSzQ6l66iAxl03tdlg==",
+
+   920        "version": "1.1.2",
+   921:       "resolved": "https://registry.npmjs.org/@radix-ui/react-aspect-ratio/-/react-aspect-ratio-1.1.2.tgz",
+   922        "integrity": "sha512-TaJxYoCpxJ7vfEkv2PTNox/6zzmpKXT6ewvCuf2tTOIVN45/Jahhlld29Yw4pciOXS2Xq91/rSGEdmEnUWZCqA==",
+
+   943        "version": "1.1.3",
+   944:       "resolved": "https://registry.npmjs.org/@radix-ui/react-avatar/-/react-avatar-1.1.3.tgz",
+   945        "integrity": "sha512-Paen00T4P8L8gd9bNsRMw7Cbaz85oxiv+hzomsRZgFm2byltPFDtfcoqlWJ8GyZlIBWgLssJlzLCnKU0G0302g==",
+
+   969        "version": "1.1.4",
+   970:       "resolved": "https://registry.npmjs.org/@radix-ui/react-checkbox/-/react-checkbox-1.1.4.tgz",
+   971        "integrity": "sha512-wP0CPAHq+P5I4INKe3hJrIa1WoNqqrejzW+zoU0rOvo1b9gDEJJFl2rYfO1PYJUQCc2H1WZxIJmyv9BS8i5fLw==",
+
+   999        "version": "1.1.3",
+  1000:       "resolved": "https://registry.npmjs.org/@radix-ui/react-collapsible/-/react-collapsible-1.1.3.tgz",
+  1001        "integrity": "sha512-jFSerheto1X03MUC0g6R7LedNW9EEGWdg9W1+MlpkMLwGkgkbUXLPBH/KIuWKXUoeYRVY11llqbTBDzuLg7qrw==",
+
+  1029        "version": "1.1.2",
+  1030:       "resolved": "https://registry.npmjs.org/@radix-ui/react-collection/-/react-collection-1.1.2.tgz",
+  1031        "integrity": "sha512-9z54IEKRxIa9VityapoEYMuByaG42iSy1ZXlY2KcuLSEtq8x4987/N6m15ppoMffgZX72gER2uHe1D9Y6Unlcw==",
+
+  1055        "version": "1.1.1",
+  1056:       "resolved": "https://registry.npmjs.org/@radix-ui/react-compose-refs/-/react-compose-refs-1.1.1.tgz",
+  1057        "integrity": "sha512-Y9VzoRDSJtgFMUCoiZBDVo084VQ5hfpXxVE+NgkdNsjiDBByiImMZKKhxMwCbdHvhlENG6a833CbFkOQvTricw==",
+
+  1070        "version": "1.1.1",
+  1071:       "resolved": "https://registry.npmjs.org/@radix-ui/react-context/-/react-context-1.1.1.tgz",
+  1072        "integrity": "sha512-UASk9zi+crv9WteK/NU4PLvOoL3OuE6BWVKNF6hPRBtYBDXQ2u5iu3O59zUlJiTVvkyuycnqrztsHVJwcK9K+Q==",
+
+  1085        "version": "2.2.6",
+  1086:       "resolved": "https://registry.npmjs.org/@radix-ui/react-context-menu/-/react-context-menu-2.2.6.tgz",
+  1087        "integrity": "sha512-aUP99QZ3VU84NPsHeaFt4cQUNgJqFsLLOt/RbbWXszZ6MP0DpDyjkFZORr4RpAEx3sUBk+Kc8h13yGtC5Qw8dg==",
+
+  1113        "version": "1.1.6",
+  1114:       "resolved": "https://registry.npmjs.org/@radix-ui/react-dialog/-/react-dialog-1.1.6.tgz",
+  1115        "integrity": "sha512-/IVhJV5AceX620DUJ4uYVMymzsipdKBzo3edo+omeskCKGm9FRHM0ebIdbPnlQVJqyuHbuBltQUOG2mOTq2IYw==",
+
+  1149        "version": "1.1.0",
+  1150:       "resolved": "https://registry.npmjs.org/@radix-ui/react-direction/-/react-direction-1.1.0.tgz",
+  1151        "integrity": "sha512-BUuBvgThEiAXh2DWu93XsT+a3aWrGqolGlqqw5VU1kG7p/ZH2cuDlM1sRLNnY3QcBS69UIz2mcKhMxDsdewhjg==",
+
+  1164        "version": "1.1.5",
+  1165:       "resolved": "https://registry.npmjs.org/@radix-ui/react-dismissable-layer/-/react-dismissable-layer-1.1.5.tgz",
+  1166        "integrity": "sha512-E4TywXY6UsXNRhFrECa5HAvE5/4BFcGyfTyK36gP+pAW1ed7UTK4vKwdr53gAJYwqbfCWC6ATvJa3J3R/9+Qrg==",
+
+  1191        "version": "2.1.6",
+  1192:       "resolved": "https://registry.npmjs.org/@radix-ui/react-dropdown-menu/-/react-dropdown-menu-2.1.6.tgz",
+  1193        "integrity": "sha512-no3X7V5fD487wab/ZYSHXq3H37u4NVeLDKI/Ks724X/eEFSSEFYZxWgsIlr1UBeEyDaM29HM5x9p1Nv8DuTYPA==",
+
+  1220        "version": "1.1.1",
+  1221:       "resolved": "https://registry.npmjs.org/@radix-ui/react-focus-guards/-/react-focus-guards-1.1.1.tgz",
+  1222        "integrity": "sha512-pSIwfrT1a6sIoDASCSpFwOasEwKTZWDw/iBdtnqKO7v6FeOzYJ7U53cPzYFVR3geGGXgVHaH+CdngrrAzqUGxg==",
+
+  1235        "version": "1.1.2",
+  1236:       "resolved": "https://registry.npmjs.org/@radix-ui/react-focus-scope/-/react-focus-scope-1.1.2.tgz",
+  1237        "integrity": "sha512-zxwE80FCU7lcXUGWkdt6XpTTCKPitG1XKOwViTxHVKIJhZl9MvIl2dVHeZENCWD9+EdWv05wlaEkRXUykU27RA==",
+
+  1260        "version": "0.1.2",
+  1261:       "resolved": "https://registry.npmjs.org/@radix-ui/react-form/-/react-form-0.1.2.tgz",
+  1262        "integrity": "sha512-Owj1MjLq6/Rp85bgzYI+zRK5APLiWDtXDM63Z39FW15bNdehrcS+FjQgLGQYswFzipYu4GAA+t5w/VqvvNZ3ag==",
+
+  1288        "version": "1.1.6",
+  1289:       "resolved": "https://registry.npmjs.org/@radix-ui/react-hover-card/-/react-hover-card-1.1.6.tgz",
+  1290        "integrity": "sha512-E4ozl35jq0VRlrdc4dhHrNSV0JqBb4Jy73WAhBEK7JoYnQ83ED5r0Rb/XdVKw89ReAJN38N492BAPBZQ57VmqQ==",
+
+  1319        "version": "1.3.2",
+  1320:       "resolved": "https://registry.npmjs.org/@radix-ui/react-icons/-/react-icons-1.3.2.tgz",
+  1321        "integrity": "sha512-fyQIhGDhzfc9pK2kH6Pl9c4BDJGfMkPqkyIgYDthyNYoNg3wVhoJMMh19WS4Up/1KMPFVpNsT2q3WmXn2N1m6g==",
+
+  1328        "version": "1.1.0",
+  1329:       "resolved": "https://registry.npmjs.org/@radix-ui/react-id/-/react-id-1.1.0.tgz",
+  1330        "integrity": "sha512-EJUrI8yYh7WOjNOqpoJaf1jlFIH2LvtgAl+YcFqNCa+4hj64ZXmPkAKOFs/ukjz3byN6bdb/AVUqHkI8/uWWMA==",
+
+  1346        "version": "2.1.2",
+  1347:       "resolved": "https://registry.npmjs.org/@radix-ui/react-label/-/react-label-2.1.2.tgz",
+  1348        "integrity": "sha512-zo1uGMTaNlHehDyFQcDZXRJhUPDuukcnHz0/jnrup0JA6qL+AFpAnty+7VKa9esuU5xTblAZzTGYJKSKaBxBhw==",
+
+  1369        "version": "2.1.6",
+  1370:       "resolved": "https://registry.npmjs.org/@radix-ui/react-menu/-/react-menu-2.1.6.tgz",
+  1371        "integrity": "sha512-tBBb5CXDJW3t2mo9WlO7r6GTmWV0F0uzHZVFmlRmYpiSK1CDU5IKojP1pm7oknpBOrFZx/YgBRW9oorPO2S/Lg==",
+
+  1409        "version": "1.1.6",
+  1410:       "resolved": "https://registry.npmjs.org/@radix-ui/react-menubar/-/react-menubar-1.1.6.tgz",
+  1411        "integrity": "sha512-FHq7+3DlXwh/7FOM4i0G4bC4vPjiq89VEEvNF4VMLchGnaUuUbE5uKXMUCjdKaOghEEMeiKa5XCa2Pk4kteWmg==",
+
+  1441        "version": "1.2.5",
+  1442:       "resolved": "https://registry.npmjs.org/@radix-ui/react-navigation-menu/-/react-navigation-menu-1.2.5.tgz",
+  1443        "integrity": "sha512-myMHHQUZ3ZLTi8W381/Vu43Ia0NqakkQZ2vzynMmTUtQQ9kNkjzhOwkZC9TAM5R07OZUVIQyHC06f/9JZJpvvA==",
+
+  1477        "version": "1.1.6",
+  1478:       "resolved": "https://registry.npmjs.org/@radix-ui/react-popover/-/react-popover-1.1.6.tgz",
+  1479        "integrity": "sha512-NQouW0x4/GnkFJ/pRqsIS3rM/k97VzKnVb2jB7Gq7VEGPy5g7uNV1ykySFt7eWSp3i2uSGFwaJcvIRJBAHmmFg==",
+
+  1514        "version": "1.2.2",
+  1515:       "resolved": "https://registry.npmjs.org/@radix-ui/react-popper/-/react-popper-1.2.2.tgz",
+  1516        "integrity": "sha512-Rvqc3nOpwseCyj/rgjlJDYAgyfw7OC1tTkKn2ivhaMGcYt8FSBlahHOZak2i3QwkRXUXgGgzeEe2RuqeEHuHgA==",
+
+  1546        "version": "1.1.4",
+  1547:       "resolved": "https://registry.npmjs.org/@radix-ui/react-portal/-/react-portal-1.1.4.tgz",
+  1548        "integrity": "sha512-sn2O9k1rPFYVyKd5LAJfo96JlSGVFpa1fS6UuBJfrZadudiw5tAmru+n1x7aMRQ84qDM71Zh1+SzK5QwU0tJfA==",
+
+  1570        "version": "1.1.2",
+  1571:       "resolved": "https://registry.npmjs.org/@radix-ui/react-presence/-/react-presence-1.1.2.tgz",
+  1572        "integrity": "sha512-18TFr80t5EVgL9x1SwF/YGtfG+l0BS0PRAlCWBDoBEiDQjeKgnNZRVJp/oVBl24sr3Gbfwc/Qpj4OcWTQMsAEg==",
+
+  1594        "version": "2.0.2",
+  1595:       "resolved": "https://registry.npmjs.org/@radix-ui/react-primitive/-/react-primitive-2.0.2.tgz",
+  1596        "integrity": "sha512-Ec/0d38EIuvDF+GZjcMU/Ze6MxntVJYO/fRlCPhCaVUyPY9WTalHJw54tp9sXeJo3tlShWpy41vQRgLRGOuz+w==",
+
+  1617        "version": "1.1.2",
+  1618:       "resolved": "https://registry.npmjs.org/@radix-ui/react-progress/-/react-progress-1.1.2.tgz",
+  1619        "integrity": "sha512-u1IgJFQ4zNAUTjGdDL5dcl/U8ntOR6jsnhxKb5RKp5Ozwl88xKR9EqRZOe/Mk8tnx0x5tNUe2F+MzsyjqMg0MA==",
+
+  1641        "version": "1.2.3",
+  1642:       "resolved": "https://registry.npmjs.org/@radix-ui/react-radio-group/-/react-radio-group-1.2.3.tgz",
+  1643        "integrity": "sha512-xtCsqt8Rp09FK50ItqEqTJ7Sxanz8EM8dnkVIhJrc/wkMMomSmXHvYbhv3E7Zx4oXh98aaLt9W679SUYXg4IDA==",
+
+  1673        "version": "1.1.2",
+  1674:       "resolved": "https://registry.npmjs.org/@radix-ui/react-roving-focus/-/react-roving-focus-1.1.2.tgz",
+  1675        "integrity": "sha512-zgMQWkNO169GtGqRvYrzb0Zf8NhMHS2DuEB/TiEmVnpr5OqPU3i8lfbxaAmC2J/KYuIQxyoQQ6DxepyXp61/xw==",
+
+  1704        "version": "1.2.3",
+  1705:       "resolved": "https://registry.npmjs.org/@radix-ui/react-scroll-area/-/react-scroll-area-1.2.3.tgz",
+  1706        "integrity": "sha512-l7+NNBfBYYJa9tNqVcP2AGvxdE3lmE6kFTBXdvHgUaZuy+4wGCL1Cl2AfaR7RKyimj7lZURGLwFO59k4eBnDJQ==",
+
+  1735        "version": "2.1.6",
+  1736:       "resolved": "https://registry.npmjs.org/@radix-ui/react-select/-/react-select-2.1.6.tgz",
+  1737        "integrity": "sha512-T6ajELxRvTuAMWH0YmRJ1qez+x4/7Nq7QIx7zJ0VK3qaEWdnWpNbEDnmWldG1zBDwqrLy5aLMUWcoGirVj5kMg==",
+
+  1778        "version": "1.1.2",
+  1779:       "resolved": "https://registry.npmjs.org/@radix-ui/react-separator/-/react-separator-1.1.2.tgz",
+  1780        "integrity": "sha512-oZfHcaAp2Y6KFBX6I5P1u7CQoy4lheCGiYj+pGFrHy8E/VNRb5E39TkTr3JrV520csPBTZjkuKFdEsjS5EUNKQ==",
+
+  1801        "version": "1.2.3",
+  1802:       "resolved": "https://registry.npmjs.org/@radix-ui/react-slider/-/react-slider-1.2.3.tgz",
+  1803        "integrity": "sha512-nNrLAWLjGESnhqBqcCNW4w2nn7LxudyMzeB6VgdyAnFLC6kfQgnAjSL2v6UkQTnDctJBlxrmxfplWS4iYjdUTw==",
+
+  1834        "version": "1.1.2",
+  1835:       "resolved": "https://registry.npmjs.org/@radix-ui/react-slot/-/react-slot-1.1.2.tgz",
+  1836        "integrity": "sha512-YAKxaiGsSQJ38VzKH86/BPRC4rh+b1Jpa+JneA5LRE7skmLPNAyeG8kPJj/oo4STLvlrs8vkf/iYyc3A5stYCQ==",
+
+  1852        "version": "1.1.3",
+  1853:       "resolved": "https://registry.npmjs.org/@radix-ui/react-switch/-/react-switch-1.1.3.tgz",
+  1854        "integrity": "sha512-1nc+vjEOQkJVsJtWPSiISGT6OKm4SiOdjMo+/icLxo2G4vxz1GntC5MzfL4v8ey9OEfw787QCD1y3mUv0NiFEQ==",
+
+  1881        "version": "1.1.3",
+  1882:       "resolved": "https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.1.3.tgz",
+  1883        "integrity": "sha512-9mFyI30cuRDImbmFF6O2KUJdgEOsGh9Vmx9x/Dh9tOhL7BngmQPQfwW4aejKm5OHpfWIdmeV6ySyuxoOGjtNng==",
+
+  1911        "version": "1.2.6",
+  1912:       "resolved": "https://registry.npmjs.org/@radix-ui/react-toast/-/react-toast-1.2.6.tgz",
+  1913        "integrity": "sha512-gN4dpuIVKEgpLn1z5FhzT9mYRUitbfZq9XqN/7kkBMUgFTzTG8x/KszWJugJXHcwxckY8xcKDZPz7kG3o6DsUA==",
+
+  1945        "version": "1.1.2",
+  1946:       "resolved": "https://registry.npmjs.org/@radix-ui/react-toggle/-/react-toggle-1.1.2.tgz",
+  1947        "integrity": "sha512-lntKchNWx3aCHuWKiDY+8WudiegQvBpDRAYL8dKLRvKEH8VOpl0XX6SSU/bUBqIRJbcTy4+MW06Wv8vgp10rzQ==",
+
+  1970        "version": "1.1.2",
+  1971:       "resolved": "https://registry.npmjs.org/@radix-ui/react-toggle-group/-/react-toggle-group-1.1.2.tgz",
+  1972        "integrity": "sha512-JBm6s6aVG/nwuY5eadhU2zDi/IwYS0sDM5ZWb4nymv/hn3hZdkw+gENn0LP4iY1yCd7+bgJaCwueMYJIU3vk4A==",
+
+  1999        "version": "1.1.2",
+  2000:       "resolved": "https://registry.npmjs.org/@radix-ui/react-toolbar/-/react-toolbar-1.1.2.tgz",
+  2001        "integrity": "sha512-wT20eQ7ScFk+kBMDmHp+lMk18cgxhu35b2Bn5deUcPxiVwfn5vuZgi7NGcHu8ocdkinahmp4FaSZysKDyRVPWQ==",
+
+  2028        "version": "1.1.8",
+  2029:       "resolved": "https://registry.npmjs.org/@radix-ui/react-tooltip/-/react-tooltip-1.1.8.tgz",
+  2030        "integrity": "sha512-YAA2cu48EkJZdAMHC0dqo9kialOcRStbtiY4nJPaht7Ptrhcvpo+eDChaM6BIs8kL6a8Z5l5poiqLnXcNduOkA==",
+
+  2062        "version": "1.1.0",
+  2063:       "resolved": "https://registry.npmjs.org/@radix-ui/react-use-callback-ref/-/react-use-callback-ref-1.1.0.tgz",
+  2064        "integrity": "sha512-CasTfvsy+frcFkbXtSJ2Zu9JHpN8TYKxkgJGWbjiZhFivxaeW7rMeZt7QELGVLaYVfFMsKHjb7Ak0nMEe+2Vfw==",
+
+  2077        "version": "1.1.0",
+  2078:       "resolved": "https://registry.npmjs.org/@radix-ui/react-use-controllable-state/-/react-use-controllable-state-1.1.0.tgz",
+  2079        "integrity": "sha512-MtfMVJiSr2NjzS0Aa90NPTnvTSg6C/JLCV7ma0W6+OMV78vd8OyRpID+Ng9LxzsPbLeuBnWBA1Nq30AtBIDChw==",
+
+  2095        "version": "1.1.0",
+  2096:       "resolved": "https://registry.npmjs.org/@radix-ui/react-use-escape-keydown/-/react-use-escape-keydown-1.1.0.tgz",
+  2097        "integrity": "sha512-L7vwWlR1kTTQ3oh7g1O0CBF3YCyyTj8NmhLR+phShpyA50HCfBFKVJTpshm9PzLiKmehsrQzTYTpX9HvmC9rhw==",
+
+  2113        "version": "1.1.0",
+  2114:       "resolved": "https://registry.npmjs.org/@radix-ui/react-use-layout-effect/-/react-use-layout-effect-1.1.0.tgz",
+  2115        "integrity": "sha512-+FPE0rOdziWSrH9athwI1R0HDVbWlEhd+FR+aSDk4uWGmSJ9Z54sdZVDQPZAinJhJXwfT+qnj969mCsT2gfm5w==",
+
+  2128        "version": "1.1.0",
+  2129:       "resolved": "https://registry.npmjs.org/@radix-ui/react-use-previous/-/react-use-previous-1.1.0.tgz",
+  2130        "integrity": "sha512-Z/e78qg2YFnnXcW88A4JmTtm4ADckLno6F7OXotmkQfeuCVaKuYzqAATPhVzl3delXE7CxIV8shofPn3jPc5Og==",
+
+  2143        "version": "1.1.0",
+  2144:       "resolved": "https://registry.npmjs.org/@radix-ui/react-use-rect/-/react-use-rect-1.1.0.tgz",
+  2145        "integrity": "sha512-0Fmkebhr6PiseyZlYAOtLS+nb7jLmpqTrJyv61Pe68MKYW6OWdRE2kI70TaYY27u7H0lajqM3hSMMLFq18Z7nQ==",
+
+  2161        "version": "1.1.0",
+  2162:       "resolved": "https://registry.npmjs.org/@radix-ui/react-use-size/-/react-use-size-1.1.0.tgz",
+  2163        "integrity": "sha512-XW3/vWuIXHa+2Uwcc2ABSfcCledmXhhQPlGbfcRXbiUQI5Icjcg19BGCZVKKInYbvUCut/ufbbLLPFC5cbb1hw==",
+
+  2179        "version": "1.1.2",
+  2180:       "resolved": "https://registry.npmjs.org/@radix-ui/react-visually-hidden/-/react-visually-hidden-1.1.2.tgz",
+  2181        "integrity": "sha512-1SzA4ns2M1aRlvxErqhLHsBHoS5eI5UUcI2awAMgGUp4LoaoWOKYmvqDY2s/tltuPkh3Yk77YF/r3IRj+Amx4Q==",
+
+  2202        "version": "1.1.0",
+  2203:       "resolved": "https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.0.tgz",
+  2204        "integrity": "sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==",
+
+  2208        "version": "1.22.0",
+  2209:       "resolved": "https://registry.npmjs.org/@remix-run/router/-/router-1.22.0.tgz",
+  2210        "integrity": "sha512-MBOl8MeOzpK0HQQQshKB7pABXbmyHizdTpqnrIseTbsv0nAepwC2ENZa1aaBExNQcpLoXmWthhak8SABLzvGPw==",
+
+  2218        "version": "4.41.0",
+  2219:       "resolved": "https://registry.npmjs.org/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.41.0.tgz",
+  2220        "integrity": "sha512-KxN+zCjOYHGwCl4UCtSfZ6jrq/qi88JDUtiEFk8LELEHq2Egfc/FgW+jItZiOLRuQfb/3xJSgFuNPC9jzggX+A==",
+
+  2232        "version": "4.41.0",
+  2233:       "resolved": "https://registry.npmjs.org/@rollup/rollup-android-arm64/-/rollup-android-arm64-4.41.0.tgz",
+  2234        "integrity": "sha512-yDvqx3lWlcugozax3DItKJI5j05B0d4Kvnjx+5mwiUpWramVvmAByYigMplaoAQ3pvdprGCTCE03eduqE/8mPQ==",
+
+  2246        "version": "4.41.0",
+  2247:       "resolved": "https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.41.0.tgz",
+  2248        "integrity": "sha512-2KOU574vD3gzcPSjxO0eyR5iWlnxxtmW1F5CkNOHmMlueKNCQkxR6+ekgWyVnz6zaZihpUNkGxjsYrkTJKhkaw==",
+
+  2260        "version": "4.41.0",
+  2261:       "resolved": "https://registry.npmjs.org/@rollup/rollup-darwin-x64/-/rollup-darwin-x64-4.41.0.tgz",
+  2262        "integrity": "sha512-gE5ACNSxHcEZyP2BA9TuTakfZvULEW4YAOtxl/A/YDbIir/wPKukde0BNPlnBiP88ecaN4BJI2TtAd+HKuZPQQ==",
+
+  2274        "version": "4.41.0",
+  2275:       "resolved": "https://registry.npmjs.org/@rollup/rollup-freebsd-arm64/-/rollup-freebsd-arm64-4.41.0.tgz",
+  2276        "integrity": "sha512-GSxU6r5HnWij7FoSo7cZg3l5GPg4HFLkzsFFh0N/b16q5buW1NAWuCJ+HMtIdUEi6XF0qH+hN0TEd78laRp7Dg==",
+
+  2288        "version": "4.41.0",
+  2289:       "resolved": "https://registry.npmjs.org/@rollup/rollup-freebsd-x64/-/rollup-freebsd-x64-4.41.0.tgz",
+  2290        "integrity": "sha512-KGiGKGDg8qLRyOWmk6IeiHJzsN/OYxO6nSbT0Vj4MwjS2XQy/5emsmtoqLAabqrohbgLWJ5GV3s/ljdrIr8Qjg==",
+
+  2302        "version": "4.41.0",
+  2303:       "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-arm-gnueabihf/-/rollup-linux-arm-gnueabihf-4.41.0.tgz",
+  2304        "integrity": "sha512-46OzWeqEVQyX3N2/QdiU/CMXYDH/lSHpgfBkuhl3igpZiaB3ZIfSjKuOnybFVBQzjsLwkus2mjaESy8H41SzvA==",
+
+  2316        "version": "4.41.0",
+  2317:       "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-arm-musleabihf/-/rollup-linux-arm-musleabihf-4.41.0.tgz",
+  2318        "integrity": "sha512-lfgW3KtQP4YauqdPpcUZHPcqQXmTmH4nYU0cplNeW583CMkAGjtImw4PKli09NFi2iQgChk4e9erkwlfYem6Lg==",
+
+  2330        "version": "4.41.0",
+  2331:       "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-arm64-gnu/-/rollup-linux-arm64-gnu-4.41.0.tgz",
+  2332        "integrity": "sha512-nn8mEyzMbdEJzT7cwxgObuwviMx6kPRxzYiOl6o/o+ChQq23gfdlZcUNnt89lPhhz3BYsZ72rp0rxNqBSfqlqw==",
+
+  2344        "version": "4.41.0",
+  2345:       "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-arm64-musl/-/rollup-linux-arm64-musl-4.41.0.tgz",
+  2346        "integrity": "sha512-l+QK99je2zUKGd31Gh+45c4pGDAqZSuWQiuRFCdHYC2CSiO47qUWsCcenrI6p22hvHZrDje9QjwSMAFL3iwXwQ==",
+
+  2358        "version": "4.41.0",
+  2359:       "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-loongarch64-gnu/-/rollup-linux-loongarch64-gnu-4.41.0.tgz",
+  2360        "integrity": "sha512-WbnJaxPv1gPIm6S8O/Wg+wfE/OzGSXlBMbOe4ie+zMyykMOeqmgD1BhPxZQuDqwUN+0T/xOFtL2RUWBspnZj3w==",
+
+  2372        "version": "4.41.0",
+  2373:       "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-powerpc64le-gnu/-/rollup-linux-powerpc64le-gnu-4.41.0.tgz",
+  2374        "integrity": "sha512-eRDWR5t67/b2g8Q/S8XPi0YdbKcCs4WQ8vklNnUYLaSWF+Cbv2axZsp4jni6/j7eKvMLYCYdcsv8dcU+a6QNFg==",
+
+  2386        "version": "4.41.0",
+  2387:       "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-riscv64-gnu/-/rollup-linux-riscv64-gnu-4.41.0.tgz",
+  2388        "integrity": "sha512-TWrZb6GF5jsEKG7T1IHwlLMDRy2f3DPqYldmIhnA2DVqvvhY2Ai184vZGgahRrg8k9UBWoSlHv+suRfTN7Ua4A==",
+
+  2400        "version": "4.41.0",
+  2401:       "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-riscv64-musl/-/rollup-linux-riscv64-musl-4.41.0.tgz",
+  2402        "integrity": "sha512-ieQljaZKuJpmWvd8gW87ZmSFwid6AxMDk5bhONJ57U8zT77zpZ/TPKkU9HpnnFrM4zsgr4kiGuzbIbZTGi7u9A==",
+
+  2414        "version": "4.41.0",
+  2415:       "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-s390x-gnu/-/rollup-linux-s390x-gnu-4.41.0.tgz",
+  2416        "integrity": "sha512-/L3pW48SxrWAlVsKCN0dGLB2bi8Nv8pr5S5ocSM+S0XCn5RCVCXqi8GVtHFsOBBCSeR+u9brV2zno5+mg3S4Aw==",
+
+  2428        "version": "4.41.0",
+  2429:       "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.41.0.tgz",
+  2430        "integrity": "sha512-XMLeKjyH8NsEDCRptf6LO8lJk23o9wvB+dJwcXMaH6ZQbbkHu2dbGIUindbMtRN6ux1xKi16iXWu6q9mu7gDhQ==",
+
+  2442        "version": "4.41.0",
+  2443:       "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.41.0.tgz",
+  2444        "integrity": "sha512-m/P7LycHZTvSQeXhFmgmdqEiTqSV80zn6xHaQ1JSqwCtD1YGtwEK515Qmy9DcB2HK4dOUVypQxvhVSy06cJPEg==",
+
+  2456        "version": "4.41.0",
+  2457:       "resolved": "https://registry.npmjs.org/@rollup/rollup-win32-arm64-msvc/-/rollup-win32-arm64-msvc-4.41.0.tgz",
+  2458        "integrity": "sha512-4yodtcOrFHpbomJGVEqZ8fzD4kfBeCbpsUy5Pqk4RluXOdsWdjLnjhiKy2w3qzcASWd04fp52Xz7JKarVJ5BTg==",
+
+  2470        "version": "4.41.0",
+  2471:       "resolved": "https://registry.npmjs.org/@rollup/rollup-win32-ia32-msvc/-/rollup-win32-ia32-msvc-4.41.0.tgz",
+  2472        "integrity": "sha512-tmazCrAsKzdkXssEc65zIE1oC6xPHwfy9d5Ta25SRCDOZS+I6RypVVShWALNuU9bxIfGA0aqrmzlzoM5wO5SPQ==",
+
+  2484        "version": "4.41.0",
+  2485:       "resolved": "https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.41.0.tgz",
+  2486        "integrity": "sha512-h1J+Yzjo/X+0EAvR2kIXJDuTuyT7drc+t2ALY0nIcGPbTatNOf0VWdhEA2Z4AAjv6X1NJV7SYo5oCTYRJhSlVA==",
+
+  2498        "version": "2.67.3",
+  2499:       "resolved": "https://registry.npmjs.org/@supabase/auth-js/-/auth-js-2.67.3.tgz",
+  2500        "integrity": "sha512-NJDaW8yXs49xMvWVOkSIr8j46jf+tYHV0wHhrwOaLLMZSFO4g6kKAf+MfzQ2RaD06OCUkUHIzctLAxjTgEVpzw==",
+
+  2507        "version": "2.4.4",
+  2508:       "resolved": "https://registry.npmjs.org/@supabase/functions-js/-/functions-js-2.4.4.tgz",
+  2509        "integrity": "sha512-WL2p6r4AXNGwop7iwvul2BvOtuJ1YQy8EbOd0dhG1oN1q8el/BIRSFCFnWAMM/vJJlHWLi4ad22sKbKr9mvjoA==",
+
+  2516        "version": "2.6.15",
+  2517:       "resolved": "https://registry.npmjs.org/@supabase/node-fetch/-/node-fetch-2.6.15.tgz",
+  2518        "integrity": "sha512-1ibVeYUacxWYi9i0cf5efil6adJ9WRyZBLivgjs+AUpewx1F3xPi7gLgaASI2SmIQxPoCEjAsLAzKPgMJVgOUQ==",
+
+  2528        "version": "1.18.1",
+  2529:       "resolved": "https://registry.npmjs.org/@supabase/postgrest-js/-/postgrest-js-1.18.1.tgz",
+  2530        "integrity": "sha512-dWDnoC0MoDHKhaEOrsEKTadWQcBNknZVQcSgNE/Q2wXh05mhCL1ut/jthRUrSbYcqIw/CEjhaeIPp7dLarT0bg==",
+
+  2537        "version": "2.11.2",
+  2538:       "resolved": "https://registry.npmjs.org/@supabase/realtime-js/-/realtime-js-2.11.2.tgz",
+  2539        "integrity": "sha512-u/XeuL2Y0QEhXSoIPZZwR6wMXgB+RQbJzG9VErA3VghVt7uRfSVsjeqd7m5GhX3JR6dM/WRmLbVR8URpDWG4+w==",
+
+  2549        "version": "0.5.2",
+  2550:       "resolved": "https://registry.npmjs.org/@supabase/ssr/-/ssr-0.5.2.tgz",
+  2551        "integrity": "sha512-n3plRhr2Bs8Xun1o4S3k1CDv17iH5QY9YcoEvXX3bxV1/5XSasA0mNXYycFmADIdtdE6BG9MRjP5CGIs8qxC8A==",
+
+  2562        "version": "2.7.1",
+  2563:       "resolved": "https://registry.npmjs.org/@supabase/storage-js/-/storage-js-2.7.1.tgz",
+  2564        "integrity": "sha512-asYHcyDR1fKqrMpytAS1zjyEfvxuOIp1CIXX7ji4lHHcJKqyk+sLl/Vxgm4sN6u8zvuUtae9e4kDxQP2qrwWBA==",
+
+  2571        "version": "2.48.1",
+  2572:       "resolved": "https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.48.1.tgz",
+  2573        "integrity": "sha512-VMD+CYk/KxfwGbI4fqwSUVA7CLr1izXpqfFerhnYPSi6LEKD8GoR4kuO5Cc8a+N43LnfSQwLJu4kVm2e4etEmA==",
+
+  2585        "version": "0.1.3",
+  2586:       "resolved": "https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz",
+  2587        "integrity": "sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==",
+
+  2591        "version": "0.5.5",
+  2592:       "resolved": "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.5.tgz",
+  2593        "integrity": "sha512-KGYxvIOXcceOAbEk4bi/dVLEK9z8sZ0uBB3Il5b1rhfClSpcX0yfRO0KmTkqR2cnQDymwLB+25ZyMzICg/cm/A==",
+
+  2601        "version": "0.6.0",
+  2602:       "resolved": "https://registry.npmjs.org/@types/cookie/-/cookie-0.6.0.tgz",
+  2603        "integrity": "sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==",
+
+  2607        "version": "4.1.12",
+  2608:       "resolved": "https://registry.npmjs.org/@types/debug/-/debug-4.1.12.tgz",
+  2609        "integrity": "sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==",
+
+  2616        "version": "1.0.7",
+  2617:       "resolved": "https://registry.npmjs.org/@types/estree/-/estree-1.0.7.tgz",
+  2618        "integrity": "sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==",
+
+  2623        "version": "2.1.0",
+  2624:       "resolved": "https://registry.npmjs.org/@types/ms/-/ms-2.1.0.tgz",
+  2625        "integrity": "sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==",
+
+  2629        "version": "20.17.19",
+  2630:       "resolved": "https://registry.npmjs.org/@types/node/-/node-20.17.19.tgz",
+  2631        "integrity": "sha512-LEwC7o1ifqg/6r2gn9Dns0f1rhK+fPFDoMiceTJ6kWmVk6bgXBI/9IOWfVan4WiAavK9pIVWdX0/e3J+eEUh5A==",
+
+  2638        "version": "1.6.6",
+  2639:       "resolved": "https://registry.npmjs.org/@types/phoenix/-/phoenix-1.6.6.tgz",
+  2640        "integrity": "sha512-PIzZZlEppgrpoT2QgbnDU+MMzuR6BbCjllj0bM70lWoejMeNJAxCchxnv7J3XFkI8MpygtRpzXrIlmWUBclP5A==",
+
+  2644        "version": "15.7.14",
+  2645:       "resolved": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.14.tgz",
+  2646        "integrity": "sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==",
+
+  2651        "version": "18.3.18",
+  2652:       "resolved": "https://registry.npmjs.org/@types/react/-/react-18.3.18.tgz",
+  2653        "integrity": "sha512-t4yC+vtgnkYjNSKlFx1jkAhH8LgTo2N/7Qvi83kdEaUtMDiwpbLAktKDaAMlRcJ5eSxZkH74eEGt1ky31d7kfQ==",
+
+  2662        "version": "18.3.5",
+  2663:       "resolved": "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.3.5.tgz",
+  2664        "integrity": "sha512-P4t6saawp+b/dFrUr2cvkVsfvPguwsxtH6dNIYRllMsefqFzkZk5UIjzyDOv5g1dXIPdG4Sp1yCR4Z6RCUsG/Q==",
+
+  2672        "version": "8.5.14",
+  2673:       "resolved": "https://registry.npmjs.org/@types/ws/-/ws-8.5.14.tgz",
+  2674        "integrity": "sha512-bd/YFLW+URhBzMXurx7lWByOu+xzU9+kb3RboOteXYDfW+tr+JZa99OyNmPINEGB/ahzKrEuc8rcv4gnpJmxTw==",
+
+  2681        "version": "1.3.8",
+  2682:       "resolved": "https://registry.npmjs.org/accepts/-/accepts-1.3.8.tgz",
+  2683        "integrity": "sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==",
+
+  2694        "version": "8.14.0",
+  2695:       "resolved": "https://registry.npmjs.org/acorn/-/acorn-8.14.0.tgz",
+  2696        "integrity": "sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==",
+
+  2706        "version": "6.1.0",
+  2707:       "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.1.0.tgz",
+  2708        "integrity": "sha512-7HSX4QQb4CspciLpVFwyRe79O3xsIZDDLER21kERQ71oaPodF8jL725AgJMFAYbooIqolJoRLuM81SpeUkpkvA==",
+
+  2714        "funding": {
+  2715:         "url": "https://github.com/chalk/ansi-regex?sponsor=1"
+  2716        }
+
+  2719        "version": "6.2.1",
+  2720:       "resolved": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.1.tgz",
+  2721        "integrity": "sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==",
+
+  2727        "funding": {
+  2728:         "url": "https://github.com/chalk/ansi-styles?sponsor=1"
+  2729        }
+
+  2732        "version": "1.3.0",
+  2733:       "resolved": "https://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz",
+  2734        "integrity": "sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A==",
+
+  2739        "version": "3.1.3",
+  2740:       "resolved": "https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz",
+  2741        "integrity": "sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==",
+
+  2753        "version": "5.0.2",
+  2754:       "resolved": "https://registry.npmjs.org/arg/-/arg-5.0.2.tgz",
+  2755        "integrity": "sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==",
+
+  2760        "version": "1.2.4",
+  2761:       "resolved": "https://registry.npmjs.org/aria-hidden/-/aria-hidden-1.2.4.tgz",
+  2762        "integrity": "sha512-y+CcFFwelSXpLZk/7fMB2mUbGtX9lKycf1MWJ7CaTIERyitVlyQx6C+sxcROU2BAJ24OiZyK+8wj2i8AlBoS3A==",
+
+  2772        "version": "1.1.1",
+  2773:       "resolved": "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz",
+  2774        "integrity": "sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==",
+
+  2778        "version": "0.4.0",
+  2779:       "resolved": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz",
+  2780        "integrity": "sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==",
+
+  2784        "version": "10.4.20",
+  2785:       "resolved": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.20.tgz",
+  2786        "integrity": "sha512-XY25y5xSv/wEoqzDyXXME4AFfkZI0P23z6Fs3YgymDnKJkCGOnkL0iTxCa85UTqaSgfcqyf3UA6+c7wUvx/16g==",
+
+  2789            "type": "opencollective",
+  2790:           "url": "https://opencollective.com/postcss/"
+  2791          },
+
+  2793            "type": "tidelift",
+  2794:           "url": "https://tidelift.com/funding/github/npm/autoprefixer"
+  2795          },
+
+  2797            "type": "github",
+  2798:           "url": "https://github.com/sponsors/ai"
+  2799          }
+
+  2821        "version": "1.9.0",
+  2822:       "resolved": "https://registry.npmjs.org/axios/-/axios-1.9.0.tgz",
+  2823        "integrity": "sha512-re4CqKTJaURpzbLHtIi6XpDv20/CnpXOtjRY5/CU32L8gU8ek9UIivcfvSWvmKEngmVbrUtPpdDwWDWL7DNHvg==",
+
+  2832        "version": "1.0.2",
+  2833:       "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz",
+  2834        "integrity": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==",
+
+  2838        "version": "2.3.0",
+  2839:       "resolved": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz",
+  2840        "integrity": "sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==",
+
+  2846        "funding": {
+  2847:         "url": "https://github.com/sponsors/sindresorhus"
+  2848        }
+
+  2851        "version": "1.20.3",
+  2852:       "resolved": "https://registry.npmjs.org/body-parser/-/body-parser-1.20.3.tgz",
+  2853        "integrity": "sha512-7rAxByjUMqQ3/bHJy7D6OGXvx/MMc4IqBn/X0fcM1QUcAItpZrBEYhWGem+tzXH90c+G01ypMcYJBO9Y30203g==",
+
+  2875        "version": "6.13.0",
+  2876:       "resolved": "https://registry.npmjs.org/qs/-/qs-6.13.0.tgz",
+  2877        "integrity": "sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==",
+
+  2885        "funding": {
+  2886:         "url": "https://github.com/sponsors/ljharb"
+  2887        }
+
+  2890        "version": "2.0.1",
+  2891:       "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.1.tgz",
+  2892        "integrity": "sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==",
+
+  2900        "version": "3.0.3",
+  2901:       "resolved": "https://registry.npmjs.org/braces/-/braces-3.0.3.tgz",
+  2902        "integrity": "sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==",
+
+  2912        "version": "4.24.4",
+  2913:       "resolved": "https://registry.npmjs.org/browserslist/-/browserslist-4.24.4.tgz",
+  2914        "integrity": "sha512-KDi1Ny1gSePi1vm0q4oxSF8b4DR44GF4BbmS2YdhPLOEqd8pDviZOGH/GsmRwoWJ2+5Lr085X7naowMwKHDG1A==",
+
+  2917            "type": "opencollective",
+  2918:           "url": "https://opencollective.com/browserslist"
+  2919          },
+
+  2921            "type": "tidelift",
+  2922:           "url": "https://tidelift.com/funding/github/npm/browserslist"
+  2923          },
+
+  2925            "type": "github",
+  2926:           "url": "https://github.com/sponsors/ai"
+  2927          }
+
+  2944        "version": "1.6.0",
+  2945:       "resolved": "https://registry.npmjs.org/busboy/-/busboy-1.6.0.tgz",
+  2946        "integrity": "sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==",
+
+  2955        "version": "3.1.2",
+  2956:       "resolved": "https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz",
+  2957        "integrity": "sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==",
+
+  2964        "version": "1.0.2",
+  2965:       "resolved": "https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz",
+  2966        "integrity": "sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==",
+
+  2977        "version": "1.0.3",
+  2978:       "resolved": "https://registry.npmjs.org/call-bound/-/call-bound-1.0.3.tgz",
+  2979        "integrity": "sha512-YTd+6wGlNlPxSuri7Y6X8tY2dmm12UMH66RpKMhiX6rsk5wXXnYgbUcOt8kiS31/AjfoTOvCsE+w8nZQLQnzHA==",
+
+  2988        "funding": {
+  2989:         "url": "https://github.com/sponsors/ljharb"
+  2990        }
+
+  2993        "version": "2.0.1",
+  2994:       "resolved": "https://registry.npmjs.org/camelcase-css/-/camelcase-css-2.0.1.tgz",
+  2995        "integrity": "sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==",
+
+  3003        "version": "1.0.30001700",
+  3004:       "resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001700.tgz",
+  3005        "integrity": "sha512-2S6XIXwaE7K7erT8dY+kLQcpa5ms63XlRkMkReXjle+kf6c5g38vyMl+Z5y8dSxOFDhcFe+nxnn261PLxBSQsQ==",
+
+  3008            "type": "opencollective",
+  3009:           "url": "https://opencollective.com/browserslist"
+  3010          },
+
+  3012            "type": "tidelift",
+  3013:           "url": "https://tidelift.com/funding/github/npm/caniuse-lite"
+  3014          },
+
+  3016            "type": "github",
+  3017:           "url": "https://github.com/sponsors/ai"
+  3018          }
+
+  3023        "version": "3.6.0",
+  3024:       "resolved": "https://registry.npmjs.org/chokidar/-/chokidar-3.6.0.tgz",
+  3025        "integrity": "sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==",
+
+  3040        "funding": {
+  3041:         "url": "https://paulmillr.com/funding/"
+  3042        },
+
+  3048        "version": "5.1.2",
+  3049:       "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
+  3050        "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
+
+  3061        "version": "0.7.1",
+  3062:       "resolved": "https://registry.npmjs.org/class-variance-authority/-/class-variance-authority-0.7.1.tgz",
+  3063        "integrity": "sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==",
+
+  3068        "funding": {
+  3069:         "url": "https://polar.sh/cva"
+  3070        }
+
+  3073        "version": "0.0.1",
+  3074:       "resolved": "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz",
+  3075        "integrity": "sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==",
+
+  3079        "version": "2.1.1",
+  3080:       "resolved": "https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz",
+  3081        "integrity": "sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==",
+
+  3088        "version": "1.0.4",
+  3089:       "resolved": "https://registry.npmjs.org/cmdk/-/cmdk-1.0.4.tgz",
+  3090        "integrity": "sha512-AnsjfHyHpQ/EFeAnG216WY7A5LiYCoZzCSygiLvfXC3H3LFGCprErteUcszaVluGOhuOTbJS3jWHrSDYPBBygg==",
+
+  3104        "version": "2.0.1",
+  3105:       "resolved": "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz",
+  3106        "integrity": "sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==",
+
+  3117        "version": "1.1.4",
+  3118:       "resolved": "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz",
+  3119        "integrity": "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==",
+
+  3124        "version": "1.0.8",
+  3125:       "resolved": "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz",
+  3126        "integrity": "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==",
+
+  3136        "version": "4.1.1",
+  3137:       "resolved": "https://registry.npmjs.org/commander/-/commander-4.1.1.tgz",
+  3138        "integrity": "sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==",
+
+  3146        "version": "0.0.1",
+  3147:       "resolved": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz",
+  3148        "integrity": "sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==",
+
+  3152        "version": "0.1.8",
+  3153:       "resolved": "https://registry.npmjs.org/confbox/-/confbox-0.1.8.tgz",
+  3154        "integrity": "sha512-RMtmw0iFkeR4YV+fUOSucriAQNb9g8zFR52MWCtl+cCZOFRNL6zeB395vPzFhEjjn4fMxXudmELnl/KF/WrK6w==",
+
+  3158        "version": "0.5.4",
+  3159:       "resolved": "https://registry.npmjs.org/content-disposition/-/content-disposition-0.5.4.tgz",
+  3160        "integrity": "sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==",
+
+  3170        "version": "1.0.5",
+  3171:       "resolved": "https://registry.npmjs.org/content-type/-/content-type-1.0.5.tgz",
+  3172        "integrity": "sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA==",
+
+  3179        "version": "0.7.2",
+  3180:       "resolved": "https://registry.npmjs.org/cookie/-/cookie-0.7.2.tgz",
+  3181        "integrity": "sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==",
+
+  3188        "version": "1.0.6",
+  3189:       "resolved": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.6.tgz",
+  3190        "integrity": "sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==",
+
+  3194        "version": "2.8.5",
+  3195:       "resolved": "https://registry.npmjs.org/cors/-/cors-2.8.5.tgz",
+  3196        "integrity": "sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==",
+
+  3207        "version": "7.0.6",
+  3208:       "resolved": "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.6.tgz",
+  3209        "integrity": "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==",
+
+  3222        "version": "3.0.5",
+  3223:       "resolved": "https://registry.npmjs.org/css-selector-parser/-/css-selector-parser-3.0.5.tgz",
+  3224        "integrity": "sha512-3itoDFbKUNx1eKmVpYMFyqKX04Ww9osZ+dLgrk6GEv6KMVeXUhUnp4I5X+evw+u3ZxVU6RFXSSRxlTeMh8bA+g==",
+
+  3227            "type": "github",
+  3228:           "url": "https://github.com/sponsors/mdevils"
+  3229          },
+
+  3231            "type": "patreon",
+  3232:           "url": "https://patreon.com/mdevils"
+  3233          }
+
+  3238        "version": "3.0.0",
+  3239:       "resolved": "https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz",
+  3240        "integrity": "sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==",
+
+  3251        "version": "3.1.3",
+  3252:       "resolved": "https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz",
+  3253        "integrity": "sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==",
+
+  3258        "version": "4.1.0",
+  3259:       "resolved": "https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz",
+  3260        "integrity": "sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==",
+
+  3263          "type": "github",
+  3264:         "url": "https://github.com/sponsors/kossnocorp"
+  3265        }
+
+  3268        "version": "4.1.0-0",
+  3269:       "resolved": "https://registry.npmjs.org/date-fns-jalali/-/date-fns-jalali-4.1.0-0.tgz",
+  3270        "integrity": "sha512-hTIP/z+t+qKwBDcmmsnmjWTduxCg+5KfdqWQvb2X/8C9+knYY6epN/pfxdDuyVlSVeFz0sM5eEfwIUQ70U4ckg==",
+
+  3274        "version": "2.6.9",
+  3275:       "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz",
+  3276        "integrity": "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==",
+
+  3283        "version": "1.0.0",
+  3284:       "resolved": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz",
+  3285        "integrity": "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==",
+
+  3292        "version": "2.0.0",
+  3293:       "resolved": "https://registry.npmjs.org/depd/-/depd-2.0.0.tgz",
+  3294        "integrity": "sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==",
+
+  3301        "version": "2.0.3",
+  3302:       "resolved": "https://registry.npmjs.org/dequal/-/dequal-2.0.3.tgz",
+  3303        "integrity": "sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==",
+
+  3310        "version": "1.2.0",
+  3311:       "resolved": "https://registry.npmjs.org/destroy/-/destroy-1.2.0.tgz",
+  3312        "integrity": "sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==",
+
+  3320        "version": "1.1.0",
+  3321:       "resolved": "https://registry.npmjs.org/detect-node-es/-/detect-node-es-1.1.0.tgz",
+  3322        "integrity": "sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==",
+
+  3326        "version": "1.2.2",
+  3327:       "resolved": "https://registry.npmjs.org/didyoumean/-/didyoumean-1.2.2.tgz",
+  3328        "integrity": "sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==",
+
+  3333        "version": "1.1.3",
+  3334:       "resolved": "https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz",
+  3335        "integrity": "sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==",
+
+  3340        "version": "1.0.1",
+  3341:       "resolved": "https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz",
+  3342        "integrity": "sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==",
+
+  3354        "version": "0.2.0",
+  3355:       "resolved": "https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz",
+  3356        "integrity": "sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==",
+
+  3361        "version": "1.1.1",
+  3362:       "resolved": "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz",
+  3363        "integrity": "sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==",
+
+  3367        "version": "1.5.102",
+  3368:       "resolved": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.102.tgz",
+  3369        "integrity": "sha512-eHhqaja8tE/FNpIiBrvBjFV/SSKpyWHLvxuR9dPTdo+3V9ppdLmFB7ZZQ98qNovcngPLYIz0oOBF9P0FfZef5Q==",
+
+  3373        "version": "8.5.2",
+  3374:       "resolved": "https://registry.npmjs.org/embla-carousel/-/embla-carousel-8.5.2.tgz",
+  3375        "integrity": "sha512-xQ9oVLrun/eCG/7ru3R+I5bJ7shsD8fFwLEY7yPe27/+fDHCNj0OT5EoG5ZbFyOxOcG6yTwW8oTz/dWyFnyGpg==",
+
+  3379        "version": "8.5.2",
+  3380:       "resolved": "https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-8.5.2.tgz",
+  3381        "integrity": "sha512-Tmx+uY3MqseIGdwp0ScyUuxpBgx5jX1f7od4Cm5mDwg/dptEiTKf9xp6tw0lZN2VA9JbnVMl/aikmbc53c6QFA==",
+
+  3392        "version": "8.5.2",
+  3393:       "resolved": "https://registry.npmjs.org/embla-carousel-reactive-utils/-/embla-carousel-reactive-utils-8.5.2.tgz",
+  3394        "integrity": "sha512-QC8/hYSK/pEmqEdU1IO5O+XNc/Ptmmq7uCB44vKplgLKhB/l0+yvYx0+Cv0sF6Ena8Srld5vUErZkT+yTahtDg==",
+
+  3401        "version": "9.2.2",
+  3402:       "resolved": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz",
+  3403        "integrity": "sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==",
+
+  3408        "version": "2.0.0",
+  3409:       "resolved": "https://registry.npmjs.org/encodeurl/-/encodeurl-2.0.0.tgz",
+  3410        "integrity": "sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==",
+
+  3417        "version": "1.0.1",
+  3418:       "resolved": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz",
+  3419        "integrity": "sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==",
+
+  3426        "version": "1.3.0",
+  3427:       "resolved": "https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz",
+  3428        "integrity": "sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==",
+
+  3435        "version": "1.1.1",
+  3436:       "resolved": "https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.1.tgz",
+  3437        "integrity": "sha512-FGgH2h8zKNim9ljj7dankFPcICIK9Cp5bm+c2gQSYePhpaG5+esrLODihIorn+Pe6FGJzWhXQotPv73jTaldXA==",
+
+  3447        "version": "2.1.0",
+  3448:       "resolved": "https://registry.npmjs.org/es-set-tostringtag/-/es-set-tostringtag-2.1.0.tgz",
+  3449        "integrity": "sha512-j6vWzfrGVfyXxge+O0x5sh6cvxAog0a/4Rdd2K36zCMV5eJ+/+tOAngRO8cODMNWbVRdVlmGZQL2YS3yR8bIUA==",
+
+  3462        "version": "0.25.4",
+  3463:       "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.25.4.tgz",
+  3464        "integrity": "sha512-8pgjLUcUjcgDg+2Q4NYXnPbo/vncAY4UmyaCm0jZevERqCHZIaWwdJHkf8XQtu4AxSKCdvrUbT0XUr1IdZzI8Q==",
+
+  3503        "version": "3.2.0",
+  3504:       "resolved": "https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz",
+  3505        "integrity": "sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==",
+
+  3512        "version": "1.0.3",
+  3513:       "resolved": "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz",
+  3514        "integrity": "sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==",
+
+  3518        "version": "4.0.1",
+  3519:       "resolved": "https://registry.npmjs.org/esprima/-/esprima-4.0.1.tgz",
+  3520        "integrity": "sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==",
+
+  3531        "version": "1.1.0",
+  3532:       "resolved": "https://registry.npmjs.org/esprima-extract-comments/-/esprima-extract-comments-1.1.0.tgz",
+  3533        "integrity": "sha512-sBQUnvJwpeE9QnPrxh7dpI/dp67erYG4WXEAreAMoelPRpMR7NWb4YtwRPn9b+H1uLQKl/qS8WYmyaljTpjIsw==",
+
+  3543        "version": "1.8.1",
+  3544:       "resolved": "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz",
+  3545        "integrity": "sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==",
+
+  3552        "version": "4.21.2",
+  3553:       "resolved": "https://registry.npmjs.org/express/-/express-4.21.2.tgz",
+  3554        "integrity": "sha512-28HqgMZAmih1Czt9ny7qr6ek2qddF4FclbMzwhCREB6OFfH+rXAnuNCwo1/wFvrtbgsQDb4kSbX9de9lFbrXnA==",
+
+  3593          "type": "opencollective",
+  3594:         "url": "https://opencollective.com/express"
+  3595        }
+
+  3598        "version": "0.7.1",
+  3599:       "resolved": "https://registry.npmjs.org/cookie/-/cookie-0.7.1.tgz",
+  3600        "integrity": "sha512-6DnInpx7SJ2AK3+CTUE/ZM0vWTUboZCegxhC2xiIydHR9jNuTAASBrfEpHhiGOZw/nX51bHt6YQl8jsGo4y/0w==",
+
+  3607        "version": "6.13.0",
+  3608:       "resolved": "https://registry.npmjs.org/qs/-/qs-6.13.0.tgz",
+  3609        "integrity": "sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==",
+
+  3617        "funding": {
+  3618:         "url": "https://github.com/sponsors/ljharb"
+  3619        }
+
+  3622        "version": "1.1.0",
+  3623:       "resolved": "https://registry.npmjs.org/extract-comments/-/extract-comments-1.1.0.tgz",
+  3624        "integrity": "sha512-dzbZV2AdSSVW/4E7Ti5hZdHWbA+Z80RJsJhr5uiL10oyjl/gy7/o+HI1HwK4/WSZhlq4SNKU3oUzXlM13Qx02Q==",
+
+  3635        "version": "2.0.1",
+  3636:       "resolved": "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz",
+  3637        "integrity": "sha512-bCK/2Z4zLidyB4ReuIsvALH6w31YfAQDmXMqMx6FyfHqvBxtjC0eRumeSu4Bs3XtXwpyIywtSTrVT99BxY1f9w==",
+
+  3641        "version": "3.3.3",
+  3642:       "resolved": "https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.3.tgz",
+  3643        "integrity": "sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==",
+
+  3657        "version": "5.1.2",
+  3658:       "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
+  3659        "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
+
+  3669        "version": "1.19.0",
+  3670:       "resolved": "https://registry.npmjs.org/fastq/-/fastq-1.19.0.tgz",
+  3671        "integrity": "sha512-7SFSRCNjBQIZH/xZR3iy5iQYR8aGBE0h3VG6/cwlbrpdciNYBMotQav8c1XI3HjHH+NikUpP53nPdlZSdWmFzA==",
+
+  3678        "version": "7.1.1",
+  3679:       "resolved": "https://registry.npmjs.org/fill-range/-/fill-range-7.1.1.tgz",
+  3680        "integrity": "sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==",
+
+  3690        "version": "1.3.1",
+  3691:       "resolved": "https://registry.npmjs.org/finalhandler/-/finalhandler-1.3.1.tgz",
+  3692        "integrity": "sha512-6BN9trH7bp3qvnrRyzsBz+g3lZxTNZTbVO2EV1CS0WIcDbawYVdYvGflME/9QP0h0pYlCDBCTjYa9nZzMDpyxQ==",
+
+  3708        "version": "1.15.9",
+  3709:       "resolved": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.9.tgz",
+  3710        "integrity": "sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==",
+
+  3713            "type": "individual",
+  3714:           "url": "https://github.com/sponsors/RubenVerborgh"
+  3715          }
+
+  3728        "version": "3.3.0",
+  3729:       "resolved": "https://registry.npmjs.org/foreground-child/-/foreground-child-3.3.0.tgz",
+  3730        "integrity": "sha512-Ld2g8rrAyMYFXBhEqMz8ZAHBi4J4uS1i/CxGMDnjyFWddMXLVcDp051DZfu+t7+ab7Wv6SMqpWmyFIj5UbfFvg==",
+
+  3740        "funding": {
+  3741:         "url": "https://github.com/sponsors/isaacs"
+  3742        }
+
+  3745        "version": "4.0.2",
+  3746:       "resolved": "https://registry.npmjs.org/form-data/-/form-data-4.0.2.tgz",
+  3747        "integrity": "sha512-hGfm/slu0ZabnNt4oaRZ6uREyfCj6P4fT/n6A1rGV+Z0VdGXjfOhVUpkn6qVQONHGIFwmveGXyDs75+nr6FM8w==",
+
+  3760        "version": "0.2.0",
+  3761:       "resolved": "https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz",
+  3762        "integrity": "sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==",
+
+  3769        "version": "4.3.7",
+  3770:       "resolved": "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz",
+  3771        "integrity": "sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==",
+
+  3777          "type": "patreon",
+  3778:         "url": "https://github.com/sponsors/rawify"
+  3779        }
+
+  3782        "version": "12.5.0",
+  3783:       "resolved": "https://registry.npmjs.org/framer-motion/-/framer-motion-12.5.0.tgz",
+  3784        "integrity": "sha512-buPlioFbH9/W7rDzYh1C09AuZHAk2D1xTA1BlounJ2Rb9aRg84OXexP0GLd+R83v0khURdMX7b5MKnGTaSg5iA==",
+
+  3809        "version": "0.5.2",
+  3810:       "resolved": "https://registry.npmjs.org/fresh/-/fresh-0.5.2.tgz",
+  3811        "integrity": "sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==",
+
+  3818        "version": "1.0.0",
+  3819:       "resolved": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz",
+  3820        "integrity": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==",
+
+  3824        "version": "2.3.3",
+  3825:       "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz",
+  3826        "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
+
+  3838        "version": "1.1.2",
+  3839:       "resolved": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz",
+  3840        "integrity": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==",
+
+  3842        "funding": {
+  3843:         "url": "https://github.com/sponsors/ljharb"
+  3844        }
+
+  3847        "version": "1.2.7",
+  3848:       "resolved": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.2.7.tgz",
+  3849        "integrity": "sha512-VW6Pxhsrk0KAOqs3WEd0klDiF/+V7gQOpAvY1jVU/LHmaD/kQO4523aiJuikX/QAKYiW6x8Jh+RJej1almdtCA==",
+
+  3866        "funding": {
+  3867:         "url": "https://github.com/sponsors/ljharb"
+  3868        }
+
+  3871        "version": "1.0.1",
+  3872:       "resolved": "https://registry.npmjs.org/get-nonce/-/get-nonce-1.0.1.tgz",
+  3873        "integrity": "sha512-FJhYRoDaiatfEkUK8HKlicmu/3SGFD51q3itKDGoSTysQJBnfOcxU5GxnhE1E6soB76MbT0MBtnKJuXyAx+96Q==",
+
+  3880        "version": "1.0.1",
+  3881:       "resolved": "https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz",
+  3882        "integrity": "sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==",
+
+  3893        "version": "10.4.5",
+  3894:       "resolved": "https://registry.npmjs.org/glob/-/glob-10.4.5.tgz",
+  3895        "integrity": "sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==",
+
+  3909        "funding": {
+  3910:         "url": "https://github.com/sponsors/isaacs"
+  3911        }
+
+  3914        "version": "6.0.2",
+  3915:       "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz",
+  3916        "integrity": "sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A==",
+
+  3927        "version": "1.2.0",
+  3928:       "resolved": "https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz",
+  3929        "integrity": "sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==",
+
+  3934        "funding": {
+  3935:         "url": "https://github.com/sponsors/ljharb"
+  3936        }
+
+  3939        "version": "4.2.11",
+  3940:       "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz",
+  3941        "integrity": "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==",
+
+  3945        "version": "1.1.0",
+  3946:       "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz",
+  3947        "integrity": "sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==",
+
+  3952        "funding": {
+  3953:         "url": "https://github.com/sponsors/ljharb"
+  3954        }
+
+  3957        "version": "1.0.2",
+  3958:       "resolved": "https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.2.tgz",
+  3959        "integrity": "sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw==",
+
+  3967        "funding": {
+  3968:         "url": "https://github.com/sponsors/ljharb"
+  3969        }
+
+  3972        "version": "2.0.2",
+  3973:       "resolved": "https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz",
+  3974        "integrity": "sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==",
+
+  3984        "version": "2.0.0",
+  3985:       "resolved": "https://registry.npmjs.org/http-errors/-/http-errors-2.0.0.tgz",
+  3986        "integrity": "sha512-FtwrG/euBzaEjYeRqOgly7G0qviiXoJWnvEH2Z1plBdXgbyjv34pHTSb9zoeHMyDy33+DWy5Wt9Wo+TURtOYSQ==",
+
+  4000        "version": "0.4.24",
+  4001:       "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz",
+  4002        "integrity": "sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==",
+
+  4012        "version": "1.0.6",
+  4013:       "resolved": "https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz",
+  4014        "integrity": "sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==",
+
+  4023        "version": "2.0.4",
+  4024:       "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz",
+  4025        "integrity": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==",
+
+  4029        "version": "1.4.0",
+  4030:       "resolved": "https://registry.npmjs.org/interpret/-/interpret-1.4.0.tgz",
+  4031        "integrity": "sha512-agE4QfB2Lkp9uICn7BAqoscw4SZP9kTE2hxiFI3jBPmXJfdqiahTbUuKGsMoN2GtqL9AxhYioAcVvgsb1HvRbA==",
+
+  4038        "version": "1.9.1",
+  4039:       "resolved": "https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.9.1.tgz",
+  4040        "integrity": "sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==",
+
+  4047        "version": "2.1.0",
+  4048:       "resolved": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz",
+  4049        "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
+
+  4060        "version": "2.16.1",
+  4061:       "resolved": "https://registry.npmjs.org/is-core-module/-/is-core-module-2.16.1.tgz",
+  4062        "integrity": "sha512-UfoeMA6fIJ8wTYFEUjelnaGI67v6+N7qXJEvQuIGa99l4xsCruSYOVSQ0uPANn4dAzm8lkYPaKLrrijLq7x23w==",
+
+  4070        "funding": {
+  4071:         "url": "https://github.com/sponsors/ljharb"
+  4072        }
+
+  4075        "version": "2.1.1",
+  4076:       "resolved": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
+  4077        "integrity": "sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==",
+
+  4084        "version": "3.0.0",
+  4085:       "resolved": "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz",
+  4086        "integrity": "sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==",
+
+  4094        "version": "4.0.3",
+  4095:       "resolved": "https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz",
+  4096        "integrity": "sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==",
+
+  4106        "version": "7.0.0",
+  4107:       "resolved": "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz",
+  4108        "integrity": "sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==",
+
+  4115        "version": "2.0.0",
+  4116:       "resolved": "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz",
+  4117        "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==",
+
+  4122        "version": "3.4.3",
+  4123:       "resolved": "https://registry.npmjs.org/jackspeak/-/jackspeak-3.4.3.tgz",
+  4124        "integrity": "sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==",
+
+  4130        "funding": {
+  4131:         "url": "https://github.com/sponsors/isaacs"
+  4132        },
+
+  4138        "version": "1.21.7",
+  4139:       "resolved": "https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz",
+  4140        "integrity": "sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==",
+
+  4148        "version": "3.7.1",
+  4149:       "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz",
+  4150        "integrity": "sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==",
+
+  4154        "version": "4.0.0",
+  4155:       "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz",
+  4156        "integrity": "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==",
+
+  4160        "version": "2.2.3",
+  4161:       "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz",
+  4162        "integrity": "sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==",
+
+  4172        "version": "3.1.3",
+  4173:       "resolved": "https://registry.npmjs.org/lilconfig/-/lilconfig-3.1.3.tgz",
+  4174        "integrity": "sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==",
+
+  4180        "funding": {
+  4181:         "url": "https://github.com/sponsors/antonk52"
+  4182        }
+
+  4185        "version": "1.2.4",
+  4186:       "resolved": "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz",
+  4187        "integrity": "sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==",
+
+  4192        "version": "1.0.0",
+  4193:       "resolved": "https://registry.npmjs.org/local-pkg/-/local-pkg-1.0.0.tgz",
+  4194        "integrity": "sha512-bbgPw/wmroJsil/GgL4qjDzs5YLTBMQ99weRsok1XCDccQeehbHA/I1oRvk2NPtr7KGZgT/Y5tPRnAtMqeG2Kg==",
+
+  4203        "funding": {
+  4204:         "url": "https://github.com/sponsors/antfu"
+  4205        }
+
+  4208        "version": "4.17.21",
+  4209:       "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz",
+  4210        "integrity": "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==",
+
+  4214        "version": "1.4.0",
+  4215:       "resolved": "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz",
+  4216        "integrity": "sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==",
+
+  4226        "version": "10.4.3",
+  4227:       "resolved": "https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz",
+  4228        "integrity": "sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==",
+
+  4233        "version": "0.468.0",
+  4234:       "resolved": "https://registry.npmjs.org/lucide-react/-/lucide-react-0.468.0.tgz",
+  4235        "integrity": "sha512-6koYRhnM2N0GGZIdXzSeiNwguv1gt/FAjZOiPl76roBi3xKEXa4WmfpxgQwTTL4KipXjefrnf3oV4IsYhi4JFA==",
+
+  4242        "version": "1.5.0",
+  4243:       "resolved": "https://registry.npmjs.org/lz-string/-/lz-string-1.5.0.tgz",
+  4244        "integrity": "sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==",
+
+  4251        "version": "1.1.0",
+  4252:       "resolved": "https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz",
+  4253        "integrity": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==",
+
+  4260        "version": "0.3.0",
+  4261:       "resolved": "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz",
+  4262        "integrity": "sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==",
+
+  4269        "version": "1.0.3",
+  4270:       "resolved": "https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-1.0.3.tgz",
+  4271        "integrity": "sha512-gaNvAS7TZ897/rVaZ0nMtAyxNyi/pdbjbAwUpFQpN70GqnVfOiXpeUUMKRBmzXaSQ8DdTX4/0ms62r2K+hE6mQ==",
+
+  4273        "funding": {
+  4274:         "url": "https://github.com/sponsors/sindresorhus"
+  4275        }
+
+  4278        "version": "1.4.1",
+  4279:       "resolved": "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz",
+  4280        "integrity": "sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==",
+
+  4287        "version": "1.1.2",
+  4288:       "resolved": "https://registry.npmjs.org/methods/-/methods-1.1.2.tgz",
+  4289        "integrity": "sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==",
+
+  4296        "version": "4.0.8",
+  4297:       "resolved": "https://registry.npmjs.org/micromatch/-/micromatch-4.0.8.tgz",
+  4298        "integrity": "sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==",
+
+  4309        "version": "1.6.0",
+  4310:       "resolved": "https://registry.npmjs.org/mime/-/mime-1.6.0.tgz",
+  4311        "integrity": "sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==",
+
+  4321        "version": "1.52.0",
+  4322:       "resolved": "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz",
+  4323        "integrity": "sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==",
+
+  4330        "version": "2.1.35",
+  4331:       "resolved": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz",
+  4332        "integrity": "sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==",
+
+  4342        "version": "9.0.5",
+  4343:       "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.5.tgz",
+  4344:       "integrity": "sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==",
+  4345        "dev": true,
+
+  4353        "funding": {
+  4354:         "url": "https://github.com/sponsors/isaacs"
+  4355        }
+
+  4358        "version": "7.1.2",
+  4359:       "resolved": "https://registry.npmjs.org/minipass/-/minipass-7.1.2.tgz",
+  4360        "integrity": "sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==",
+
+  4368        "version": "1.7.4",
+  4369:       "resolved": "https://registry.npmjs.org/mlly/-/mlly-1.7.4.tgz",
+  4370        "integrity": "sha512-qmdSIPC4bDJXgZTCR7XosJiNKySV7O215tsPtDN9iEO/7q/76b/ijtgRu/+epFXSJhijtTCCGp3DWS549P3xKw==",
+
+  4380        "version": "12.5.0",
+  4381:       "resolved": "https://registry.npmjs.org/motion-dom/-/motion-dom-12.5.0.tgz",
+  4382        "integrity": "sha512-uH2PETDh7m+Hjd1UQQ56yHqwn83SAwNjimNPE/kC+Kds0t4Yh7+29rfo5wezVFpPOv57U4IuWved5d1x0kNhbQ==",
+
+  4389        "version": "12.5.0",
+  4390:       "resolved": "https://registry.npmjs.org/motion-utils/-/motion-utils-12.5.0.tgz",
+  4391        "integrity": "sha512-+hFFzvimn0sBMP9iPxBa9OtRX35ZQ3py0UHnb8U29VD+d8lQ8zH3dTygJWqK7av2v6yhg7scj9iZuvTS0f4+SA==",
+
+  4395        "version": "2.0.0",
+  4396:       "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
+  4397        "integrity": "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==",
+
+  4401        "version": "2.7.0",
+  4402:       "resolved": "https://registry.npmjs.org/mz/-/mz-2.7.0.tgz",
+  4403        "integrity": "sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==",
+
+  4413        "version": "3.3.8",
+  4414:       "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.8.tgz",
+  4415        "integrity": "sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==",
+
+  4418            "type": "github",
+  4419:           "url": "https://github.com/sponsors/ai"
+  4420          }
+
+  4431        "version": "0.6.3",
+  4432:       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.3.tgz",
+  4433        "integrity": "sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==",
+
+  4440        "version": "14.2.29",
+  4441:       "resolved": "https://registry.npmjs.org/next/-/next-14.2.29.tgz",
+  4442        "integrity": "sha512-s98mCOMOWLGGpGOfgKSnleXLuegvvH415qtRZXpSp00HeEgdmrxmwL9cgKU+h4XrhB16zEI5d/7BnkS3ATInsA==",
+
+  4490        "version": "0.2.1",
+  4491:       "resolved": "https://registry.npmjs.org/next-themes/-/next-themes-0.2.1.tgz",
+  4492        "integrity": "sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==",
+
+  4501        "version": "8.4.31",
+  4502:       "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz",
+  4503        "integrity": "sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==",
+
+  4506            "type": "opencollective",
+  4507:           "url": "https://opencollective.com/postcss/"
+  4508          },
+
+  4510            "type": "tidelift",
+  4511:           "url": "https://tidelift.com/funding/github/npm/postcss"
+  4512          },
+
+  4514            "type": "github",
+  4515:           "url": "https://github.com/sponsors/ai"
+  4516          }
+
+  4529        "version": "2.0.19",
+  4530:       "resolved": "https://registry.npmjs.org/node-releases/-/node-releases-2.0.19.tgz",
+  4531        "integrity": "sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw==",
+
+  4535        "version": "3.0.0",
+  4536:       "resolved": "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz",
+  4537        "integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==",
+
+  4545        "version": "0.1.2",
+  4546:       "resolved": "https://registry.npmjs.org/normalize-range/-/normalize-range-0.1.2.tgz",
+  4547        "integrity": "sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==",
+
+  4554        "version": "4.1.1",
+  4555:       "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
+  4556        "integrity": "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==",
+
+  4563        "version": "3.0.0",
+  4564:       "resolved": "https://registry.npmjs.org/object-hash/-/object-hash-3.0.0.tgz",
+  4565        "integrity": "sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==",
+
+  4573        "version": "1.13.4",
+  4574:       "resolved": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.13.4.tgz",
+  4575        "integrity": "sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==",
+
+  4580        "funding": {
+  4581:         "url": "https://github.com/sponsors/ljharb"
+  4582        }
+
+  4585        "version": "2.4.1",
+  4586:       "resolved": "https://registry.npmjs.org/on-finished/-/on-finished-2.4.1.tgz",
+  4587        "integrity": "sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==",
+
+  4597        "version": "1.4.0",
+  4598:       "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+  4599        "integrity": "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==",
+
+  4606        "version": "1.0.1",
+  4607:       "resolved": "https://registry.npmjs.org/package-json-from-dist/-/package-json-from-dist-1.0.1.tgz",
+  4608        "integrity": "sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==",
+
+  4613        "version": "1.0.0",
+  4614:       "resolved": "https://registry.npmjs.org/parse-code-context/-/parse-code-context-1.0.0.tgz",
+  4615        "integrity": "sha512-OZQaqKaQnR21iqhlnPfVisFjBWjhnMl5J9MgbP8xC+EwoVqbXrq78lp+9Zb3ahmLzrIX5Us/qbvBnaS3hkH6OA==",
+
+  4622        "version": "1.3.3",
+  4623:       "resolved": "https://registry.npmjs.org/parseurl/-/parseurl-1.3.3.tgz",
+  4624        "integrity": "sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==",
+
+  4631        "version": "1.0.1",
+  4632:       "resolved": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz",
+  4633        "integrity": "sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==",
+
+  4640        "version": "3.1.1",
+  4641:       "resolved": "https://registry.npmjs.org/path-key/-/path-key-3.1.1.tgz",
+  4642        "integrity": "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==",
+
+  4650        "version": "1.0.7",
+  4651:       "resolved": "https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz",
+  4652        "integrity": "sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==",
+
+  4656        "version": "1.11.1",
+  4657:       "resolved": "https://registry.npmjs.org/path-scurry/-/path-scurry-1.11.1.tgz",
+  4658        "integrity": "sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==",
+
+  4668        "funding": {
+  4669:         "url": "https://github.com/sponsors/isaacs"
+  4670        }
+
+  4673        "version": "0.1.12",
+  4674:       "resolved": "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.12.tgz",
+  4675        "integrity": "sha512-RA1GjUVMnvYFxuqovrEqZoxxW5NUZqbwKtYz/Tt7nXerk0LbLblQmrsgdeOxV5SFHf0UDggjS/bSeOZwt1pmEQ==",
+
+  4679        "version": "2.0.3",
+  4680:       "resolved": "https://registry.npmjs.org/pathe/-/pathe-2.0.3.tgz",
+  4681        "integrity": "sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==",
+
+  4685        "version": "1.1.1",
+  4686:       "resolved": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz",
+  4687        "integrity": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==",
+
+  4691        "version": "2.3.1",
+  4692:       "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
+  4693        "integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==",
+
+  4698        "funding": {
+  4699:         "url": "https://github.com/sponsors/jonschlinkert"
+  4700        }
+
+  4703        "version": "2.3.0",
+  4704:       "resolved": "https://registry.npmjs.org/pify/-/pify-2.3.0.tgz",
+  4705        "integrity": "sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==",
+
+  4713        "version": "4.0.6",
+  4714:       "resolved": "https://registry.npmjs.org/pirates/-/pirates-4.0.6.tgz",
+  4715        "integrity": "sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==",
+
+  4723        "version": "1.3.1",
+  4724:       "resolved": "https://registry.npmjs.org/pkg-types/-/pkg-types-1.3.1.tgz",
+  4725        "integrity": "sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==",
+
+  4734        "version": "8.5.3",
+  4735:       "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.3.tgz",
+  4736        "integrity": "sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==",
+
+  4739            "type": "opencollective",
+  4740:           "url": "https://opencollective.com/postcss/"
+  4741          },
+
+  4743            "type": "tidelift",
+  4744:           "url": "https://tidelift.com/funding/github/npm/postcss"
+  4745          },
+
+  4747            "type": "github",
+  4748:           "url": "https://github.com/sponsors/ai"
+  4749          }
+
+  4762        "version": "15.1.0",
+  4763:       "resolved": "https://registry.npmjs.org/postcss-import/-/postcss-import-15.1.0.tgz",
+  4764        "integrity": "sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==",
+
+  4780        "version": "4.0.1",
+  4781:       "resolved": "https://registry.npmjs.org/postcss-js/-/postcss-js-4.0.1.tgz",
+  4782:       "integrity": "sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==",
+  4783        "dev": true,
+
+  4792          "type": "opencollective",
+  4793:         "url": "https://opencollective.com/postcss/"
+  4794        },
+
+  4800        "version": "4.0.2",
+  4801:       "resolved": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-4.0.2.tgz",
+  4802        "integrity": "sha512-bSVhyJGL00wMVoPUzAVAnbEoWyqRxkjv64tUl427SKnPrENtq6hJwUojroMz2VB+Q1edmi4IfrAPpami5VVgMQ==",
+
+  4806            "type": "opencollective",
+  4807:           "url": "https://opencollective.com/postcss/"
+  4808          },
+
+  4810            "type": "github",
+  4811:           "url": "https://github.com/sponsors/ai"
+  4812          }
+
+  4836        "version": "6.2.0",
+  4837:       "resolved": "https://registry.npmjs.org/postcss-nested/-/postcss-nested-6.2.0.tgz",
+  4838        "integrity": "sha512-HQbt28KulC5AJzG+cZtj9kvKB93CFCdLvog1WFLf1D+xmMvPGlBstkpTEZfK5+AN9hfJocyBFCNiqyS48bpgzQ==",
+
+  4842            "type": "opencollective",
+  4843:           "url": "https://opencollective.com/postcss/"
+  4844          },
+
+  4846            "type": "github",
+  4847:           "url": "https://github.com/sponsors/ai"
+  4848          }
+
+  4862        "version": "6.1.2",
+  4863:       "resolved": "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.1.2.tgz",
+  4864        "integrity": "sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==",
+
+  4876        "version": "4.2.0",
+  4877:       "resolved": "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz",
+  4878        "integrity": "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==",
+
+  4882        "version": "3.5.1",
+  4883:       "resolved": "https://registry.npmjs.org/prettier/-/prettier-3.5.1.tgz",
+  4884        "integrity": "sha512-hPpFQvHwL3Qv5AdRvBFMhnKo4tYxp0ReXiPn2bxkiohEX6mBeBwEpBSQTkD458RaaDKQMYSp4hX4UtfUTA5wDw==",
+
+  4892        "funding": {
+  4893:         "url": "https://github.com/prettier/prettier?sponsor=1"
+  4894        }
+
+  4897        "version": "4.2.0",
+  4898:       "resolved": "https://registry.npmjs.org/prompt-sync/-/prompt-sync-4.2.0.tgz",
+  4899        "integrity": "sha512-BuEzzc5zptP5LsgV5MZETjDaKSWfchl5U9Luiu8SKp7iZWD5tZalOxvNcZRwv+d2phNFr8xlbxmFNcRKfJOzJw==",
+
+  4906        "version": "4.1.1",
+  4907:       "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-4.1.1.tgz",
+  4908        "integrity": "sha512-ILlv4k/3f6vfQ4OoP2AGvirOktlQ98ZEL1k9FaQjxa3L1abBgbuTDAdPOpvbGncC0BTVQrl+OM8xZGK6tWXt7g==",
+
+  4915        "version": "5.2.0",
+  4916:       "resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-5.2.0.tgz",
+  4917        "integrity": "sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==",
+
+  4927        "version": "2.0.7",
+  4928:       "resolved": "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.7.tgz",
+  4929        "integrity": "sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==",
+
+  4940        "version": "1.1.0",
+  4941:       "resolved": "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz",
+  4942        "integrity": "sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==",
+
+  4946        "version": "6.14.0",
+  4947:       "resolved": "https://registry.npmjs.org/qs/-/qs-6.14.0.tgz",
+  4948        "integrity": "sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==",
+
+  4956        "funding": {
+  4957:         "url": "https://github.com/sponsors/ljharb"
+  4958        }
+
+  4961        "version": "1.2.3",
+  4962:       "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
+  4963        "integrity": "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==",
+
+  4966            "type": "github",
+  4967:           "url": "https://github.com/sponsors/feross"
+  4968          },
+
+  4970            "type": "patreon",
+  4971:           "url": "https://www.patreon.com/feross"
+  4972          },
+
+  4974            "type": "consulting",
+  4975:           "url": "https://feross.org/support"
+  4976          }
+
+  4981        "version": "1.1.3",
+  4982:       "resolved": "https://registry.npmjs.org/radix-ui/-/radix-ui-1.1.3.tgz",
+  4983        "integrity": "sha512-W8L6soM1vQnIXVvVa31AkQhoZBDPwVoNHhT13R3aB9Qq7ARYIUS9DLaCopRBsbTdZm1NEEPx3rnq659CiNOBDw==",
+
+  5053        "version": "1.2.1",
+  5054:       "resolved": "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz",
+  5055        "integrity": "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==",
+
+  5062        "version": "2.5.2",
+  5063:       "resolved": "https://registry.npmjs.org/raw-body/-/raw-body-2.5.2.tgz",
+  5064        "integrity": "sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==",
+
+  5077        "version": "18.3.1",
+  5078:       "resolved": "https://registry.npmjs.org/react/-/react-18.3.1.tgz",
+  5079        "integrity": "sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==",
+
+  5089        "version": "9.5.1",
+  5090:       "resolved": "https://registry.npmjs.org/react-day-picker/-/react-day-picker-9.5.1.tgz",
+  5091        "integrity": "sha512-PxuK8inYLlYgM2zZUVBPsaBM5jI40suPeG+naKyx7kpyF032RRlEAUEjkpW9/poTASh/vyWAOVqjGuGw+47isw==",
+
+  5102          "type": "individual",
+  5103:         "url": "https://github.com/sponsors/gpbl"
+  5104        },
+
+  5110        "version": "18.3.1",
+  5111:       "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz",
+  5112        "integrity": "sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==",
+
+  5123        "version": "7.54.2",
+  5124:       "resolved": "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.54.2.tgz",
+  5125        "integrity": "sha512-eHpAUgUjWbZocoQYUHposymRb4ZP6d0uwUnooL2uOybA9/3tPUvoAKqEWK1WaSiTxxOfTpffNZP7QwlnM3/gEg==",
+
+  5131          "type": "opencollective",
+  5132:         "url": "https://opencollective.com/react-hook-form"
+  5133        },
+
+  5139        "version": "2.6.3",
+  5140:       "resolved": "https://registry.npmjs.org/react-remove-scroll/-/react-remove-scroll-2.6.3.tgz",
+  5141        "integrity": "sha512-pnAi91oOk8g8ABQKGF5/M9qxmmOPxaAnopyTHYfqYEwJhyFrbbBtHuSgtKEoH0jpcxx5o3hXqH1mNd9/Oi+8iQ==",
+
+  5164        "version": "2.3.8",
+  5165:       "resolved": "https://registry.npmjs.org/react-remove-scroll-bar/-/react-remove-scroll-bar-2.3.8.tgz",
+  5166        "integrity": "sha512-9r+yi9+mgU33AKcj6IbT9oRCO78WriSj6t/cF8DWBZJ9aOGPOTEDvdUDz1FwKim7QXWwmHqtdHnRJfhAxEG46Q==",
+
+  5186        "version": "2.1.7",
+  5187:       "resolved": "https://registry.npmjs.org/react-resizable-panels/-/react-resizable-panels-2.1.7.tgz",
+  5188        "integrity": "sha512-JtT6gI+nURzhMYQYsx8DKkx6bSoOGFp7A3CwMrOb8y5jFHFyqwo9m68UhmXRw57fRVJksFn1TSlm3ywEQ9vMgA==",
+
+  5196        "version": "6.29.0",
+  5197:       "resolved": "https://registry.npmjs.org/react-router/-/react-router-6.29.0.tgz",
+  5198        "integrity": "sha512-DXZJoE0q+KyeVw75Ck6GkPxFak63C4fGqZGNijnWgzB/HzSP1ZfTlBj5COaGWwhrMQ/R8bXiq5Ooy4KG+ReyjQ==",
+
+  5212        "version": "6.29.0",
+  5213:       "resolved": "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.29.0.tgz",
+  5214        "integrity": "sha512-pkEbJPATRJ2iotK+wUwHfy0xs2T59YPEN8BQxVCPeBZvK7kfPESRc/nyxzdcxR17hXgUPYx2whMwl+eo9cUdnQ==",
+
+  5230        "version": "2.2.3",
+  5231:       "resolved": "https://registry.npmjs.org/react-style-singleton/-/react-style-singleton-2.2.3.tgz",
+  5232        "integrity": "sha512-b6jSvxvVnyptAiLjbkWLE/lOnR4lfTtDAl+eUC7RZy+QQWc6wRzIV2CE6xBuMmDxc2qIihtDCZD5NPOFl7fRBQ==",
+
+  5252        "version": "1.0.0",
+  5253:       "resolved": "https://registry.npmjs.org/read-cache/-/read-cache-1.0.0.tgz",
+  5254        "integrity": "sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==",
+
+  5262        "version": "3.6.0",
+  5263:       "resolved": "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz",
+  5264        "integrity": "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==",
+
+  5275        "version": "1.3.0",
+  5276:       "resolved": "https://registry.npmjs.org/readline/-/readline-1.3.0.tgz",
+  5277        "integrity": "sha512-k2d6ACCkiNYz222Fs/iNze30rRJ1iIicW7JuX/7/cozvih6YCkFZH+J6mAFDVgv0dRBaAyr4jDqC95R2y4IADg==",
+
+  5281        "version": "0.6.2",
+  5282:       "resolved": "https://registry.npmjs.org/rechoir/-/rechoir-0.6.2.tgz",
+  5283        "integrity": "sha512-HFM8rkZ+i3zrV+4LQjwQ0W+ez98pApMGM3HUrN04j3CqzPOzl9nmP15Y8YXNm8QHGv/eacOVEjqhmWpkRV0NAw==",
+
+  5292        "version": "1.22.10",
+  5293:       "resolved": "https://registry.npmjs.org/resolve/-/resolve-1.22.10.tgz",
+  5294        "integrity": "sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==",
+
+  5307        "funding": {
+  5308:         "url": "https://github.com/sponsors/ljharb"
+  5309        }
+
+  5312        "version": "1.11.0",
+  5313:       "resolved": "https://registry.npmjs.org/resq/-/resq-1.11.0.tgz",
+  5314        "integrity": "sha512-G10EBz+zAAy3zUd/CDoBbXRL6ia9kOo3xRHrMDsHljI0GDkhYlyjwoCx5+3eCC4swi1uCoZQhskuJkj7Gp57Bw==",
+
+  5321        "version": "1.0.4",
+  5322:       "resolved": "https://registry.npmjs.org/reusify/-/reusify-1.0.4.tgz",
+  5323        "integrity": "sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==",
+
+  5331        "version": "4.41.0",
+  5332:       "resolved": "https://registry.npmjs.org/rollup/-/rollup-4.41.0.tgz",
+  5333        "integrity": "sha512-HqMFpUbWlf/tvcxBFNKnJyzc7Lk+XO3FGc3pbNBLqEbOz0gPLRgcrlS3UF4MfUrVlstOaP/q0kM6GVvi+LrLRg==",
+
+  5371        "version": "1.2.0",
+  5372:       "resolved": "https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz",
+  5373        "integrity": "sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==",
+
+  5376            "type": "github",
+  5377:           "url": "https://github.com/sponsors/feross"
+  5378          },
+
+  5380            "type": "patreon",
+  5381:           "url": "https://www.patreon.com/feross"
+  5382          },
+
+  5384            "type": "consulting",
+  5385:           "url": "https://feross.org/support"
+  5386          }
+
+  5394        "version": "5.2.1",
+  5395:       "resolved": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz",
+  5396        "integrity": "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==",
+
+  5399            "type": "github",
+  5400:           "url": "https://github.com/sponsors/feross"
+  5401          },
+
+  5403            "type": "patreon",
+  5404:           "url": "https://www.patreon.com/feross"
+  5405          },
+
+  5407            "type": "consulting",
+  5408:           "url": "https://feross.org/support"
+  5409          }
+
+  5414        "version": "2.1.2",
+  5415:       "resolved": "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz",
+  5416        "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==",
+
+  5420        "version": "0.23.2",
+  5421:       "resolved": "https://registry.npmjs.org/scheduler/-/scheduler-0.23.2.tgz",
+  5422        "integrity": "sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==",
+
+  5429        "version": "3.0.5",
+  5430:       "resolved": "https://registry.npmjs.org/seedrandom/-/seedrandom-3.0.5.tgz",
+  5431        "integrity": "sha512-8OwmbklUNzwezjGInmZ+2clQmExQPvomqjL7LFqOYqtmuxRgQYqOD3mHaU+MvZn5FLUeVxVfQjwLZW/n/JFuqg==",
+
+  5435        "version": "0.19.0",
+  5436:       "resolved": "https://registry.npmjs.org/send/-/send-0.19.0.tgz",
+  5437        "integrity": "sha512-dW41u5VfLXu8SJh5bwRmyYUbAoSB3c9uQh6L8h/KtsFREPWpbX1lrljJo186Jc4nmci/sGUZ9a0a0J2zgfq2hw==",
+
+  5459        "version": "1.0.2",
+  5460:       "resolved": "https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz",
+  5461        "integrity": "sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==",
+
+  5468        "version": "2.1.3",
+  5469:       "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+  5470        "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
+
+  5474        "version": "1.16.2",
+  5475:       "resolved": "https://registry.npmjs.org/serve-static/-/serve-static-1.16.2.tgz",
+  5476:       "integrity": "sha512-VqpjJZKadQB/PEbEwvFdO43Ax5dFBZ2UECszz8bQ7pi7wt//PWe1P6MN7eCnjsatYtBT6EuiClbjSWP2WrIoTw==",
+  5477        "license": "MIT",
+
+  5489        "version": "1.2.0",
+  5490:       "resolved": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz",
+  5491        "integrity": "sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==",
+
+  5495        "version": "2.0.0",
+  5496:       "resolved": "https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz",
+  5497        "integrity": "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==",
+
+  5508        "version": "3.0.0",
+  5509:       "resolved": "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz",
+  5510        "integrity": "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==",
+
+  5518        "version": "0.8.5",
+  5519:       "resolved": "https://registry.npmjs.org/shelljs/-/shelljs-0.8.5.tgz",
+  5520        "integrity": "sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==",
+
+  5535        "version": "1.1.11",
+  5536:       "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz",
+  5537        "integrity": "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==",
+
+  5545        "version": "7.2.3",
+  5546:       "resolved": "https://registry.npmjs.org/glob/-/glob-7.2.3.tgz",
+  5547        "integrity": "sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==",
+
+  5561        "funding": {
+  5562:         "url": "https://github.com/sponsors/isaacs"
+  5563        }
+
+  5566        "version": "3.1.2",
+  5567:       "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz",
+  5568        "integrity": "sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==",
+
+  5578        "version": "1.1.0",
+  5579:       "resolved": "https://registry.npmjs.org/side-channel/-/side-channel-1.1.0.tgz",
+  5580        "integrity": "sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==",
+
+  5592        "funding": {
+  5593:         "url": "https://github.com/sponsors/ljharb"
+  5594        }
+
+  5597        "version": "1.0.0",
+  5598:       "resolved": "https://registry.npmjs.org/side-channel-list/-/side-channel-list-1.0.0.tgz",
+  5599        "integrity": "sha512-FCLHtRD/gnpCiCHEiJLOwdmFP+wzCmDEkc9y7NsYxeF4u7Btsn1ZuwgwJGxImImHicJArLP4R0yX4c2KCrMrTA==",
+
+  5608        "funding": {
+  5609:         "url": "https://github.com/sponsors/ljharb"
+  5610        }
+
+  5613        "version": "1.0.1",
+  5614:       "resolved": "https://registry.npmjs.org/side-channel-map/-/side-channel-map-1.0.1.tgz",
+  5615        "integrity": "sha512-VCjCNfgMsby3tTdo02nbjtM/ewra6jPHmpThenkTYh8pG9ucZ/1P8So4u4FGBek/BjpOVsDCMoLA/iuBKIFXRA==",
+
+  5626        "funding": {
+  5627:         "url": "https://github.com/sponsors/ljharb"
+  5628        }
+
+  5631        "version": "1.0.2",
+  5632:       "resolved": "https://registry.npmjs.org/side-channel-weakmap/-/side-channel-weakmap-1.0.2.tgz",
+  5633        "integrity": "sha512-WPS/HvHQTYnHisLo9McqBHOJk2FkHO/tlpvldyrnem4aeQp4hai3gythswg6p01oSoTl58rcpiFAjF2br2Ak2A==",
+
+  5645        "funding": {
+  5646:         "url": "https://github.com/sponsors/ljharb"
+  5647        }
+
+  5650        "version": "4.1.0",
+  5651:       "resolved": "https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz",
+  5652        "integrity": "sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==",
+
+  5658        "funding": {
+  5659:         "url": "https://github.com/sponsors/isaacs"
+  5660        }
+
+  5663        "version": "2.0.3",
+  5664:       "resolved": "https://registry.npmjs.org/sonner/-/sonner-2.0.3.tgz",
+  5665        "integrity": "sha512-njQ4Hht92m0sMqqHVDL32V2Oun9W1+PHO9NDv9FHfJjT3JT22IG4Jpo3FPQy+mouRKCXFWO+r67v6MrHX2zeIA==",
+
+  5673        "version": "1.2.1",
+  5674:       "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz",
+  5675        "integrity": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
+
+  5682        "version": "0.4.1",
+  5683:       "resolved": "https://registry.npmjs.org/specificity/-/specificity-0.4.1.tgz",
+  5684        "integrity": "sha512-1klA3Gi5PD1Wv9Q0wUoOQN1IWAuPu0D1U03ThXTr0cJ20+/iq2tHSDnK7Kk/0LXJ1ztUB2/1Os0wKmfyNgUQfg==",
+
+  5691        "version": "2.0.1",
+  5692:       "resolved": "https://registry.npmjs.org/statuses/-/statuses-2.0.1.tgz",
+  5693        "integrity": "sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==",
+
+  5700        "version": "1.1.0",
+  5701:       "resolved": "https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz",
+  5702        "integrity": "sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==",
+
+  5708        "version": "5.1.2",
+  5709:       "resolved": "https://registry.npmjs.org/string-width/-/string-width-5.1.2.tgz",
+  5710        "integrity": "sha512-HnLOCR3vjcY8beoNLtcjZ5/nxn2afmME6lhrDrebokqMap+XbeW8n9TXpPDOqdGK5qcI3oT0GKTW6wC7EMiVqA==",
+
+  5721        "funding": {
+  5722:         "url": "https://github.com/sponsors/sindresorhus"
+  5723        }
+
+  5727        "version": "4.2.3",
+  5728:       "resolved": "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz",
+  5729        "integrity": "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==",
+
+  5742        "version": "5.0.1",
+  5743:       "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz",
+  5744        "integrity": "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==",
+
+  5752        "version": "8.0.0",
+  5753:       "resolved": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz",
+  5754        "integrity": "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==",
+
+  5759        "version": "6.0.1",
+  5760:       "resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz",
+  5761        "integrity": "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==",
+
+  5772        "version": "7.1.0",
+  5773:       "resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.1.0.tgz",
+  5774        "integrity": "sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ==",
+
+  5783        "funding": {
+  5784:         "url": "https://github.com/chalk/strip-ansi?sponsor=1"
+  5785        }
+
+  5789        "version": "6.0.1",
+  5790:       "resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz",
+  5791        "integrity": "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==",
+
+  5802        "version": "5.0.1",
+  5803:       "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz",
+  5804        "integrity": "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==",
+
+  5812        "version": "17.6.0",
+  5813:       "resolved": "https://registry.npmjs.org/stripe/-/stripe-17.6.0.tgz",
+  5814        "integrity": "sha512-+HB6+SManp0gSRB0dlPmXO+io18krlAe0uimXhhIkL/RG/VIRigkfoM3QDJPkqbuSW0XsA6uzsivNCJU1ELEDA==",
+
+  5825        "version": "5.1.1",
+  5826:       "resolved": "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.1.tgz",
+  5827        "integrity": "sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==",
+
+  5848        "version": "3.35.0",
+  5849:       "resolved": "https://registry.npmjs.org/sucrase/-/sucrase-3.35.0.tgz",
+  5850        "integrity": "sha512-8EbVDiu9iN/nESwxeSxDKe0dunta1GOlHufmSSXxMD2z2/tMZpDMpvXQGsc+ajGo8y2uYUmixaSRUc/QPoQ0GA==",
+
+  5871        "version": "1.0.0",
+  5872:       "resolved": "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz",
+  5873        "integrity": "sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==",
+
+  5878        "funding": {
+  5879:         "url": "https://github.com/sponsors/ljharb"
+  5880        }
+
+  5883        "version": "2.6.0",
+  5884:       "resolved": "https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-2.6.0.tgz",
+  5885        "integrity": "sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==",
+
+  5889          "type": "github",
+  5890:         "url": "https://github.com/sponsors/dcastil"
+  5891        }
+
+  5894        "version": "3.4.17",
+  5895:       "resolved": "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.17.tgz",
+  5896        "integrity": "sha512-w33E2aCvSDP0tW9RZuNXadXlkHXqFzSkQew/aIa2i/Sj8fThxwovwlXHSPXTbAHwEIhBFXAedUhP2tueAKP8Og==",
+
+  5932        "version": "1.0.7",
+  5933:       "resolved": "https://registry.npmjs.org/tailwindcss-animate/-/tailwindcss-animate-1.0.7.tgz",
+  5934        "integrity": "sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==",
+
+  5942        "version": "2.0.106",
+  5943:       "resolved": "https://registry.npmjs.org/tempo-devtools/-/tempo-devtools-2.0.106.tgz",
+  5944        "integrity": "sha512-YsParghl77qWZ0B3XrD0zmnNN8W7QBNfVlB08tNY+pR1sUgCuuwMk8LnC8PQ827OleGzzkBCZJXtG8u2ydbMHg==",
+
+  5972        "version": "3.3.1",
+  5973:       "resolved": "https://registry.npmjs.org/thenify/-/thenify-3.3.1.tgz",
+  5974        "integrity": "sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==",
+
+  5982        "version": "1.6.0",
+  5983:       "resolved": "https://registry.npmjs.org/thenify-all/-/thenify-all-1.6.0.tgz",
+  5984        "integrity": "sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==",
+
+  5995        "version": "0.2.13",
+  5996:       "resolved": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.13.tgz",
+  5997        "integrity": "sha512-mEwzpUgrLySlveBwEVDMKk5B57bhLPYovRfPAXD5gA/98Opn0rCDj3GtLwFvCvH5RK9uPCExUROW5NjDwvqkxw==",
+
+  6007        "funding": {
+  6008:         "url": "https://github.com/sponsors/SuperchupuDev"
+  6009        }
+
+  6012        "version": "6.4.4",
+  6013:       "resolved": "https://registry.npmjs.org/fdir/-/fdir-6.4.4.tgz",
+  6014        "integrity": "sha512-1NZP+GK4GfuAv3PqKvxQRDMjdSRZjnkq7KfhlNrCNNlZ0ygQFpebfrnfnq/W7fpUnAv9aGWmY1zKx7FYL3gwhg==",
+
+  6027        "version": "4.0.2",
+  6028:       "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.2.tgz",
+  6029        "integrity": "sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==",
+
+  6035        "funding": {
+  6036:         "url": "https://github.com/sponsors/jonschlinkert"
+  6037        }
+
+  6040        "version": "5.0.1",
+  6041:       "resolved": "https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz",
+  6042        "integrity": "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==",
+
+  6052        "version": "1.0.1",
+  6053:       "resolved": "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz",
+  6054        "integrity": "sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==",
+
+  6061        "version": "0.0.3",
+  6062:       "resolved": "https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz",
+  6063        "integrity": "sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==",
+
+  6067        "version": "0.1.13",
+  6068:       "resolved": "https://registry.npmjs.org/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz",
+  6069        "integrity": "sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==",
+
+  6074        "version": "2.8.1",
+  6075:       "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz",
+  6076        "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==",
+
+  6080        "version": "1.6.18",
+  6081:       "resolved": "https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz",
+  6082        "integrity": "sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==",
+
+  6093        "version": "5.7.3",
+  6094:       "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.7.3.tgz",
+  6095        "integrity": "sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==",
+
+  6107        "version": "1.5.4",
+  6108:       "resolved": "https://registry.npmjs.org/ufo/-/ufo-1.5.4.tgz",
+  6109        "integrity": "sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==",
+
+  6113        "version": "6.19.8",
+  6114:       "resolved": "https://registry.npmjs.org/undici-types/-/undici-types-6.19.8.tgz",
+  6115        "integrity": "sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==",
+
+  6119        "version": "1.0.0",
+  6120:       "resolved": "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz",
+  6121        "integrity": "sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==",
+
+  6128        "version": "1.1.2",
+  6129:       "resolved": "https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.1.2.tgz",
+  6130        "integrity": "sha512-PPypAm5qvlD7XMZC3BujecnaOxwhrtoFR+Dqkk5Aa/6DssiH0ibKoketaj9w8LP7Bont1rYeoV5plxD7RTEPRg==",
+
+  6133            "type": "opencollective",
+  6134:           "url": "https://opencollective.com/browserslist"
+  6135          },
+
+  6137            "type": "tidelift",
+  6138:           "url": "https://tidelift.com/funding/github/npm/browserslist"
+  6139          },
+
+  6141            "type": "github",
+  6142:           "url": "https://github.com/sponsors/ai"
+  6143          }
+
+  6158        "version": "1.3.3",
+  6159:       "resolved": "https://registry.npmjs.org/use-callback-ref/-/use-callback-ref-1.3.3.tgz",
+  6160        "integrity": "sha512-jQL3lRnocaFtu3V00JToYz/4QkNWswxijDaCVNZRiRTO3HQDLsdu1ZtmIUvV4yPp+rvWm5j0y0TG/S61cuijTg==",
+
+  6179        "version": "1.1.3",
+  6180:       "resolved": "https://registry.npmjs.org/use-sidecar/-/use-sidecar-1.1.3.tgz",
+  6181        "integrity": "sha512-Fedw0aZvkhynoPYlA5WXrMCAMm+nSWdZt6lzJQ7Ok8S6Q+VsHmHpRWndVRJ8Be0ZbkfPc5LRYH+5XrzXcEeLRQ==",
+
+  6201        "version": "1.4.0",
+  6202:       "resolved": "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.4.0.tgz",
+  6203        "integrity": "sha512-9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==",
+
+  6210        "version": "1.0.2",
+  6211:       "resolved": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz",
+  6212:       "integrity": "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==",
+  6213        "dev": true,
+
+  6217        "version": "1.0.1",
+  6218:       "resolved": "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz",
+  6219        "integrity": "sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==",
+
+  6226        "version": "9.0.1",
+  6227:       "resolved": "https://registry.npmjs.org/uuid/-/uuid-9.0.1.tgz",
+  6228        "integrity": "sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==",
+  6229        "funding": [
+  6230:         "https://github.com/sponsors/broofa",
+  6231:         "https://github.com/sponsors/ctavan"
+  6232        ],
+
+  6239        "version": "1.1.2",
+  6240:       "resolved": "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz",
+  6241        "integrity": "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==",
+
+  6248        "version": "1.1.2",
+  6249:       "resolved": "https://registry.npmjs.org/vaul/-/vaul-1.1.2.tgz",
+  6250        "integrity": "sha512-ZFkClGpWyI2WUQjdLJ/BaGuV6AVQiJ3uELGk3OYtP+B6yCO7Cmn9vPFXVJkRaGkOJu3m8bQMgtyzNHixULceQA==",
+
+  6261        "version": "6.3.5",
+  6262:       "resolved": "https://registry.npmjs.org/vite/-/vite-6.3.5.tgz",
+  6263        "integrity": "sha512-cZn6NDFE7wdTpINgs++ZJ4N49W2vRp8LCKrn3Ob1kYNtOo21vfDoaV5GzBfLU4MovSAB8uNRm4jgzVQZ+mBzPQ==",
+
+  6280        "funding": {
+  6281:         "url": "https://github.com/vitejs/vite?sponsor=1"
+  6282        },
+
+  6336        "version": "0.32.5",
+  6337:       "resolved": "https://registry.npmjs.org/vite-plugin-pages/-/vite-plugin-pages-0.32.5.tgz",
+  6338        "integrity": "sha512-GY2JAt+4vZ4BqTtw+4CSUxPgYiqamrMRIzYk2AtJvQHeBoMlctsQW+tgCpKriUKINiKfi6NegbP07r1XrdxTWA==",
+
+  6371        "version": "4.4.0",
+  6372:       "resolved": "https://registry.npmjs.org/debug/-/debug-4.4.0.tgz",
+  6373        "integrity": "sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==",
+
+  6388        "version": "2.1.3",
+  6389:       "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+  6390        "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
+
+  6394        "version": "6.4.4",
+  6395:       "resolved": "https://registry.npmjs.org/fdir/-/fdir-6.4.4.tgz",
+  6396        "integrity": "sha512-1NZP+GK4GfuAv3PqKvxQRDMjdSRZjnkq7KfhlNrCNNlZ0ygQFpebfrnfnq/W7fpUnAv9aGWmY1zKx7FYL3gwhg==",
+
+  6409        "version": "4.0.2",
+  6410:       "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.2.tgz",
+  6411        "integrity": "sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==",
+
+  6417        "funding": {
+  6418:         "url": "https://github.com/sponsors/jonschlinkert"
+  6419        }
+
+  6422        "version": "3.0.1",
+  6423:       "resolved": "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-3.0.1.tgz",
+  6424        "integrity": "sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==",
+
+  6428        "version": "5.0.0",
+  6429:       "resolved": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-5.0.0.tgz",
+  6430        "integrity": "sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==",
+
+  6438        "version": "2.0.2",
+  6439:       "resolved": "https://registry.npmjs.org/which/-/which-2.0.2.tgz",
+  6440        "integrity": "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==",
+
+  6454        "version": "8.1.0",
+  6455:       "resolved": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-8.1.0.tgz",
+  6456        "integrity": "sha512-si7QWI6zUMq56bESFvagtmzMdGOtoxfR+Sez11Mobfc7tm+VkUckk9bW2UeffTGVUbOksxmSw0AA2gs8g71NCQ==",
+
+  6467        "funding": {
+  6468:         "url": "https://github.com/chalk/wrap-ansi?sponsor=1"
+  6469        }
+
+  6473        "version": "7.0.0",
+  6474:       "resolved": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz",
+  6475        "integrity": "sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==",
+
+  6486        "funding": {
+  6487:         "url": "https://github.com/chalk/wrap-ansi?sponsor=1"
+  6488        }
+
+  6491        "version": "5.0.1",
+  6492:       "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz",
+  6493        "integrity": "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==",
+
+  6501        "version": "4.3.0",
+  6502:       "resolved": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz",
+  6503        "integrity": "sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==",
+
+  6512        "funding": {
+  6513:         "url": "https://github.com/chalk/ansi-styles?sponsor=1"
+  6514        }
+
+  6517        "version": "8.0.0",
+  6518:       "resolved": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz",
+  6519        "integrity": "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==",
+
+  6524        "version": "4.2.3",
+  6525:       "resolved": "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz",
+  6526        "integrity": "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==",
+
+  6539        "version": "6.0.1",
+  6540:       "resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz",
+  6541        "integrity": "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==",
+
+  6552        "version": "1.0.2",
+  6553:       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+  6554        "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==",
+
+  6558        "version": "8.18.0",
+  6559:       "resolved": "https://registry.npmjs.org/ws/-/ws-8.18.0.tgz",
+  6560        "integrity": "sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==",
+
+  6579        "version": "2.7.0",
+  6580:       "resolved": "https://registry.npmjs.org/yaml/-/yaml-2.7.0.tgz",
+  6581        "integrity": "sha512-+hSoy/QHluxmC9kCIJyL/uyFmLmc+e5CFR5Wa+bpIhIj85LVb9ZH2nVnqrHoSvKogwODv0ClqZkmiSSaIH5LTA==",
+
+hooks/useBlogAnalytics.ts:
+   68  
+   70    useEffect(() => {
+
+   84  
+   85:   
+   86    useEffect(() => {
+
+   88        trackView();
+   89:     }, 1000); 
+   90  
+
+   93  
+   94:   // Update engagement data periodically
+   95    useEffect(() => {
+
+   97        updateViewEngagement();
+   98:     }, 30000); // Update every 30 seconds
+   99  
+  100:     // Update on page unload
+  101      const handleBeforeUnload = () => {
+
+  109        window.removeEventListener('beforeunload', handleBeforeUnload);
+  110:       updateViewEngagement(); // Final update on cleanup
+  111      };
+
+  113  
+  114:   // Check if user already liked this post
+  115    useEffect(() => {
+
+  126        } catch (error) {
+  127:         // User hasn't liked yet
+  128          setIsLiked(false);
+
+  134  
+  135:   // Get current stats
+  136    useEffect(() => {
+
+  156  
+  157:   // Toggle like
+  158    const toggleLike = useCallback(async () => {
+
+  160        if (isLiked) {
+  161:         // Remove like
+  162          await supabase
+
+  170        } else {
+  171:         // Add like
+  172          await supabase
+
+  188  
+  189:   // Track share
+  190    const trackShare = useCallback(async (platform: string) => {
+
+hooks/useRealtimeBlogAnalytics.ts:
+   30  
+   31: // Type definitions for the joined query results
+   32  interface BlogViewWithPost {
+
+   81  
+   82:   // Calculate analytics from posts
+   83    const calculateAnalytics = useCallback((postsData: BlogPost[]) => {
+
+   99        engagementRate,
+  100:       viewsThisWeek: 0, // Will be calculated separately
+  101        recentActivity: [],
+
+  104  
+  105:   // Fetch posts with latest analytics
+  106    const fetchPosts = useCallback(async () => {
+
+  140  
+  141:   // Fetch recent activity
+  142    const fetchRecentActivity = useCallback(async () => {
+
+  192  
+  193:       // Combine recent activity
+  194        const recentActivity = [
+
+  230  
+  231:   // Set up real-time subscriptions
+  232    useEffect(() => {
+  233:     // Subscribe to blog_posts changes (when stats are updated)
+  234      const postsChannel = supabase
+
+  244            console.log('Blog post updated:', payload);
+  245:           // Update the specific post in state
+  246            setPosts(prevPosts => 
+
+  252            );
+  253:           // Recalculate analytics
+  254            setPosts(prevPosts => {
+
+  266  
+  267:     // Subscribe to new views
+  268      const viewsChannel = supabase
+
+  283  
+  284:     // Subscribe to new likes
+  285      const likesChannel = supabase
+
+  300  
+  301:     // Subscribe to new comments
+  302      const commentsChannel = supabase
+
+  317  
+  318:     // Subscribe to new shares
+  319      const sharesChannel = supabase
+
+  334  
+  335:     // Cleanup subscriptions
+  336      return () => {
+
+  344  
+  345:   // Initial data fetch
+  346    useEffect(() => {
+
+  354  
+  355:   // Refresh data periodically
+  356    useEffect(() => {
+
+  359        fetchRecentActivity();
+  360:     }, 30000); // Refresh every 30 seconds
+  361  
+
+src/middleware.ts:
+  28  
+  29:   // Refresh session if expired - required for Server Components
+  30    const { data: { session }, error } = await supabase.auth.getSession()
+
+  38  
+  39: // Ensure the middleware is only called for relevant paths
+  40  export const config = {
+
+src/app/layout.tsx:
+  24      <html lang="en" suppressHydrationWarning>
+  25:       <Script src="https://api.tempolabs.ai/proxy-asset?url=https://storage.googleapis.com/tempo-public-assets/error-handling.js" />
+  26        <body className={inter.className}>
+
+src/app/page.tsx:
+   50  
+   51:   // Company logos - adjusted for 120x120px
+   52    const clientLogos = [
+
+   58  
+   59:   // Gallery items with categories
+   60    const galleryItems = [
+
+  125  
+  126:   // Testimonials
+  127    const testimonials = [
+
+  150  
+  151:   // Services data
+  152    const services = [
+
+  182  
+  183:   // Filter gallery items
+  184    const filteredGallery =
+
+  195  
+  196:   // Auto-slide testimonials
+  197    useEffect(() => {
+
+  203  
+  204:   // Gallery categories
+  205    const categories = [
+
+  258          <meta property="og:type" content="website" />
+  259:         <meta property="og:url" content="https://ganpathioverseas.com/" />
+  260          <meta
+
+src/app/(auth)/smtp-message.tsx:
+  14            <Link
+  15:             href="https://supabase.com/docs/guides/auth/auth-smtp"
+  16              target="_blank"
+
+src/app/admin/page.tsx:
+  82  
+  83:         // Show success state briefly before redirect
+  84          setTimeout(() => {
+
+src/app/auth/callback/route.ts:
+  13  
+  14:   // URL to redirect to after sign in process completes
+  15    const redirectTo = redirect_to || "/dashboard";
+
+src/app/blog/page.tsx:
+  28    if (!mounted) {
+  29:     return null; // Prevent hydration mismatch
+  30    }
+  31  
+  32:   // Get categories for stats
+  33    const categories = posts
+
+  36  
+  37:   // Get most popular posts
+  38    const popularPosts =
+
+src/app/blog/[slug]/blog-post-client.tsx:
+   84  
+   85:   // Real-time updates for this specific post
+   86    useEffect(() => {
+
+   98            console.log("Post stats updated:", payload);
+   99:           // The analytics hook will handle the updates
+  100          }
+
+  108  
+  109:   // Format date
+  110    const formatDate = (dateString: string) => {
+
+  118  
+  119:   // Calculate reading time
+  120    useEffect(() => {
+
+  125  
+  126:   // Check if bookmarked
+  127    useEffect(() => {
+
+  135  
+  136:   // Load comments
+  137    useEffect(() => {
+
+  157  
+  158:   // Share functionality
+  159    const handleShare = async (platform?: string) => {
+
+  164      if (platform) {
+  165:       // Track the share
+  166        trackShare(platform);
+
+  170          case "twitter":
+  171:           shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+  172            break;
+  173          case "facebook":
+  174:           shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+  175            break;
+  176          case "linkedin":
+  177:           shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+  178            break;
+
+  189      } else {
+  190:       // Native share or copy to clipboard
+  191        if (navigator.share) {
+
+  198        } else {
+  199:         // Fallback: copy to clipboard
+  200          navigator.clipboard.writeText(url);
+
+  206  
+  207:   // Toggle bookmark
+  208    const toggleBookmark = () => {
+
+  227  
+  228:   // Submit comment
+  229    const handleSubmitComment = async (e: React.FormEvent) => {
+
+  775                    <Image
+  776:                     src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${post.author}`}
+  777                      alt={post.author}
+
+src/app/blog/[slug]/page.tsx:
+   48  
+   49: // Generate comprehensive metadata for SEO
+   50  export async function generateMetadata({
+
+   71    const baseUrl =
+   72:     process.env.NEXT_PUBLIC_SITE_URL || "https://ganpathioverseas.com";
+   73    const postUrl = `${baseUrl}/blog/${post.slug}`;
+
+   76  
+   77:   // Generate structured data
+   78    const structuredData = {
+   79:     "@context": "https://schema.org",
+   80      "@type": "BlogPosting",
+
+  153  
+  154:     // OpenGraph tags
+  155      openGraph: {
+
+  176  
+  177:     // Twitter Card tags
+  178      twitter: {
+
+  187  
+  188:     // Additional SEO tags
+  189      alternates: {
+
+  192  
+  193:     // Robots
+  194      robots: {
+
+  205  
+  206:     // Additional meta tags
+  207      other: {
+  208:       // Article specific
+  209        "article:published_time": post.publish_date || post.created_at,
+
+  214  
+  215:       // SEO specific
+  216        "content-language": "en-US",
+
+  220  
+  221:       // Schema.org JSON-LD
+  222        "script:ld+json": JSON.stringify(structuredData),
+
+  226  
+  227: // Generate static params for better performance
+  228  export async function generateStaticParams() {
+
+  248  
+  249:   // Fetch blog post with all SEO data
+  250    const { data: post, error } = await supabase
+
+  268  
+  269:   // Fetch related posts based on category and tags
+  270    let relatedPostsQuery = supabase
+
+  286  
+  287:   // Track page view (server-side)
+  288    try {
+
+  290  
+  291:     // Log detailed analytics
+  292      await supabase.from("blog_views").insert([
+
+  305  
+  306:   // Generate breadcrumb data
+  307    const breadcrumbs = [
+
+  323            __html: JSON.stringify({
+  324:             "@context": "https://schema.org",
+  325              "@type": "BlogPosting",
+
+  363              __html: JSON.stringify({
+  364:               "@context": "https://schema.org",
+  365                "@type": "BreadcrumbList",
+
+src/app/dashboard/comment-management.tsx:
+    1: // "use client";
+    2  
+    3: // import { useState, useEffect } from "react";
+    4: // import { createClient } from "../../supabase/client";
+    5: // import { Badge } from "@/components/ui/badge";
+    6: // import { Button } from "@/components/ui/button";
+    7: // import {
+    8: //   Card,
+    9: //   CardContent,
+   10: //   CardDescription,
+   11: //   CardHeader,
+   12: //   CardTitle,
+   13: // } from "@/components/ui/card";
+   14: // import {
+   15: //   Dialog,
+   16: //   DialogContent,
+   17: //   DialogDescription,
+   18: //   DialogFooter,
+   19: //   DialogHeader,
+   20: //   DialogTitle,
+   21: // } from "@/components/ui/dialog";
+   22: // import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+   23: // import {
+   24: //   MessageCircle,
+   25: //   CheckCircle,
+   26: //   XCircle,
+   27: //   Clock,
+   28: //   User,
+   29: //   Calendar,
+   30: //   AlertCircle,
+   31: //   Activity,
+   32: //   RefreshCw,
+   33: //   BarChart3,
+   34: // } from "lucide-react";
+   35: // import { toast } from "sonner";
+   36  
+   37: // interface Comment {
+   38: //   id: string;
+   39: //   blog_post_id: string;
+   40: //   slug: string;
+   41: //   author_name: string;
+   42: //   author_email: string;
+   43: //   comment_text: string;
+   44: //   status: 'pending' | 'approved' | 'rejected';
+   45: //   created_at: string;
+   46: //   blog_posts?: {
+   47: //     title: string;
+   48: //   };
+   49: // }
+   50  
+   51: // export default function CommentManagement() {
+   52: //   const [comments, setComments] = useState<Comment[]>([]);
+   53: //   const [selectedComment, setSelectedComment] = useState<Comment | null>(null);
+   54: //   const [isDialogOpen, setIsDialogOpen] = useState(false);
+   55: //   const [activeTab, setActiveTab] = useState<'pending' | 'approved' | 'rejected' | 'all'>('pending');
+   56: //   const [isLoading, setIsLoading] = useState(true);
+   57: //   const [isRefreshing, setIsRefreshing] = useState(false);
+   58  
+   59: //   const supabase = createClient();
+   60  
+   61: //   // Fetch comments
+   62: //   const fetchComments = async () => {
+   63: //     try {
+   64: //       setIsRefreshing(true);
+   65: //       const { data, error } = await supabase
+   66: //         .from('blog_comments')
+   67: //         .select(`
+   68: //           *,
+   69: //           blog_posts (title)
+   70: //         `)
+   71: //         .order('created_at', { ascending: false });
+   72  
+   73: //       if (error) throw error;
+   74: //       setComments(data || []);
+   75: //     } catch (error) {
+   76: //       console.error('Error fetching comments:', error);
+   77: //       toast.error('Failed to fetch comments');
+   78: //     } finally {
+   79: //       setIsLoading(false);
+   80: //       setIsRefreshing(false);
+   81: //     }
+   82: //   };
+   83  
+   84: //   // Set up real-time subscription
+   85: //   useEffect(() => {
+   86: //     const channel = supabase
+   87: //       .channel('comments_realtime')
+   88: //       .on(
+   89: //         'postgres_changes',
+   90: //         {
+   91: //           event: '*',
+   92: //           schema: 'public',
+   93: //           table: 'blog_comments',
+   94: //         },
+   95: //         (payload) => {
+   96: //           console.log('Comment event:', payload);
+   97            
+   98: //           if (payload.eventType === 'INSERT') {
+   99: //             // Add new comment with animation
+  100: //             fetchComments(); // Refetch to get blog post title
+  101: //             toast.success('New comment received!');
+  102: //           } else if (payload.eventType === 'UPDATE') {
+  103: //             // Update existing comment
+  104: //             setComments(prev => 
+  105: //               prev.map(comment => 
+  106: //                 comment.id === payload.new.id 
+  107: //                   ? { ...comment, ...payload.new }
+  108: //                   : comment
+  109: //               )
+  110: //             );
+  111: //           } else if (payload.eventType === 'DELETE') {
+  112: //             // Remove deleted comment
+  113: //             setComments(prev => 
+  114: //               prev.filter(comment => comment.id !== payload.old.id)
+  115: //             );
+  116: //           }
+  117: //         }
+  118: //       )
+  119: //       .subscribe();
+  120  
+  121: //     return () => {
+  122: //       supabase.removeChannel(channel);
+  123: //     };
+  124: //   }, [supabase]);
+  125  
+  126: //   // Initial fetch
+  127: //   useEffect(() => {
+  128: //     fetchComments();
+  129: //   }, []);
+  130  
+  131: //   // Filter comments
+  132: //   const filteredComments = comments.filter(comment => {
+  133: //     if (activeTab === 'all') return true;
+  134: //     return comment.status === activeTab;
+  135: //   });
+  136  
+  137: //   // Update comment status
+  138: //   const updateCommentStatus = async (commentId: string, status: 'approved' | 'rejected') => {
+  139: //     try {
+  140: //       const { error } = await supabase
+  141: //         .from('blog_comments')
+  142: //         .update({ 
+  143: //           status,
+  144: //           updated_at: new Date().toISOString()
+  145: //         })
+  146: //         .eq('id', commentId);
+  147  
+  148: //       if (error) throw error;
+  149  
+  150: //       toast.success(`Comment ${status} successfully!`);
+  151: //       setIsDialogOpen(false);
+  152: //     } catch (error) {
+  153: //       console.error('Error updating comment:', error);
+  154: //       toast.error('Failed to update comment status');
+  155: //     }
+  156: //   };
+  157  
+  158: //   // Delete comment
+  159: //   const deleteComment = async (commentId: string) => {
+  160: //     try {
+  161: //       const { error } = await supabase
+  162: //         .from('blog_comments')
+  163: //         .delete()
+  164: //         .eq('id', commentId);
+  165  
+  166: //       if (error) throw error;
+  167  
+  168: //       toast.success('Comment deleted successfully!');
+  169: //       setIsDialogOpen(false);
+  170: //     } catch (error) {
+  171: //       console.error('Error deleting comment:', error);
+  172: //       toast.error('Failed to delete comment');
+  173: //     }
+  174: //   };
+  175  
+  176: //   // Format date
+  177: //   const formatDate = (dateString: string) => {
+  178: //     return new Date(dateString).toLocaleDateString("en-US", {
+  179: //       year: "numeric",
+  180: //       month: "short",
+  181: //       day: "numeric",
+  182: //       hour: "2-digit",
+  183: //       minute: "2-digit",
+  184: //     });
+  185: //   };
+  186  
+  187: //   // Get status badge
+  188: //   const getStatusBadge = (status: string) => {
+  189: //     switch (status) {
+  190: //       case 'pending':
+  191: //         return (
+  192: //           <Badge className="bg-yellow-100 text-yellow-800 border-yellow-200">
+  193: //             <Clock className="w-3 h-3 mr-1" />
+  194: //             Pending
+  195: //           </Badge>
+  196: //         );
+  197: //       case 'approved':
+  198: //         return (
+  199: //           <Badge className="bg-green-100 text-green-800 border-green-200">
+  200: //             <CheckCircle className="w-3 h-3 mr-1" />
+  201: //             Approved
+  202: //           </Badge>
+  203: //         );
+  204: //       case 'rejected':
+  205: //         return (
+  206: //           <Badge className="bg-red-100 text-red-800 border-red-200">
+  207: //             <XCircle className="w-3 h-3 mr-1" />
+  208: //             Rejected
+  209: //           </Badge>
+  210: //         );
+  211: //       default:
+  212: //         return <Badge variant="outline">Unknown</Badge>;
+  213: //     }
+  214: //   };
+  215  
+  216: //   // Get comment counts
+  217: //   const getCommentCounts = () => {
+  218: //     return {
+  219: //       all: comments.length,
+  220: //       pending: comments.filter(c => c.status === 'pending').length,
+  221: //       approved: comments.filter(c => c.status === 'approved').length,
+  222: //       rejected: comments.filter(c => c.status === 'rejected').length,
+  223: //     };
+  224: //   };
+  225  
+  226: //   const counts = getCommentCounts();
+  227  
+  228: //   return (
+  229: //     <div className="space-y-6">
+  230: //       {/* Header */}
+  231: //       <div className="flex justify-between items-center">
+  232: //         <div className="flex items-center space-x-4">
+  233: //           <h2 className="text-2xl font-semibold">Comment Management</h2>
+  234: //           <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+  235: //             <Activity className="w-3 h-3 mr-1 animate-pulse" />
+  236: //             Live Updates
+  237: //           </Badge>
+  238: //           <Button
+  239: //             onClick={fetchComments}
+  240: //             variant="outline"
+  241: //             size="sm"
+  242: //             disabled={isRefreshing}
+  243: //           >
+  244: //             <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? "animate-spin" : ""}`} />
+  245: //             Refresh
+  246: //           </Button>
+  247: //         </div>
+  248: //       </div>
+  249  
+  250: //       {/* Stats Cards */}
+  251: //       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+  252: //         <Card className="bg-blue-50 border-blue-200">
+  253: //           <CardContent className="p-4">
+  254: //             <div className="flex items-center justify-between">
+  255: //               <div>
+  256: //                 <p className="text-sm text-red-600">Rejected</p>
+  257: //                 <p className="text-2xl font-bold text-red-900 transition-all duration-500">
+  258: //                   {counts.rejected}
+  259: //                 </p>
+  260: //               </div>
+  261: //               <XCircle className="w-8 h-8 text-red-500" />
+  262: //             </div>
+  263: //           </CardContent>
+  264: //         </Card>
+  265: //       </div>
+  266  
+  267: //       {/* Tabs */}
+  268: //       <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as any)}>
+  269: //         <TabsList className="mb-6">
+  270: //           <TabsTrigger value="pending">
+  271: //             Pending ({counts.pending})
+  272: //             {counts.pending > 0 && (
+  273: //               <div className="w-2 h-2 bg-yellow-500 rounded-full ml-2 animate-pulse" />
+  274: //             )}
+  275: //           </TabsTrigger>
+  276: //           <TabsTrigger value="approved">Approved ({counts.approved})</TabsTrigger>
+  277: //           <TabsTrigger value="rejected">Rejected ({counts.rejected})</TabsTrigger>
+  278: //           <TabsTrigger value="all">All ({counts.all})</TabsTrigger>
+  279: //         </Tabs>
+  280  
+  281: //         <TabsContent value={activeTab}>
+  282: //           {isLoading ? (
+  283: //             <div className="text-center py-16">
+  284: //               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+  285: //               <p className="text-gray-600">Loading comments...</p>
+  286: //             </div>
+  287: //           ) : filteredComments.length === 0 ? (
+  288: //             <div className="text-center py-16 bg-gray-50 rounded-xl">
+  289: //               <MessageCircle className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+  290: //               <h3 className="text-xl font-semibold text-gray-900 mb-2">
+  291: //                 No {activeTab === 'all' ? '' : activeTab} comments found
+  292: //               </h3>
+  293: //               <p className="text-gray-500">
+  294: //                 {activeTab === 'pending' 
+  295: //                   ? 'New comments will appear here for moderation.'
+  296: //                   : `No ${activeTab} comments at the moment.`
+  297: //                 }
+  298: //               </p>
+  299: //             </div>
+  300: //           ) : (
+  301: //             <div className="space-y-4">
+  302: //               {filteredComments.map((comment) => (
+  303: //                 <Card 
+  304: //                   key={comment.id} 
+  305: //                   className={`hover:shadow-lg transition-all duration-300 ${
+  306: //                     comment.status === 'pending' ? 'border-yellow-200 bg-yellow-50/30' :
+  307: //                     comment.status === 'approved' ? 'border-green-200 bg-green-50/30' :
+  308: //                     'border-red-200 bg-red-50/30'
+  309: //                   }`}
+  310: //                 >
+  311: //                   <CardHeader>
+  312: //                     <div className="flex items-start justify-between">
+  313: //                       <div className="space-y-2">
+  314: //                         <div className="flex items-center space-x-2">
+  315: //                           <CardTitle className="text-lg">
+  316: //                             {comment.blog_posts?.title || 'Unknown Post'}
+  317: //                           </CardTitle>
+  318: //                           {getStatusBadge(comment.status)}
+  319: //                         </div>
+  320: //                         <div className="flex items-center space-x-4 text-sm text-gray-500">
+  321: //                           <div className="flex items-center">
+  322: //                             <User className="h-4 w-4 mr-1" />
+  323: //                             <span className="font-medium">{comment.author_name}</span>
+  324: //                           </div>
+  325: //                           <div className="flex items-center">
+  326: //                             <Calendar className="h-4 w-4 mr-1" />
+  327: //                             <span>{formatDate(comment.created_at)}</span>
+  328: //                           </div>
+  329: //                         </div>
+  330: //                       </div>
+  331: //                     </div>
+  332: //                   </CardHeader>
+  333  
+  334: //                   <CardContent>
+  335: //                     <div className="space-y-4">
+  336: //                       {/* Comment Text */}
+  337: //                       <div className="p-4 bg-white rounded-lg border">
+  338: //                         <p className="text-gray-700 whitespace-pre-wrap">
+  339: //                           {comment.comment_text}
+  340: //                         </p>
+  341: //                       </div>
+  342  
+  343: //                       {/* Author Info */}
+  344: //                       <div className="text-sm text-gray-600">
+  345: //                         <span className="font-medium">Email:</span> {comment.author_email}
+  346: //                       </div>
+  347: //                     </div>
+  348: //                   </CardContent>
+  349  
+  350: //                   <CardContent className="pt-0">
+  351: //                     <div className="flex justify-end space-x-2">
+  352: //                       {comment.status === 'pending' && (
+  353: //                         <>
+  354: //                           <Button
+  355: //                             onClick={() => updateCommentStatus(comment.id, 'approved')}
+  356: //                             size="sm"
+  357: //                             className="bg-green-600 hover:bg-green-700 text-white"
+  358: //                           >
+  359: //                             <CheckCircle className="w-4 h-4 mr-1" />
+  360: //                             Approve
+  361: //                           </Button>
+  362: //                           <Button
+  363: //                             onClick={() => updateCommentStatus(comment.id, 'rejected')}
+  364: //                             size="sm"
+  365: //                             variant="outline"
+  366: //                             className="text-red-600 border-red-300 hover:bg-red-50"
+  367: //                           >
+  368: //                             <XCircle className="w-4 h-4 mr-1" />
+  369: //                             Reject
+  370: //                           </Button>
+  371: //                         </>
+  372: //                       )}
+  373                        
+  374: //                       {comment.status === 'approved' && (
+  375: //                         <Button
+  376: //                           onClick={() => updateCommentStatus(comment.id, 'rejected')}
+  377: //                           size="sm"
+  378: //                           variant="outline"
+  379: //                           className="text-red-600 border-red-300 hover:bg-red-50"
+  380: //                         >
+  381: //                           <XCircle className="w-4 h-4 mr-1" />
+  382: //                           Reject
+  383: //                         </Button>
+  384: //                       )}
+  385                        
+  386: //                       {comment.status === 'rejected' && (
+  387: //                         <Button
+  388: //                           onClick={() => updateCommentStatus(comment.id, 'approved')}
+  389: //                           size="sm"
+  390: //                           className="bg-green-600 hover:bg-green-700 text-white"
+  391: //                         >
+  392: //                           <CheckCircle className="w-4 h-4 mr-1" />
+  393: //                           Approve
+  394: //                         </Button>
+  395: //                       )}
+  396  
+  397: //                       <Button
+  398: //                         onClick={() => {
+  399: //                           setSelectedComment(comment);
+  400: //                           setIsDialogOpen(true);
+  401: //                         }}
+  402: //                         size="sm"
+  403: //                         variant="outline"
+  404: //                         className="text-red-600 border-red-300 hover:bg-red-50"
+  405: //                       >
+  406: //                         Delete
+  407: //                       </Button>
+  408: //                     </div>
+  409: //                   </CardContent>
+  410: //                 </Card>
+  411: //               ))}
+  412: //             </div>
+  413: //           )}
+  414: //         </TabsContent>
+  415: //       </Tabs>
+  416  
+  417: //       {/* Delete Confirmation Dialog */}
+  418: //       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+  419: //         <DialogContent className="sm:max-w-md">
+  420: //           <DialogHeader>
+  421: //             <DialogTitle className="flex items-center">
+  422: //               <AlertCircle className="w-5 h-5 mr-2 text-red-600" />
+  423: //               Delete Comment
+  424: //             </DialogTitle>
+  425: //             <DialogDescription>
+  426: //               Are you sure you want to delete this comment from{' '}
+  427: //               <span className="font-medium">{selectedComment?.author_name}</span>?
+  428: //               This action cannot be undone.
+  429: //             </DialogDescription>
+  430: //           </DialogHeader>
+  431            
+  432: //           {selectedComment && (
+  433: //             <div className="p-3 bg-gray-50 rounded-lg border">
+  434: //               <p className="text-sm text-gray-700 line-clamp-3">
+  435: //                 {selectedComment.comment_text}
+  436: //               </p>
+  437: //             </div>
+  438: //           )}
+  439  
+  440: //           <DialogFooter>
+  441: //             <Button
+  442: //               variant="outline"
+  443: //               onClick={() => setIsDialogOpen(false)}
+  444: //             >
+  445: //               Cancel
+  446: //             </Button>
+  447: //             <Button
+  448: //               onClick={() => selectedComment && deleteComment(selectedComment.id)}
+  449: //               className="bg-red-600 hover:bg-red-700"
+  450: //             >
+  451: //               Delete Comment
+  452: //             </Button>
+  453: //           </DialogFooter>
+  454: //         </DialogContent>
+  455: //       </Dialog>
+  456  
+  457: //       {/* Bulk Actions Section */}
+  458: //       {counts.pending > 0 && (
+  459: //         <Card className="mt-6 bg-yellow-50 border-yellow-200">
+  460: //           <CardHeader>
+  461: //             <CardTitle className="text-yellow-800 flex items-center">
+  462: //               <AlertCircle className="w-5 h-5 mr-2" />
+  463: //               Bulk Actions
+  464: //             </CardTitle>
+  465: //             <CardDescription className="text-yellow-700">
+  466: //               You have {counts.pending} comments waiting for review.
+  467: //             </CardDescription>
+  468: //           </CardHeader>
+  469: //           <CardContent>
+  470: //             <div className="flex space-x-3">
+  471: //               <Button
+  472: //                 onClick={async () => {
+  473: //                   try {
+  474: //                     const pendingComments = comments.filter(c => c.status === 'pending');
+  475: //                     const { error } = await supabase
+  476: //                       .from('blog_comments')
+  477: //                       .update({ status: 'approved', updated_at: new Date().toISOString() })
+  478: //                       .in('id', pendingComments.map(c => c.id));
+  479  
+  480: //                     if (error) throw error;
+  481: //                     toast.success(`Approved ${pendingComments.length} comments!`);
+  482: //                   } catch (error) {
+  483: //                     console.error('Error bulk approving:', error);
+  484: //                     toast.error('Failed to bulk approve comments');
+  485: //                   }
+  486: //                 }}
+  487: //                 className="bg-green-600 hover:bg-green-700"
+  488: //               >
+  489: //                 <CheckCircle className="w-4 h-4 mr-2" />
+  490: //                 Approve All Pending
+  491: //               </Button>
+  492                
+  493: //               <Button
+  494: //                 onClick={async () => {
+  495: //                   try {
+  496: //                     const pendingComments = comments.filter(c => c.status === 'pending');
+  497: //                     const { error } = await supabase
+  498: //                       .from('blog_comments')
+  499: //                       .update({ status: 'rejected', updated_at: new Date().toISOString() })
+  500: //                       .in('id', pendingComments.map(c => c.id));
+  501  
+  502: //                     if (error) throw error;
+  503: //                     toast.success(`Rejected ${pendingComments.length} comments!`);
+  504: //                   } catch (error) {
+  505: //                     console.error('Error bulk rejecting:', error);
+  506: //                     toast.error('Failed to bulk reject comments');
+  507: //                   }
+  508: //                 }}
+  509: //                 variant="outline"
+  510: //                 className="text-red-600 border-red-300 hover:bg-red-50"
+  511: //               >
+  512: //                 <XCircle className="w-4 h-4 mr-2" />
+  513: //                 Reject All Pending
+  514: //               </Button>
+  515: //             </div>
+  516: //           </CardContent>
+  517: //         </Card>
+  518: //       )}
+  519  
+  520: //       {/* Auto-moderation Settings */}
+  521: //       <Card className="mt-6">
+  522: //         <CardHeader>
+  523: //           <CardTitle className="flex items-center">
+  524: //             <MessageCircle className="w-5 h-5 mr-2 text-blue-600" />
+  525: //             Comment Settings
+  526: //           </CardTitle>
+  527: //           <CardDescription>
+  528: //             Configure how comments are handled on your blog
+  529: //           </CardDescription>
+  530: //         </CardHeader>
+  531: //         <CardContent className="space-y-4">
+  532: //           <div className="flex items-center justify-between p-4 border rounded-lg">
+  533: //             <div>
+  534: //               <h4 className="font-medium">Auto-approve trusted commenters</h4>
+  535: //               <p className="text-sm text-gray-600">
+  536: //                 Automatically approve comments from users who have had previous comments approved
+  537: //               </p>
+  538: //             </div>
+  539: //             <Button variant="outline" size="sm">
+  540: //               Configure
+  541: //             </Button>
+  542: //           </div>
+  543            
+  544: //           <div className="flex items-center justify-between p-4 border rounded-lg">
+  545: //             <div>
+  546: //               <h4 className="font-medium">Email notifications</h4>
+  547: //               <p className="text-sm text-gray-600">
+  548: //                 Get notified when new comments are submitted for review
+  549: //               </p>
+  550: //             </div>
+  551: //             <Button variant="outline" size="sm">
+  552: //               Settings
+  553: //             </Button>
+  554: //           </div>
+  555            
+  556: //           <div className="flex items-center justify-between p-4 border rounded-lg">
+  557: //             <div>
+  558: //               <h4 className="font-medium">Comment moderation</h4>
+  559: //               <p className="text-sm text-gray-600">
+  560: //                 Require approval for all comments before they appear publicly
+  561: //               </p>
+  562: //             </div>
+  563: //             <Badge className="bg-green-100 text-green-800">
+  564: //               Enabled
+  565: //             </Badge>
+  566: //           </div>
+  567: //         </CardContent>
+  568: //       </Card>
+  569  
+  570: //       {/* Recent Comment Activity */}
+  571: //       {comments.length > 0 && (
+  572: //         <Card className="mt-6">
+  573: //           <CardHeader>
+  574: //             <CardTitle className="flex items-center">
+  575: //               <Activity className="w-5 h-5 mr-2 text-purple-600 animate-pulse" />
+  576: //               Recent Comment Activity
+  577: //             </CardTitle>
+  578: //             <CardDescription>
+  579: //               Latest comment interactions across all blog posts
+  580: //             </CardDescription>
+  581: //           </CardHeader>
+  582: //           <CardContent>
+  583: //             <div className="space-y-3 max-h-80 overflow-y-auto">
+  584: //               {comments.slice(0, 10).map((comment, index) => (
+  585: //                 <div
+  586: //                   key={comment.id}
+  587: //                   className="flex items-start space-x-3 p-3 hover:bg-gray-50 rounded-lg transition-all duration-200"
+  588: //                   style={{ animationDelay: `${index * 50}ms` }}
+  589: //                 >
+  590: //                   <div className={`p-1.5 rounded-full ${
+  591: //                     comment.status === 'pending' ? 'bg-yellow-100' :
+  592: //                     comment.status === 'approved' ? 'bg-green-100' :
+  593: //                     'bg-red-100'
+  594: //                   }`}>
+  595: //                     {comment.status === 'pending' && <Clock className="w-3 h-3 text-yellow-600" />}
+  596: //                     {comment.status === 'approved' && <CheckCircle className="w-3 h-3 text-green-600" />}
+  597: //                     {comment.status === 'rejected' && <XCircle className="w-3 h-3 text-red-600" />}
+  598: //                   </div>
+  599: //                   <div className="flex-1 min-w-0">
+  600: //                     <p className="text-sm font-medium text-gray-900 truncate">
+  601: //                       {comment.author_name} commented on "{comment.blog_posts?.title || 'Unknown Post'}"
+  602: //                     </p>
+  603: //                     <p className="text-xs text-gray-600 truncate">
+  604: //                       "{comment.comment_text.slice(0, 60)}..." • {formatDate(comment.created_at)}
+  605: //                     </p>
+  606: //                   </div>
+  607: //                   <div className={`px-2 py-1 rounded-full text-xs ${
+  608: //                     comment.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+  609: //                     comment.status === 'approved' ? 'bg-green-100 text-green-800' :
+  610: //                     'bg-red-100 text-red-800'
+  611: //                   }`}>
+  612: //                     {comment.status}
+  613: //                   </div>
+  614: //                 </div>
+  615: //               ))}
+  616: //             </div>
+  617: //           </CardContent>
+  618: //         </Card>
+  619: //       )}
+  620  
+  621: //       {/* Export Options */}
+  622: //       <Card className="mt-6">
+  623: //         <CardHeader>
+  624: //           <CardTitle>Export & Analytics</CardTitle>
+  625: //           <CardDescription>
+  626: //             Download comment data and view engagement analytics
+  627: //           </CardDescription>
+  628: //         </CardHeader>
+  629: //         <CardContent>
+  630: //           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+  631: //             <Button
+  632: //               variant="outline"
+  633: //               className="flex flex-col items-center p-6 h-auto"
+  634: //               onClick={() => {
+  635: //                 // Export functionality
+  636: //                 const csvData = comments.map(comment => ({
+  637: //                   'Post Title': comment.blog_posts?.title || 'Unknown',
+  638: //                   'Author Name': comment.author_name,
+  639: //                   'Author Email': comment.author_email,
+  640: //                   'Comment': comment.comment_text,
+  641: //                   'Status': comment.status,
+  642: //                   'Date': formatDate(comment.created_at)
+  643: //                 }));
+  644                  
+  645: //                 const csv = [
+  646: //                   Object.keys(csvData[0] || {}).join(','),
+  647: //                   ...csvData.map(row => Object.values(row).map(val => `"${val}"`).join(','))
+  648: //                 ].join('\n');
+  649                  
+  650: //                 const blob = new Blob([csv], { type: 'text/csv' });
+  651: //                 const url = window.URL.createObjectURL(blob);
+  652: //                 const a = document.createElement('a');
+  653: //                 a.href = url;
+  654: //                 a.download = `blog-comments-${new Date().toISOString().split('T')[0]}.csv`;
+  655: //                 a.click();
+  656: //                 window.URL.revokeObjectURL(url);
+  657                  
+  658: //                 toast.success('Comments exported to CSV!');
+  659: //               }}
+  660: //             >
+  661: //               <MessageCircle className="w-6 h-6 mb-2" />
+  662: //               <span className="font-medium">Export Comments</span>
+  663: //               <span className="text-xs text-gray-500">Download as CSV</span>
+  664: //             </Button>
+  665              
+  666: //             <Button
+  667: //               variant="outline"
+  668: //               className="flex flex-col items-center p-6 h-auto"
+  669: //               onClick={() => {
+  670: //                 toast.info('Analytics feature coming soon!');
+  671: //               }}
+  672: //             >
+  673: //               <BarChart3 className="w-6 h-6 mb-2" />
+  674: //               <span className="font-medium">Comment Analytics</span>
+  675: //               <span className="text-xs text-gray-500">View trends</span>
+  676: //             </Button>
+  677              
+  678: //             <Button
+  679: //               variant="outline"
+  680: //               className="flex flex-col items-center p-6 h-auto"
+  681: //               onClick={() => {
+  682: //                 toast.info('User insights coming soon!');
+  683: //               }}
+  684: //             >
+  685: //               <User className="w-6 h-6 mb-2" />
+  686: //               <span className="font-medium">Top Commenters</span>
+  687: //               <span className="text-xs text-gray-500">User insights</span>
+  688: //             </Button>
+  689: //           </div>
+  690: //         </CardContent>
+  691: //       </Card>
+  692: //     </div>
+  693: //   );
+  694: // }="text-sm text-blue-600">Total Comments</p>
+  695: //                 <p className="text-2xl font-bold text-blue-900 transition-all duration-500">
+  696: //                   {counts.all}
+  697: //                 </p>
+  698: //               </div>
+  699: //               <MessageCircle className="w-8 h-8 text-blue-500" />
+  700: //             </div>
+  701: //           </CardContent>
+  702: //         </Card>
+  703  
+  704: //         <Card className="bg-yellow-50 border-yellow-200">
+  705: //           <CardContent className="p-4">
+  706: //             <div className="flex items-center justify-between">
+  707: //               <div>
+  708: //                 <p className="text-sm text-yellow-600">Pending Review</p>
+  709: //                 <p className="text-2xl font-bold text-yellow-900 transition-all duration-500">
+  710: //                   {counts.pending}
+  711: //                 </p>
+  712: //               </div>
+  713: //               <Clock className="w-8 h-8 text-yellow-500" />
+  714: //             </div>
+  715: //           </CardContent>
+  716: //         </Card>
+  717  
+  718: //         <Card className="bg-green-50 border-green-200">
+  719: //           <CardContent className="p-4">
+  720: //             <div className="flex items-center justify-between">
+  721: //               <div>
+  722: //                 <p className="text-sm text-green-600">Approved</p>
+  723: //                 <p className="text-2xl font-bold text-green-900 transition-all duration-500">
+  724: //                   {counts.approved}
+  725: //                 </p>
+  726: //               </div>
+  727: //               <CheckCircle className="w-8 h-8 text-green-500" />
+  728: //             </div>
+  729: //           </CardContent>
+  730: //         </Card>
+  731  
+  732: //         <Card className="bg-red-50 border-red-200">
+  733: //           <CardContent className="p-4">
+  734: //             <div className="flex items-center justify-between">
+  735: //               <div>
+  736: //                 <p className
+
+src/app/dashboard/layout.tsx:
+  26  
+
+  28            if (sessionAge < twentyFourHours) {
+
+  30            } else {
+
+  32              localStorage.removeItem("admin_session");
+
+  48  
+
+  50    if (loading) {
+
+  60  
+
+  62    if (!isAuthenticated) {
+
+src/app/dashboard/page.tsx:
+   24  
+
+   26  interface RecentInquiry {
+
+   53  
+
+   55    useEffect(() => {
+
+   65  
+
+   67            if (sessionAge < twentyFourHours) {
+
+   70            } else {
+
+   72              localStorage.removeItem("admin_session");
+
+   86  
+
+   88    const fetchDashboardData = async () => {
+
+   91  
+
+   93        const [inquiriesResult, blogPostsResult] = await Promise.all([
+
+  100  
+
+  102        const newInquiries =
+
+  105  
+
+  107        const recentInquiries: RecentInquiry[] = (
+
+  126        console.error("Error fetching dashboard data:", error);
+
+  128      }
+
+  130  
+
+  132    if (loading) {
+
+  142  
+
+  144    if (!isAuthenticated) {
+
+src/app/dashboard/blog/page.tsx:
+    6  import { createClient } from "../../../../supabase/client";
+    7: import AdvancedBlogEditor from "../../../components/blog/advanced-blog-editor"; // Adjust path as needed
+    8  
+
+   67  
+   68: // Enhanced interfaces
+   69  interface BlogPost {
+
+  151  
+  152:   // Filter states
+  153    const [searchTerm, setSearchTerm] = useState("");
+
+  163    const handleSavePost = (post: any): void => {
+  164:     // Handle saving the post
+  165      setPosts((prev) => [...prev, post]);
+
+  171    };
+  172:   // Check authentication
+  173    useEffect(() => {
+
+  202  
+  203:   // Fetch comprehensive blog data with SEO analytics
+  204    const fetchBlogData = async () => {
+
+  207  
+  208:       // Fetch blog posts with all SEO data
+  209        const { data: blogPosts, error: postsError } = await supabase
+
+  229  
+  230:       // Calculate comprehensive stats
+  231        const totalPosts = blogPosts?.length || 0;
+
+  238  
+  239:       // Aggregate analytics
+  240        const totalViews =
+
+  249  
+  250:       // SEO metrics
+  251        const avgSeoScore =
+
+  257  
+  258:       // Find top performing post
+  259        const topPerformingPost = blogPosts?.reduce(
+
+  274  
+  275:       // Get SEO analytics
+  276        const { data: seoData } = await supabase
+
+  291  
+  292:       // Get recent activity
+  293        const oneWeekAgo = new Date();
+
+  300  
+  301:       // Calculate engagement rate
+  302        const engagementActions = totalLikes + totalComments + totalShares;
+
+  330  
+  331:   // Filter and search functionality
+  332    useEffect(() => {
+
+  334  
+  335:     // Search filter
+  336      if (searchTerm) {
+
+  346  
+  347:     // Status filter
+  348      if (statusFilter !== "all") {
+
+  351  
+  352:     // Category filter
+  353      if (categoryFilter !== "all") {
+
+  356  
+  357:     // Sort
+  358      filtered.sort((a, b) => {
+
+  371  
+  372:   // Get unique categories
+  373    const categories = Array.from(new Set(posts.map((post) => post.category)));
+  374  
+  375:   // Bulk actions
+  376    const handleBulkAction = async (action: string) => {
+
+  437  
+  438:   // Export data
+  439    const handleExport = () => {
+  440      const csvContent = [
+  441:       // Header
+  442        [
+
+  452        ].join(","),
+  453:       // Data
+  454        ...filteredPosts.map((post) =>
+
+  477  
+  478:   // Get SEO score color
+  479    const getSeoScoreColor = (score: number) => {
+
+  484  
+  485:   // Format date
+  486    const formatDate = (dateString: string) => {
+
+src/app/dashboard/inquiries/page.tsx:
+   24  
+   25: // Define a flexible interface for our database data
+   26  interface ContactInquiry {
+
+   39  
+   40: // Type for what InquiryList expects (with required fields)
+   41  type InquiryListItem = ContactInquiry & {
+
+   74  
+   75:   // Check authentication
+   76    useEffect(() => {
+
+  105  
+  106:   // Fetch inquiries and calculate stats
+  107    const fetchInquiriesData = async () => {
+
+  120  
+  121:       // Set the inquiries data as-is from the database
+  122        setInquiries(inquiriesData || []);
+  123  
+  124:       // Calculate stats
+  125        const totalInquiries = inquiriesData?.length || 0;
+
+  132  
+  133:       // Today's inquiries
+  134        const today = new Date().toDateString();
+
+  139  
+  140:       // Response rate
+  141        const responseRate =
+
+  158  
+  159:   // Transform inquiries for InquiryList component
+  160    const transformInquiriesForList = (
+
+src/app/services/page.tsx:
+   37        ],
+   38:       // More relevant printing industry image
+   39        image: "/images/services/offset-printing.jpg",
+
+   52        ],
+   53:       // UV printing specific image
+   54        image: "/images/services/UV_Printing.webp",
+
+   67        ],
+   68:       // Digital printing equipment image
+   69        image: "/images/services/Digital_Printing.jpg",
+
+   82        ],
+   83:       // Large format banner/poster image
+   84        image: "/images/services/large_format_printing.webp",
+
+   97        ],
+   98:       // Book printing/binding image
+   99        image: "/images/services/book_publishing.jpg",
+
+  112        ],
+  113:       // Packaging/boxes image
+  114        image: "/images/services/packaging_solutions.jpg",
+
+src/components/animated-sections.tsx:
+  143                <Image
+  144:                 src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80"
+  145                  alt="Before printing enhancement"
+
+  164                <Image
+  165:                 src="https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=800&q=80"
+  166                  alt="After printing enhancement"
+
+src/components/contact-form.tsx:
+  45  
+  46:     // Clear any previous status when user starts typing
+  47      if (formStatus.type) {
+
+  59  
+  60:       // Insert inquiry into database
+  61        const { data, error } = await supabase
+
+  81  
+  82:       // Success - reset form
+  83        setFormData({
+
+  98  
+  99:       // Auto-hide success message after 5 seconds
+  100        setTimeout(() => {
+
+src/components/footer.tsx:
+  68                      version="1.0"
+  69:                     xmlns="http://www.w3.org/2000/svg"
+  70                      width="550.000000pt"
+
+src/components/hero.tsx:
+  156                        {
+  157:                         src: "https://images.unsplash.com/photo-1601645191163-3fc0d5d64e35?w=500&q=80",
+  158                          alt: "Offset printing",
+
+  161                        {
+  162:                         src: "https://images.unsplash.com/photo-1611244419377-b0a760c19719?w=500&q=80",
+  163                          alt: "UV printing",
+
+  166                        {
+  167:                         src: "https://images.unsplash.com/photo-1611244419377-b0a760c19719?w=500&q=80",
+  168                          alt: "Business cards",
+
+  171                        {
+  172:                         src: "https://images.unsplash.com/photo-1601645191163-3fc0d5d64e35?w=500&q=80",
+  173                          alt: "Large format",
+
+src/components/navbar-client.tsx:
+  37    const [searchQuery, setSearchQuery] = useState("");
+  38:   const [notifications] = useState(3); // Mock notification count
+  39    const pathname = usePathname();
+  40  
+  41:   // Handle scroll effect
+  42    useEffect(() => {
+
+src/components/navbar.tsx:
+  29  
+  30:   // Close mobile menu when route changes
+  31    useEffect(() => {
+
+  78                    version="1.0"
+  79:                   xmlns="http://www.w3.org/2000/svg"
+  80                    width="550.000000pt"
+
+src/components/optimized-image.tsx:
+  34  
+  35:   // Get optimized URL if it's a Supabase image
+  36    const optimizedSrc = imageUploadService.getOptimizedUrl(
+
+  42  
+  43:   // Fallback image
+  44:   const fallbackSrc = "/images/placeholder.jpg"; // You'll need to add this
+  45  
+
+  83  
+  84: // Utility component for hero backgrounds
+  85  export function HeroBackground({
+
+src/components/page-transition-provider.tsx:
+  17  
+  18:     // Simulate page loading
+  19      const timer = setTimeout(() => {
+
+src/components/tempo-init.tsx:
+  1  "use client";
+  2: // Import the dev tools and initialize them
+  3  import { useEffect } from "react";
+
+src/components/theme-switcher.tsx:
+  18  
+  19:   // useEffect only runs on the client, so now we can safely show the UI
+  20    useEffect(() => {
+
+src/components/url-provider.tsx:
+  12    useEffect(() => {
+  13:     // Get the full URL information
+  14      const baseUrl = window.location.origin;
+  15      
+  16:     // Check if we're behind a proxy like ngrok by looking at the hostname
+  17      const isProxy = !baseUrl.includes('localhost') && !baseUrl.includes('127.0.0.1');
+  18      
+  19:     // Store the URL for use in the form
+  20      setCurrentUrl(baseUrl);
+  21      
+  22:     // If we're using a proxy like ngrok, log for debugging
+  23      if (isProxy) {
+
+  27  
+  28:   // Clone children and add the currentUrl as a hidden input
+  29    const childrenWithUrl = React.Children.map(children, (child) => {
+
+src/components/blog/advanced-blog-editor.tsx:
+   127  }) {
+   128:   // Main post state
+   129    const [post, setPost] = useState<BlogPost>({
+
+   148  
+   149:   // Editor states
+   150    const [activeTab, setActiveTab] = useState("content");
+
+   173  
+   174:   // Auto-generate slug from title
+   175    useEffect(() => {
+
+   184  
+   185:   // Auto-generate meta fields
+   186    useEffect(() => {
+
+   194  
+   195:   // Real-time SEO analysis
+   196    useEffect(() => {
+
+   201  
+   202:       // Calculate word count and reading time
+   203        const wordCount = post.content
+
+   208  
+   209:       // Analyze SEO factors
+   210        const issues: SEOAnalysis["issues"] = [];
+
+   212  
+   213:       // Title length check
+   214        if (post.title.length < 30 || post.title.length > 60) {
+
+   230  
+   231:       // Meta description check
+   232        if (!post.meta_description) {
+
+   254  
+   255:       // Focus keyword analysis
+   256        let keywordAnalysis = {
+
+   272  
+   273:         // Check headings
+   274          const headingMatches =
+
+   279  
+   280:         // Keyword scoring
+   281          if (keywordAnalysis.inTitle) score += 15;
+
+   292  
+   293:       // Content length check
+   294        if (wordCount < 300) {
+
+   313  
+   314:       // Image alt text check
+   315        if (post.cover_image && !post.alt_text) {
+
+   329  
+   330:       // Tags check
+   331        if (!post.tags || post.tags.length === 0) {
+
+   350  
+   351:       // Update post with calculated values
+   352        setPost((prev) => ({
+
+   384  
+   385:   // Handle image upload
+   386    const handleImageUpload = async (file?: File) => {
+
+   390        if (imageUploadType === "url") {
+   391:         // Validate URL
+   392          if (!imageUrl) {
+
+   396  
+   397:         // Test if URL is accessible
+   398          const img = new Image();
+
+   409        } else if (file) {
+   410:         // Upload file to Supabase storage
+   411          const fileExt = file.name.split(".").pop();
+
+   420  
+   421:         // Simulate progress for user feedback
+   422          const progressInterval = setInterval(() => {
+
+   431  
+   432:         // Complete progress after upload
+   433          setTimeout(() => {
+
+   441  
+   442:         // Save to media library
+   443          await supabase.from("media_library").insert([
+
+   465  
+   466:   // Add tag
+   467    const addTag = () => {
+
+   476  
+   477:   // Remove tag
+   478    const removeTag = (tagToRemove: string) => {
+
+   484  
+   485:   // Format text
+   486    const formatText = (format: string) => {
+
+   541  
+   542:   // Save post
+   543    const handleSave = async (status: string = post.status || "draft") => {
+
+   560        if (initialPost?.id) {
+   561:         // Update existing post
+   562          const { error } = await supabase
+
+   569        } else {
+   570:         // Create new post
+   571          const { data, error } = await supabase
+
+  1380                <Input
+  1381:                 placeholder="https://example.com/image.jpg"
+  1382                  value={imageUrl}
+
+src/components/blog/blog-list.tsx:
+   88  
+
+   90    useEffect(() => {
+
+  108  
+
+  110                    setTimeout(() => {
+
+  147  
+
+  149    useEffect(() => {
+
+  157  
+
+  159    useEffect(() => {
+
+  162  
+
+  164    const categories = Array.from(new Set(posts.map((post) => post.category)));
+
+  167  
+
+  169    const filteredPosts = posts
+  170      .filter((post) => {
+
+  172        if (post.status !== "published") return false;
+
+  216  
+
+  218    const featuredPosts = filteredPosts
+
+  222  
+
+  224    const formatDate = (dateString: string) => {
+
+  232  
+
+  234    const getSeoScoreColor = (score: number) => {
+
+  239  
+
+  241    const handleSubscribe = async (e: React.FormEvent) => {
+
+  274  
+
+  276    const toggleBookmark = (postId: string) => {
+
+  535                              post.cover_image ||
+  536:                             "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=800&q=80"
+  537                            }
+
+  612              viewMode === "grid" ? (
+
+  614                <Link href={`/blog/${post.slug}`} key={post.id} className="group">
+
+  622                          post.cover_image ||
+  623:                         "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=800&q=80"
+  624                        }
+
+  783              ) : (
+
+  785                <Link href={`/blog/${post.slug}`} key={post.id} className="group">
+
+  794                            post.cover_image ||
+  795:                           "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=800&q=80"
+  796                          }
+
+src/components/dashboard/blog-post-list.tsx:
+   76  
+
+   78    useEffect(() => {
+
+   99  
+
+  101    const refreshPosts = async () => {
+
+  158        cover_image:
+  159:         "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=800&q=80",
+  160        author: "Admin",
+
+  191        if (selectedPost) {
+
+  193          const { error } = await supabase
+
+  208  
+
+  210          setPosts((prev) =>
+
+  217        } else {
+
+  219          const { data, error } = await supabase
+
+  236  
+
+  238          if (data) {
+
+  266  
+
+  268        setPosts((prev) => prev.filter((post) => post.id !== selectedPost.id));
+
+  395                        post.cover_image ||
+  396:                       "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=800&q=80"
+  397                      }
+
+  521                      onChange={handleChange}
+  522:                     placeholder="https://example.com/image.jpg"
+  523                      required
+
+src/components/dashboard/inquiry-list.tsx:
+   93  
+
+   95    useEffect(() => {
+
+  128  
+
+  130    useEffect(() => {
+
+  133  
+
+  135    const refreshInquiries = async () => {
+
+  152  
+
+  154    const refreshHistory = async () => {
+
+  209  
+
+  211        setInquiries((prev) =>
+
+  229      try {
+
+  231        const { error: historyError } = await supabase
+
+  251  
+
+  253        const { error: updateError } = await supabase
+
+  263  
+
+  265        setInquiries((prev) =>
+
+  272  
+
+  274        refreshHistory();
+
+src/components/ui/calendar.tsx:
+  51        }}
+  52:       
+  56        {...props}
+
+src/components/ui/use-toast.ts:
+   1: import * as React from "react";
+
+  90  
+  91:       
+  93        if (toastId) {
+
+src/utils/imageUpload.ts:
+   18      try {
+   19:       
+   20        const fileExt = file.name.split('.').pop();
+
+   23  
+   24:      
+   25        const { data, error } = await this.supabase.storage
+
+   35  
+   36:       
+   37        const { data: { publicUrl } } = this.supabase.storage
+
+   86      if (!url.includes('supabase')) {
+   87:       return url; 
+   88      }
+
+   93      params.set('quality', quality.toString());
+   94:     params.set('format', 'webp'); 
+   95  
+
+   99  
+  100:
+  101  export const imageUploadService = new ImageUploadService();
+  102  
+  103: 
+  104  export const validateImage = (file: File): { valid: boolean; error?: string } => {
+  105:   const maxSize = 5 * 1024 * 1024; 
+  106    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+
+  124  
+  125: 
+  126  export const getFilePathFromUrl = (url: string): string | null => {
+
+supabase/config.toml:
+    1  # For detailed configuration reference documentation, visit:
+    2: # https://supabase.com/docs/guides/local-development/cli/config
+    3  # A string used to distinguish different Supabase projects on the same host. Defaults to the
+
+   66  # External URL of the API server that frontend connects to.
+   67: api_url = "http://127.0.0.1"
+   68  # OpenAI API Key to use for Supabase AI in the Supabase Studio.
+
+  102  # in emails.
+  103: site_url = "http://127.0.0.1:3000"
+  104  # A list of *exact* URLs that auth providers are permitted to redirect to post authentication.
+  105: additional_redirect_urls = ["https://127.0.0.1:3000"]
+  106  # How long tokens are valid for, in seconds. Defaults to 3600 (1 hour), maximum 604,800 (1 week).
+
+  186  # enabled = true
+  187: # uri = "pg-functions://<database>/<schema>/<hook_name>"
+  188  
+
+supabase/middleware.ts:
+   4  export const updateSession = async (request: NextRequest) => {
+   5:   // This `try/catch` block is only here for the interactive tutorial.
+   6:   // Feel free to remove once you have Supabase connected.
+   7    try {
+   8:     // Create an unmodified response
+   9      let response = NextResponse.next({
+
+  40  
+  41:    
+  42:     
+  43      const { data: { user }, error } = await supabase.auth.getUser();
+  44  
+  45:     
+  46      if (request.nextUrl.pathname.startsWith("/dashboard") && error) {
+
+  55    } catch (e) {
+  59      return NextResponse.next({
+
+supabase/server.ts:
+   9  
+  11  export const createServerClient = (req: any, res: any) => {
+
+supabase/migrations/20240523000001_create_blog_and_inquiries_tables.sql:
+  39    '<p>Offset printing has been the backbone of the commercial printing industry for decades, and for good reason. This tried-and-true printing method delivers exceptional quality, consistency, and cost-effectiveness for medium to large print runs.</p><h2>How Offset Printing Works</h2><p>Unlike digital printing, which transfers toner directly onto paper, offset printing uses plates (typically made from aluminum) that transfer an image onto a rubber blanket, which then transfers it onto the printing surface. This indirect method—where the image is offset from the plate to the blanket to the surface—is why it''s called "offset" printing.</p><h2>Advantages of Offset Printing</h2><ul><li><strong>Superior Image Quality:</strong> Offset printing produces sharp, clean images and type with consistent high quality.</li><li><strong>Cost-Effective for Large Runs:</strong> While setup costs are higher than digital printing, the per-unit cost decreases significantly as quantity increases.</li><li><strong>Wide Range of Materials:</strong> Offset printing works on various paper types, textures, and thicknesses.</li><li><strong>Special Inks and Colors:</strong> Offers precise color matching with Pantone colors and specialty inks like metallics.</li></ul><h2>When to Choose Offset Printing</h2><p>Offset printing is ideal for projects requiring:</p><ul><li>Large quantities (typically 500+ pieces)</li><li>Consistent, high-quality color reproduction</li><li>Specific brand colors (Pantone matching)</li><li>Special finishes or paper stocks</li></ul><p>At Ganpathi Overseas, our state-of-the-art offset printing equipment ensures your projects receive the highest quality treatment. Our experienced press operators meticulously monitor each job to maintain color consistency and image quality throughout the entire run.</p>',
+  40:   'https://images.unsplash.com/photo-1601645191163-3fc0d5d64e35?w=800&q=80',
+  41    'Rajesh Kumar',
+
+  51    '<p>When planning a print project, one of the first decisions you''ll need to make is which printing method to use. The two primary options—digital and offset printing—each have distinct advantages and ideal use cases.</p><h2>Digital Printing</h2><p>Digital printing uses toner or liquid ink directly applied to paper, similar to office printers but with professional-grade equipment.</p><h3>Advantages:</h3><ul><li><strong>Quick Turnaround:</strong> No plate setup means faster production times</li><li><strong>Cost-Effective for Small Runs:</strong> Ideal for quantities under 500</li><li><strong>Variable Data Printing:</strong> Each piece can be personalized</li><li><strong>Print on Demand:</strong> Print only what you need, when you need it</li></ul><h2>Offset Printing</h2><p>Offset printing transfers ink from metal plates to rubber blankets before applying to paper.</p><h3>Advantages:</h3><ul><li><strong>Superior Quality:</strong> Sharper details and more precise color matching</li><li><strong>Cost-Effective for Large Runs:</strong> Unit cost decreases as quantity increases</li><li><strong>Special Inks:</strong> Can use Pantone colors, metallics, and custom inks</li><li><strong>Wide Material Range:</strong> Works on various paper types and thicknesses</li></ul><h2>Making Your Decision</h2><p>Consider these factors when choosing between digital and offset:</p><ul><li><strong>Quantity:</strong> Small runs (under 500) typically favor digital; larger runs favor offset</li><li><strong>Timeline:</strong> Need it fast? Digital usually has quicker turnaround</li><li><strong>Color Accuracy:</strong> Brand-specific colors often require offset with Pantone matching</li><li><strong>Personalization:</strong> Variable data needs point to digital</li><li><strong>Budget:</strong> Consider both immediate costs and per-unit pricing</li></ul><p>At Ganpathi Overseas, we offer both digital and offset printing services, allowing us to recommend the best solution for your specific project requirements and budget.</p>',
+  52:   'https://images.unsplash.com/photo-1611244419377-b0a760c19719?w=800&q=80',
+  53    'Priya Sharma',

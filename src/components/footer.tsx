@@ -50,9 +50,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white relative overflow-hidden">
       {/* Decorative Background Elements */}
-      <div className="absolute inset-0 opacity-10">
-       
-      </div>
+      <div className="absolute inset-0 opacity-10"></div>
 
       {/* Main Footer Content */}
       <div className="py-16 relative z-10">
@@ -427,7 +425,7 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
               </div>
 
               <p className="text-gray-300 leading-relaxed">
-                Leading printing services provider in Lucknow with 25+ years of
+                Leading printing services provider in Lucknow with 20+ years of
                 experience. We deliver quality, innovation, and reliability in
                 every project.
               </p>
@@ -435,7 +433,7 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 pt-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-400">25+</div>
+                  <div className="text-2xl font-bold text-blue-400">20+</div>
                   <div className="text-xs text-gray-400">Years</div>
                 </div>
                 <div className="text-center">
@@ -498,7 +496,7 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
                       <br />
                       Near Boothnath Metro Station
                       <br />
-                      Lucknow, UP 2226016
+                      Lucknow, UP 226016.
                     </p>
                   </div>
                 </div>
@@ -537,25 +535,25 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
                 <h4 className="font-semibold mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="/coming-soon"
                     className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
                   >
                     <Facebook className="w-5 h-5" />
                   </a>
                   <a
-                    href="#"
+                    href="/coming-soon"
                     className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
                   >
                     <Twitter className="w-5 h-5" />
                   </a>
                   <a
-                    href="#"
+                    href="/coming-soon"
                     className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
                   >
                     <Instagram className="w-5 h-5" />
                   </a>
                   <a
-                    href="#"
+                    href="/coming-soon"
                     className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
                   >
                     <Linkedin className="w-5 h-5" />
@@ -572,7 +570,7 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © 2024 Ganpathi Overseas. All rights reserved.
+              ©2025 Ganpathi Overseas. All rights reserved.
             </div>
 
             <div className="flex space-x-6 text-sm">

@@ -7,7 +7,6 @@ export const createClient = () => {
   );
 };
 
-// For server-side operations in pages router, use this in getServerSideProps or API routes
 export const createServerClient = (req: any, res: any) => {
   return createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,

@@ -1,7 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { createClient } from '../supabase/client';
 
-// Generate or get visitor ID
 const getVisitorId = (): string => {
   if (typeof window === 'undefined') return 'server';
   
@@ -24,7 +23,6 @@ export const useBlogAnalytics = (blogPostId: string, slug: string) => {
   const supabase = createClient();
   const visitorId = getVisitorId();
 
-  // Track page view
   const trackView = useCallback(async () => {
     if (hasTrackedView) return;
     
@@ -47,7 +45,6 @@ export const useBlogAnalytics = (blogPostId: string, slug: string) => {
     }
   }, [blogPostId, slug, visitorId, hasTrackedView, supabase]);
 
-  // Update view with engagement data
   const updateViewEngagement = useCallback(async () => {
     if (!hasTrackedView) return;
 
@@ -85,22 +82,18 @@ export const useBlogAnalytics = (blogPostId: string, slug: string) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollDepth]);
 
-  // Track view on mount
   useEffect(() => {
     const timer = setTimeout(() => {
       trackView();
-    }, 1000); // Wait 1 second before tracking view
-
+    }, 1000); 
     return () => clearTimeout(timer);
   }, [trackView]);
 
-  // Update engagement data periodically
   useEffect(() => {
     const interval = setInterval(() => {
       updateViewEngagement();
-    }, 30000); // Update every 30 seconds
+    }, 30000); 
 
-    // Update on page unload
     const handleBeforeUnload = () => {
       updateViewEngagement();
     };
@@ -110,11 +103,10 @@ export const useBlogAnalytics = (blogPostId: string, slug: string) => {
     return () => {
       clearInterval(interval);
       window.removeEventListener('beforeunload', handleBeforeUnload);
-      updateViewEngagement(); // Final update on cleanup
+      updateViewEngagement(); 
     };
   }, [updateViewEngagement]);
 
-  // Check if user already liked this post
   useEffect(() => {
     const checkExistingLike = async () => {
       try {
@@ -127,7 +119,6 @@ export const useBlogAnalytics = (blogPostId: string, slug: string) => {
 
         setIsLiked(!!data);
       } catch (error) {
-        // User hasn't liked yet
         setIsLiked(false);
       }
     };
@@ -135,7 +126,6 @@ export const useBlogAnalytics = (blogPostId: string, slug: string) => {
     checkExistingLike();
   }, [blogPostId, visitorId, supabase]);
 
-  // Get current stats
   useEffect(() => {
     const getStats = async () => {
       try {
@@ -157,11 +147,9 @@ export const useBlogAnalytics = (blogPostId: string, slug: string) => {
     getStats();
   }, [blogPostId, supabase]);
 
-  // Toggle like
   const toggleLike = useCallback(async () => {
     try {
       if (isLiked) {
-        // Remove like
         await supabase
           .from('blog_likes')
           .delete()
@@ -171,7 +159,6 @@ export const useBlogAnalytics = (blogPostId: string, slug: string) => {
         setIsLiked(false);
         setLikeCount(prev => Math.max(0, prev - 1));
       } else {
-        // Add like
         await supabase
           .from('blog_likes')
           .insert([{
@@ -189,7 +176,6 @@ export const useBlogAnalytics = (blogPostId: string, slug: string) => {
     }
   }, [blogPostId, slug, visitorId, isLiked, supabase]);
 
-  // Track share
   const trackShare = useCallback(async (platform: string) => {
     try {
       await supabase

@@ -10,18 +10,18 @@ export class ImageUploadService {
    * @param folder - Folder within bucket (optional)
    * @returns Promise with public URL or error
    */
+  
   async uploadImage(
     file: File, 
     bucket: 'blog-images' | 'gallery' | 'uploads',
     folder?: string
   ): Promise<{ url?: string; error?: string }> {
     try {
-      // Generate unique filename
+
       const fileExt = file.name.split('.').pop();
       const fileName = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}.${fileExt}`;
       const filePath = folder ? `${folder}/${fileName}` : fileName;
 
-      // Upload file
       const { data, error } = await this.supabase.storage
         .from(bucket)
         .upload(filePath, file, {
