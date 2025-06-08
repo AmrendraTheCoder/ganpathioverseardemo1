@@ -131,20 +131,27 @@ export default function InquiryList({
     refreshHistory();
   }, []);
 
-  // Refresh inquiries from database
+  // Refresh inquiries from API
   const refreshInquiries = async () => {
     setIsRefreshing(true);
     try {
-      const { data, error } = await supabase
-        .from("contact_inquiries")
-        .select("*")
-        .order("created_at", { ascending: false });
+      const response = await fetch("/api/admin/inquiries");
 
-      if (error) throw error;
-      setInquiries(data || []);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+
+      if (result.success) {
+        setInquiries(result.data || []);
+        toast.success("Inquiries refreshed successfully!");
+      } else {
+        throw new Error(result.error || "Failed to fetch inquiries");
+      }
     } catch (error) {
       console.error("Error refreshing inquiries:", error);
-      toast.error("Failed to refresh inquiries");
+      toast.error("Failed to refresh inquiries. Please try again.");
     } finally {
       setIsRefreshing(false);
     }

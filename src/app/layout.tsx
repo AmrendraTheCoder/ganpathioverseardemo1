@@ -5,6 +5,7 @@ import Script from "next/script";
 import { TempoInit } from "@/components/tempo-init";
 import { ThemeProvider } from "@/components/theme-provider";
 import ErrorBoundary from "@/components/error-boundary";
+import ChatbotWidget from "@/components/chatbot-widget";
 import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -35,6 +36,7 @@ export default function RootLayout({
               {children}
             </main>
           </ErrorBoundary>
+          <ChatbotWidget />
           <TempoInit />
           <Toaster position="top-right" expand={false} richColors closeButton />
         </ThemeProvider>

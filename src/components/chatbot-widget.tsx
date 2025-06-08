@@ -1,102 +1,140 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Mail, ArrowRight, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send, Bot, User, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { usePathname } from "next/navigation";
+import { Input } from "@/components/ui/input";
 
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const pathname = usePathname();
+interface Message {
+  id: string;
+  type: "bot" | "user";
+  text: string;
+  timestamp: Date;
+}
 
+export default function ChatbotWidget() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [inputValue, setInputValue] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  // Initialize with welcome message
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = scrollTop / docHeight;
+    if (isOpen && messages.length === 0) {
+      const welcomeMessage: Message = {
+        id: "welcome",
+        type: "bot",
+        text: "🎯 Welcome to Ganpathi Overseas!\n\nYour trusted printing partner since 20+ years.\n\n✨ Ask me about:\n• Business Cards & Brochures\n• Large Format Printing\n• Custom Print Solutions\n• Quote & Pricing\n• File Requirements\n\nHow can I assist you today?",
+        timestamp: new Date(),
+      };
+      setMessages([welcomeMessage]);
+    }
+  }, [isOpen, messages.length]);
 
-      setIsScrolled(scrollTop > 50);
-      setScrollProgress(scrollPercent * 100);
+  // Hide widget when scrolling down, show when scrolling up
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsVisible(currentScrollY < lastScrollY || currentScrollY < 100);
+      lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
+  const sendMessage = async (text: string) => {
+    if (!text.trim()) return;
 
-  const navItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Portfolio", href: "/portfolio" },
-    { name: "Contact", href: "/contact" },
-  ];
+    // Add user message
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      type: "user",
+      text,
+      timestamp: new Date(),
+    };
 
-  const isActiveLink = (href: string) => {
-    if (href === "/") {
-      return pathname === "/";
+    setMessages((prev) => [...prev, userMessage]);
+    setInputValue("");
+    setIsTyping(true);
+
+    try {
+      // Call chatbot API
+      const response = await fetch("/api/chatbot", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        const botMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          type: "bot",
+          text: result.response,
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, botMessage]);
+      } else {
+        throw new Error("API failed");
+      }
+    } catch (error) {
+      // Fallback response
+      const fallbackMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        type: "bot",
+        text: "I'm having trouble connecting right now. Please call us at +91 965 191 1111 for immediate assistance!",
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, fallbackMessage]);
+    } finally {
+      setIsTyping(false);
     }
-    return pathname.startsWith(href);
   };
 
+  const quickReplies = [
+    "What services do you offer?",
+    "How much does printing cost?",
+    "What's your turnaround time?",
+    "Contact information",
+  ];
+
   return (
-    <>
-      {/* Enhanced Progress Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-transparent">
-        <div
-          className="h-full bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 transition-all duration-100 ease-out shadow-lg"
-          style={{ width: `${scrollProgress}%` }}
-        />
-      </div>
-
-      {/* Enhanced Main Navbar */}
-      <nav
-        className={`sticky top-0 w-full z-40 transition-all duration-300 ease-out ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-lg shadow-lg border-b border-gray-200"
-            : "bg-white/90 backdrop-blur-md shadow-md"
-        }`}
-      >
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Enhanced Logo Section */}
-            <Link href="/" className="flex items-center space-x-4 group">
-              {/* Enhanced Ganesh Icon with Animation */}
-              <div
-                className={`transition-all duration-300 ease-out ${
-                  isScrolled ? "w-8 h-8" : "w-10 h-10"
-                } flex items-center justify-center group-hover:scale-105 relative`}
+    <div
+      className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ease-out ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+      }`}
+    >
+      {/* Chatbot Toggle Button */}
+      {!isOpen && (
+        <div className="relative group">
+          {/* Main Button */}
+          <Button
+            onClick={() => setIsOpen(true)}
+            className="relative w-16 h-16 rounded-full bg-blue-900 hover:bg-blue-800 shadow-lg border-0 transition-all duration-200 hover:shadow-xl"
+          >
+            {/* Logo Icon */}
+            <div className="w-12 h-12 flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+              <svg
+                version="1.0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="550.000000pt"
+                height="686.000000pt"
+                viewBox="0 0 550.000000 686.000000"
+                preserveAspectRatio="xMidYMid meet"
+                className="w-10 h-10"
               >
-                {/* Decorative Ring */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 opacity-0 group-hover:opacity-100 scale-110 transition-all duration-300"></div>
-
-                {/* Enhanced SVG Icon */}
-                <svg
-                  version="1.0"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="550.000000pt"
-                  height="686.000000pt"
-                  viewBox="0 0 550.000000 686.000000"
-                  preserveAspectRatio="xMidYMid meet"
-                  className={`transition-all duration-300 ${
-                    isScrolled ? "w-12 h-12" : "w-14 h-14"
-                  } text-gray-800 group-hover:text-blue relative z-10`}
+                <g
+                  transform="translate(0.000000,686.000000) scale(0.100000,-0.100000)"
+                  fill="white"
+                  stroke="none"
                 >
-                  <g
-                    transform="translate(0.000000,686.000000) scale(0.100000,-0.100000)"
-                    fill="currentColor"
-                    stroke="none"
-                  >
-                    <path
-                      d="M2540 5805 c0 -18 -5 -25 -20 -25 -15 0 -20 -7 -20 -25 0 -20 -5 -25
+                  <path
+                    d="M2540 5805 c0 -18 -5 -25 -20 -25 -15 0 -20 -7 -20 -25 0 -20 -5 -25
 -25 -25 -23 0 -25 -4 -25 -45 0 -41 -2 -45 -25 -45 -23 0 -25 -4 -25 -45 0
 -38 -3 -45 -20 -45 -15 0 -20 -7 -20 -25 0 -18 5 -25 20 -25 15 0 20 7 20 25
 0 20 5 25 25 25 23 0 25 4 25 45 0 41 2 45 25 45 20 0 25 5 25 25 0 18 5 25
@@ -133,9 +171,9 @@ c-108 0 -115 -1 -115 -20 0 -17 -7 -20 -50 -20 -47 0 -50 -2 -50 -25 0 -23 -4
 l-45 0 0 90 c0 89 0 90 -25 90 -20 0 -25 5 -25 25 0 20 -5 25 -25 25 -23 0
 -25 4 -25 45 0 38 -3 45 -20 45 -15 0 -20 7 -20 25 0 23 -3 25 -50 25 -47 0
 -50 2 -50 25 0 24 -2 25 -70 25 -68 0 -70 -1 -70 -25z"
-                    />
-                    <path
-                      d="M2730 4965 l0 -25 -280 0 -280 0 0 -25 c0 -23 -4 -25 -45 -25 -38 0
+                  />
+                  <path
+                    d="M2730 4965 l0 -25 -280 0 -280 0 0 -25 c0 -23 -4 -25 -45 -25 -38 0
 -45 -3 -45 -20 0 -15 -7 -20 -25 -20 -20 0 -25 -5 -25 -25 0 -20 -5 -25 -25
 -25 -20 0 -25 -5 -25 -25 0 -18 -5 -25 -20 -25 -17 0 -20 -7 -20 -45 0 -41 -2
 -45 -25 -45 -20 0 -25 -5 -25 -25 0 -23 -4 -25 -45 -25 -41 0 -45 2 -45 25 0
@@ -269,21 +307,21 @@ c25 0 25 0 25 -95 0 -95 0 -95 25 -95 20 0 25 -5 25 -25 0 -18 5 -25 20 -25
 50 13 0 20 7 20 20 0 17 7 20 50 20 47 0 50 2 50 25 0 23 4 25 45 25 41 0 45
 2 45 25 0 24 2 25 70 25 63 0 70 2 70 20 0 19 7 20 165 20 158 0 165 -1 165
 -20z"
-                    />
-                    <path
-                      d="M2500 4495 c0 -18 5 -25 20 -25 15 0 20 7 20 25 0 18 -5 25 -20 25
+                  />
+                  <path
+                    d="M2500 4495 c0 -18 5 -25 20 -25 15 0 20 7 20 25 0 18 -5 25 -20 25
 -15 0 -20 -7 -20 -25z"
-                    />
-                    <path
-                      d="M2730 4495 c0 -20 5 -25 25 -25 20 0 25 5 25 25 0 20 -5 25 -25 25
+                  />
+                  <path
+                    d="M2730 4495 c0 -20 5 -25 25 -25 20 0 25 5 25 25 0 20 -5 25 -25 25
 -20 0 -25 -5 -25 -25z"
-                    />
-                    <path
-                      d="M2500 4380 l0 -50 45 0 c38 0 45 -3 45 -20 0 -19 7 -20 115 -20 l115
+                  />
+                  <path
+                    d="M2500 4380 l0 -50 45 0 c38 0 45 -3 45 -20 0 -19 7 -20 115 -20 l115
 0 0 45 0 45 -140 0 -140 0 0 25 c0 18 -5 25 -20 25 -17 0 -20 -7 -20 -50z"
-                    />
-                    <path
-                      d="M2030 4355 c0 -20 5 -25 25 -25 18 0 25 -5 25 -20 0 -13 7 -20 20
+                  />
+                  <path
+                    d="M2030 4355 c0 -20 5 -25 25 -25 18 0 25 -5 25 -20 0 -13 7 -20 20
 -20 15 0 20 -7 20 -25 0 -20 5 -25 25 -25 20 0 25 -5 25 -25 0 -20 5 -25 25
 -25 18 0 25 -5 25 -20 0 -17 -7 -20 -50 -20 -43 0 -50 3 -50 20 0 18 -7 20
 -70 20 -63 0 -70 -2 -70 -20 0 -15 7 -20 25 -20 20 0 25 -5 25 -25 0 -20 5
@@ -291,36 +329,36 @@ c25 0 25 0 25 -95 0 -95 0 -95 25 -95 20 0 25 -5 25 -25 0 -18 5 -25 20 -25
 -20 45 -20 l45 0 0 90 c0 83 -1 90 -20 90 -17 0 -20 7 -20 50 0 47 -2 50 -25
 50 -18 0 -25 5 -25 20 0 15 -7 20 -25 20 -20 0 -25 5 -25 25 0 23 -4 25 -45
 25 -41 0 -45 -2 -45 -25z"
-                    />
-                    <path
-                      d="M3200 4355 c0 -20 -5 -25 -25 -25 -18 0 -25 -5 -25 -20 0 -15 -7 -20
+                  />
+                  <path
+                    d="M3200 4355 c0 -20 -5 -25 -25 -25 -18 0 -25 -5 -25 -20 0 -15 -7 -20
 -25 -20 -20 0 -25 -5 -25 -25 0 -18 -5 -25 -20 -25 -19 0 -20 -7 -20 -95 l0
 -95 90 0 c89 0 90 0 90 25 0 20 5 25 25 25 24 0 25 2 25 70 l0 70 -45 0 -45 0
 0 -45 0 -45 -50 0 c-43 0 -50 3 -50 20 0 15 7 20 25 20 23 0 25 3 25 50 0 47
 2 50 25 50 18 0 25 5 25 20 0 17 7 20 45 20 41 0 45 2 45 25 0 23 -4 25 -45
 25 -41 0 -45 -2 -45 -25z"
-                    />
-                    <path
-                      d="M2540 4215 c0 -20 5 -25 25 -25 18 0 25 -5 25 -20 0 -19 7 -20 95
+                  />
+                  <path
+                    d="M2540 4215 c0 -20 5 -25 25 -25 18 0 25 -5 25 -20 0 -19 7 -20 95
 -20 88 0 95 1 95 20 0 13 7 20 20 20 15 0 20 7 20 25 0 18 -5 25 -20 25 -15 0
 -20 -7 -20 -25 0 -25 0 -25 -95 -25 -95 0 -95 0 -95 25 0 20 -5 25 -25 25 -20
 0 -25 -5 -25 -25z"
-                    />
-                    <path
-                      d="M2640 3865 l0 -45 70 0 c68 0 70 1 70 25 0 23 -3 25 -50 25 -43 0
+                  />
+                  <path
+                    d="M2640 3865 l0 -45 70 0 c68 0 70 1 70 25 0 23 -3 25 -50 25 -43 0
 -50 3 -50 20 0 13 -7 20 -20 20 -17 0 -20 -7 -20 -45z"
-                    />
-                    <path
-                      d="M2640 3705 c0 -20 -5 -25 -25 -25 -20 0 -25 -5 -25 -25 0 -25 0 -25
+                  />
+                  <path
+                    d="M2640 3705 c0 -20 -5 -25 -25 -25 -20 0 -25 -5 -25 -25 0 -25 0 -25
 95 -25 l95 0 0 50 0 50 -70 0 c-68 0 -70 -1 -70 -25z"
-                    />
-                    <path
-                      d="M2590 3515 c0 -20 5 -25 25 -25 18 0 25 -5 25 -20 0 -19 7 -20 90
+                  />
+                  <path
+                    d="M2590 3515 c0 -20 5 -25 25 -25 18 0 25 -5 25 -20 0 -19 7 -20 90
 -20 83 0 90 1 90 20 0 13 -7 20 -20 20 -15 0 -20 7 -20 25 0 25 0 25 -95 25
 -95 0 -95 0 -95 -25z"
-                    />
-                    <path
-                      d="M2680 3330 c0 -15 7 -20 25 -20 20 0 25 -5 25 -25 0 -20 5 -25 25
+                  />
+                  <path
+                    d="M2680 3330 c0 -15 7 -20 25 -20 20 0 25 -5 25 -25 0 -20 5 -25 25
 -25 24 0 25 -2 25 -70 0 -63 2 -70 20 -70 18 0 20 -7 20 -70 0 -68 1 -70 25
 -70 23 0 25 -4 25 -45 0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -18 5 -25 20
 -25 15 0 20 -7 20 -25 0 -20 5 -25 25 -25 18 0 25 -5 25 -20 0 -17 7 -20 45
@@ -330,16 +368,16 @@ c25 0 25 0 25 -95 0 -95 0 -95 25 -95 20 0 25 -5 25 -25 0 -18 5 -25 20 -25
 -17 0 -20 7 -20 50 0 47 -2 50 -25 50 -24 0 -25 2 -25 70 0 68 -1 70 -25 70
 -24 0 -25 2 -25 70 0 63 -2 70 -20 70 -13 0 -20 7 -20 20 0 17 -7 20 -50 20
 -43 0 -50 -3 -50 -20z"
-                    />
-                    <path
-                      d="M3290 3235 c0 -20 5 -25 25 -25 23 0 25 -4 25 -45 l0 -45 45 0 c41 0
+                  />
+                  <path
+                    d="M3290 3235 c0 -20 5 -25 25 -25 23 0 25 -4 25 -45 l0 -45 45 0 c41 0
 45 -2 45 -25 0 -20 5 -25 25 -25 18 0 25 -5 25 -20 0 -17 7 -20 45 -20 l45 0
 0 45 c0 41 -2 45 -25 45 -20 0 -25 5 -25 25 0 23 -4 25 -45 25 -38 0 -45 3
 -45 20 0 17 -7 20 -45 20 -41 0 -45 2 -45 25 0 20 -5 25 -25 25 -20 0 -25 -5
 -25 -25z"
-                    />
-                    <path
-                      d="M1420 3145 c0 -23 -4 -25 -45 -25 -41 0 -45 -2 -45 -25 0 -20 -5 -25
+                  />
+                  <path
+                    d="M1420 3145 c0 -23 -4 -25 -45 -25 -41 0 -45 -2 -45 -25 0 -20 -5 -25
 -25 -25 -23 0 -25 -4 -25 -45 0 -38 -3 -45 -20 -45 -18 0 -20 -7 -20 -70 0
 -68 -1 -70 -25 -70 l-25 0 0 -185 0 -185 -25 0 c-20 0 -25 -5 -25 -25 0 -18
 -5 -25 -20 -25 -19 0 -20 -7 -20 -165 0 -158 1 -165 20 -165 18 0 20 -7 20
@@ -432,169 +470,160 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
 7 20 20 0 17 7 20 50 20 47 0 50 2 50 25 0 23 4 25 45 25 41 0 45 2 45 25 l0
 25 210 0 210 0 0 -25z m-1960 -1120 c0 -20 -5 -25 -25 -25 -20 0 -25 5 -25 25
 0 20 5 25 25 25 20 0 25 -5 25 -25z"
-                    />
-                    <path d="M2870 2140 l0 -50 45 0 45 0 0 50 0 50 -45 0 -45 0 0 -50z" />
-                  </g>
-                </svg>
-              </div>
-
-              {/* Enhanced Text Section */}
-              <div className="hidden sm:block space-y-0.5">
-                <h1
-                  className={`transition-all duration-300 ${
-                    isScrolled ? "text-lg" : "text-xl"
-                  } font-bold text-gray-900 group-hover:text-blue-600 tracking-wide`}
-                  style={{ fontFamily: "serif" }}
-                >
-                  GANPATHI{" "}
-                  <span className="font-light text-blue-600">OVERSEAS</span>
-                </h1>
-                <div className="flex items-center space-x-2">
-                  <p className="text-xs text-gray-500 tracking-wider font-medium">
-                    Premium Printing Solutions
-                  </p>
-                  <Sparkles className="w-3 h-3 text-blue-500 opacity-70" />
-                </div>
-              </div>
-            </Link>
-
-            {/* Enhanced Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-2">
-              {navItems.map((item, index) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 group ${
-                    isActiveLink(item.href)
-                      ? "text-white bg-blue-600 shadow-sm"
-                      : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
-                  }`}
-                  style={{
-                    animationDelay: `${index * 0.1}s`,
-                  }}
-                >
-                  <span className="relative z-10">{item.name}</span>
-
-                  {/* Enhanced Active Indicator */}
-                  <span
-                    className={`absolute bottom-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-6 group-hover:left-1/2 group-hover:-translate-x-1/2 transition-all duration-300 rounded-full ${
-                      isActiveLink(item.href) ? "w-6 -translate-x-1/2" : ""
-                    }`}
-                  ></span>
-
-                  {/* Hover Glow Effect */}
-                  {!isActiveLink(item.href) && (
-                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-400/0 to-purple-400/0 group-hover:from-blue-400/10 group-hover:to-purple-400/10 transition-all duration-300"></div>
-                  )}
-                </Link>
-              ))}
+                  />
+                  <path d="M2870 2140 l0 -50 45 0 45 0 0 50 0 50 -45 0 -45 0 0 -50z" />
+                </g>
+              </svg>
             </div>
 
-            {/* Enhanced CTA Section */}
-            <div className="hidden lg:flex items-center space-x-4">
-              {/* Contact Info */}
-              <div className="flex items-center space-x-2 text-sm text-gray-600 px-3 py-2 rounded-lg bg-gray-50 hover:bg-blue-50 transition-all duration-200 group">
-                <Phone className="w-4 h-4 text-blue-600" />
-                <span className="font-medium">+91 96519 11111</span>
-              </div>
+            {/* Small notification dot */}
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
+          </Button>
 
-              {/* Enhanced CTA Button */}
-              <Button
-                asChild
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium shadow-sm hover:shadow-md transition-all duration-200 text-sm"
-              >
-                <Link href="/quote" className="flex items-center space-x-2">
-                  <span>Get Free Quote</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-            </div>
-
-            {/* Enhanced Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              <div className="relative w-6 h-6">
-                <span
-                  className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 ${
-                    isMenuOpen ? "rotate-45 top-3" : "top-1"
-                  }`}
-                ></span>
-                <span
-                  className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 top-3 ${
-                    isMenuOpen ? "opacity-0" : "opacity-100"
-                  }`}
-                ></span>
-                <span
-                  className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 ${
-                    isMenuOpen ? "-rotate-45 top-3" : "top-5"
-                  }`}
-                ></span>
-              </div>
-            </button>
+          {/* Tooltip */}
+          <div className="absolute bottom-full right-0 mb-3 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            Need help? Chat with us! 💬
+            <div className="absolute top-full right-4 border-4 border-transparent border-t-gray-900"></div>
           </div>
         </div>
+      )}
 
-        {/* Enhanced Mobile Menu */}
-        <div
-          className={`lg:hidden transition-all duration-500 ease-out ${
-            isMenuOpen
-              ? "max-h-screen opacity-100 visible"
-              : "max-h-0 opacity-0 invisible overflow-hidden"
-          }`}
-        >
-          <div className="bg-white/95 backdrop-blur-2xl border-t border-gradient-to-r from-blue-100 to-purple-100 shadow-2xl">
-            <div className="container mx-auto px-6 py-8">
-              <div className="space-y-3">
-                {navItems.map((item, index) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={`block px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 rounded-2xl transition-all duration-300 font-semibold hover:shadow-lg hover:scale-102 ${
-                      isActiveLink(item.href)
-                        ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg"
+      {/* Chat Window */}
+      {isOpen && (
+        <div className="w-96 h-[500px] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
+          {/* Header */}
+          <div className="bg-blue-900 text-white p-4 flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="relative">
+                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                  <MessageCircle className="w-6 h-6" />
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
+              </div>
+              <div>
+                <h3 className="font-semibold">Printing Assistant</h3>
+                <p className="text-xs text-blue-100">Online • Ready to help</p>
+              </div>
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsOpen(false)}
+              className="text-white hover:bg-white/20 rounded-full w-8 h-8 p-0"
+            >
+              <X className="w-4 h-4" />
+            </Button>
+          </div>
+
+          {/* Messages */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-3">
+            {messages.map((message) => (
+              <div
+                key={message.id}
+                className={`flex ${message.type === "user" ? "justify-end" : "justify-start"}`}
+              >
+                <div
+                  className={`max-w-[75%] ${message.type === "user" ? "order-2" : "order-1"}`}
+                >
+                  <div
+                    className={`flex items-start space-x-2 ${
+                      message.type === "user"
+                        ? "flex-row-reverse space-x-reverse"
                         : ""
                     }`}
-                    onClick={() => setIsMenuOpen(false)}
-                    style={{
-                      animationDelay: `${index * 0.1}s`,
-                    }}
                   >
-                    <div className="flex items-center justify-between">
-                      <span>{item.name}</span>
-                      <ArrowRight className="w-4 h-4 opacity-50" />
-                    </div>
-                  </Link>
-                ))}
-
-                {/* Enhanced Mobile CTA Section */}
-                <div className="pt-6 border-t border-gray-200 space-y-4">
-                  <div className="flex items-center justify-center space-x-3 text-sm text-gray-600 py-3 rounded-2xl bg-gray-50/50">
-                    <Phone className="w-5 h-5 text-blue-500" />
-                    <span className="font-semibold">+91 96519 11111</span>
-                  </div>
-
-                  <Button
-                    asChild
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white justify-center py-4 rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 group"
-                  >
-                    <Link
-                      href="/quote"
-                      onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center justify-center space-x-2"
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center text-white ${
+                        message.type === "user" ? "bg-blue-600" : "bg-gray-500"
+                      }`}
                     >
-                      <span>Get Free Quote</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                    </Link>
-                  </Button>
+                      {message.type === "user" ? (
+                        <User className="w-4 h-4" />
+                      ) : (
+                        <MessageCircle className="w-4 h-4" />
+                      )}
+                    </div>
+                    <div
+                      className={`rounded-2xl px-4 py-2 shadow-sm ${
+                        message.type === "user"
+                          ? "bg-blue-600 text-white"
+                          : "bg-gray-100 text-gray-800"
+                      }`}
+                    >
+                      <div className="text-sm whitespace-pre-wrap leading-relaxed">
+                        {message.text}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+            ))}
+
+            {/* Typing Indicator */}
+            {isTyping && (
+              <div className="flex justify-start">
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center">
+                    <MessageCircle className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="bg-gray-100 rounded-2xl px-4 py-2">
+                    <div className="flex space-x-1">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                      <div
+                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        style={{ animationDelay: "0.1s" }}
+                      ></div>
+                      <div
+                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        style={{ animationDelay: "0.2s" }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Quick Replies */}
+          {messages.length === 1 && (
+            <div className="px-4 pb-2">
+              <div className="flex flex-wrap gap-2">
+                {quickReplies.map((reply, index) => (
+                  <button
+                    key={index}
+                    onClick={() => sendMessage(reply)}
+                    className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs hover:bg-blue-100 transition-colors border border-blue-200 animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {reply}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Input */}
+          <div className="p-4 border-t border-gray-200">
+            <div className="flex space-x-2">
+              <Input
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyPress={(e) => e.key === "Enter" && sendMessage(inputValue)}
+                placeholder="Type your message..."
+                className="flex-1 rounded-xl border-gray-300 focus:border-blue-600 focus:ring-blue-600"
+                disabled={isTyping}
+              />
+              <Button
+                onClick={() => sendMessage(inputValue)}
+                disabled={!inputValue.trim() || isTyping}
+                className="bg-blue-900 hover:bg-blue-800 text-white border-0 rounded-xl px-4 transform transition-all duration-200 hover:scale-105"
+              >
+                <Send className="w-4 h-4" />
+              </Button>
             </div>
           </div>
         </div>
-      </nav>
-    </>
+      )}
+    </div>
   );
 }
