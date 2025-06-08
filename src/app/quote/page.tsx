@@ -85,7 +85,18 @@ export default function QuotePage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const uploadFilesToServer = async (files: File[]) => {
+  // Define the uploaded file type
+  interface UploadedFile {
+    originalName: string;
+    filename: string;
+    size: number;
+    type: string;
+    url: string;
+  }
+
+  const uploadFilesToServer = async (
+    files: File[]
+  ): Promise<UploadedFile[]> => {
     if (files.length === 0) return [];
 
     const formData = new FormData();
@@ -119,7 +130,7 @@ export default function QuotePage() {
 
     try {
       // Upload files first
-      let uploadedFilesData = [];
+      let uploadedFilesData: UploadedFile[] = [];
       if (uploadedFiles.length > 0) {
         uploadedFilesData = await uploadFilesToServer(uploadedFiles);
       }
