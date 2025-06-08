@@ -57,7 +57,7 @@ export default function Navbar() {
         />
       </div>
 
-      {/* Enhanced Main Navbar */}
+      {/* Main Navbar */}
       <nav
         className={`sticky top-0 w-full z-40 transition-all duration-300 ease-out ${
           isScrolled
@@ -67,18 +67,15 @@ export default function Navbar() {
       >
         <div className="container mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Enhanced Logo Section */}
-            <Link href="/" className="flex items-center space-x-4 group">
-              {/* Enhanced Ganesh Icon with Animation */}
+            {/* Logo Section */}
+            <Link href="/" className="flex items-center space-x-3 group">
+              {/* Ganesh Icon */}
               <div
-                className={`transition-all duration-300 ease-out ${
-                  isScrolled ? "w-8 h-8" : "w-10 h-10"
-                } flex items-center justify-center group-hover:scale-105 relative`}
+                className={`transition-all duration-200 ease-out ${
+                  isScrolled ? "w-10 h-10" : "w-12 h-12"
+                } flex items-center text-black justify-center group-hover:scale-105`}
               >
-                {/* Decorative Ring */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 opacity-0 group-hover:opacity-100 scale-110 transition-all duration-300"></div>
-
-                {/* Enhanced SVG Icon */}
+                {/* SVG Icon */}
                 <svg
                   version="1.0"
                   xmlns="http://www.w3.org/2000/svg"
@@ -86,9 +83,9 @@ export default function Navbar() {
                   height="686.000000pt"
                   viewBox="0 0 550.000000 686.000000"
                   preserveAspectRatio="xMidYMid meet"
-                  className={`transition-all duration-300 ${
+                  className={`transition-all duration-200 ${
                     isScrolled ? "w-12 h-12" : "w-14 h-14"
-                  } text-gray-800 group-hover:text-blue relative z-10`}
+                  } text-black group-hover:text-blue-500`}
                 >
                   <g
                     transform="translate(0.000000,686.000000) scale(0.100000,-0.100000)"
@@ -441,16 +438,20 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
               {/* Enhanced Text Section */}
               <div className="hidden sm:block space-y-0.5">
                 <h1
-                  className={`transition-all duration-300 ${
-                    isScrolled ? "text-lg" : "text-xl"
-                  } font-bold text-gray-900 group-hover:text-blue-600 tracking-wide`}
+                  className={`transition-all duration-200 ${
+                    isScrolled ? "text-xl" : "text-xl"
+                  } font-bold text-gray-900 group-hover:text-blue-600`}
                   style={{ fontFamily: "serif" }}
                 >
                   GANPATHI{" "}
-                  <span className="font-light text-blue-600">OVERSEAS</span>
+                  <span
+                    className={`font-light ${isScrolled ? "text-blue-600" : "text-black"} `}
+                  >
+                    OVERSEAS
+                  </span>
                 </h1>
                 <div className="flex items-center space-x-2">
-                  <p className="text-xs text-gray-500 tracking-wider font-medium">
+                  <p className="text-xs tracking-wider font-medium">
                     Premium Printing Solutions
                   </p>
                   <Sparkles className="w-3 h-3 text-blue-500 opacity-70" />
@@ -466,7 +467,7 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
                   href={item.href}
                   className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 group ${
                     isActiveLink(item.href)
-                      ? "text-white bg-blue-600 shadow-sm"
+                      ? "text-white bg-blue-600 shadow-md"
                       : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
                   }`}
                   style={{
@@ -501,7 +502,7 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
               {/* Enhanced CTA Button */}
               <Button
                 asChild
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium shadow-sm hover:shadow-md transition-all duration-200 text-sm"
+                className="bg-white hover:bg-gray-50 text-blue-600 hover:text-blue-700 px-6 py-2 rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-200 text-sm border border-blue-600"
               >
                 <Link href="/quote" className="flex items-center space-x-2">
                   <span>Get Free Quote</span>
@@ -545,16 +546,16 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
               : "max-h-0 opacity-0 invisible overflow-hidden"
           }`}
         >
-          <div className="bg-white/95 backdrop-blur-2xl border-t border-gradient-to-r from-blue-100 to-purple-100 shadow-2xl">
+          <div className="bg-white/95 backdrop-blur-2xl border-t border-gray-200 shadow-2xl">
             <div className="container mx-auto px-6 py-8">
               <div className="space-y-3">
                 {navItems.map((item, index) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`block px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 rounded-2xl transition-all duration-300 font-semibold hover:shadow-lg hover:scale-102 ${
+                    className={`block px-6 py-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-2xl transition-all duration-300 font-semibold hover:shadow-lg hover:scale-102 ${
                       isActiveLink(item.href)
-                        ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg"
+                        ? "text-white bg-blue-600 shadow-lg"
                         : ""
                     }`}
                     onClick={() => setIsMenuOpen(false)}
@@ -571,14 +572,14 @@ c0 -23 4 -25 45 -25 l45 0 0 -45 c0 -41 2 -45 25 -45 20 0 25 -5 25 -25 0 -20
 
                 {/* Enhanced Mobile CTA Section */}
                 <div className="pt-6 border-t border-gray-200 space-y-4">
-                  <div className="flex items-center justify-center space-x-3 text-sm text-gray-600 py-3 rounded-2xl bg-gray-50/50">
-                    <Phone className="w-5 h-5 text-blue-500" />
+                  <div className="flex items-center justify-center space-x-3 text-sm text-gray-600 py-3 rounded-2xl bg-gray-50">
+                    <Phone className="w-5 h-5 text-blue-600" />
                     <span className="font-semibold">+91 96519 11111</span>
                   </div>
 
                   <Button
                     asChild
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white justify-center py-4 rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 group"
+                    className="w-full bg-white hover:bg-gray-50 text-blue-600 hover:text-blue-700 justify-center py-4 rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 group border border-blue-600"
                   >
                     <Link
                       href="/quote"
